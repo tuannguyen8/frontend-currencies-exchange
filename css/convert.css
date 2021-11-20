@@ -1,0 +1,15 @@
+.convert .container-fluid .row .left-side {
+  background-color: lavenderblush;
+  height: 74vh;
+}
+
+.convert .container-fluid .row .right-side .right-upper {
+  background-color: lavender;
+  height: 37vh;
+}
+
+.convert .container-fluid .row .right-side .right-lower {
+  background-color: lightgray;
+  height: 37vh;
+}
+/*# sourceMappingURL=convert.css.map */

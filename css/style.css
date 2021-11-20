@@ -60,148 +60,21 @@ html, body, input, button {
   font-family: 'Poppins', sans-serif;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
+header {
+  margin-top: 20px;
+  border-bottom: 1px #337ab7 solid;
 }
 
-.totop {
-  display: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 70px;
-  height: 70px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: white;
-  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-.totop i {
-  font-size: 30px;
-}
-
-.sticky {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  background: white;
-  z-index: 3;
-  -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
-body {
-  position: relative;
-}
-
-.input-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.input-group input {
-  padding: 10px;
-  background-color: #ccc;
-  border-radius: 4px;
-  width: 300px;
-}
-
-.input-group button {
-  padding: 10px;
-  background: #1a91db;
+header div ul li a {
   color: white;
-  cursor: pointer;
 }
 
-.input-group .dog-list {
-  position: relative;
+footer {
+  margin-top: 20px;
+  border-bottom: 1px #337ab7 solid;
 }
 
-.input-group .dog-list .dog-breeds {
-  width: 140px;
-  background-color: #ccc;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.input-group .dog-list ul {
-  background: white;
-  height: 500px;
-  overflow-y: auto;
-  position: absolute;
-  width: 100%;
-  -webkit-box-shadow: 0px 2px 10px -2px #ccc;
-          box-shadow: 0px 2px 10px -2px #ccc;
-  z-index: 10;
-  display: none;
-}
-
-.input-group .dog-list ul li {
-  padding: 10px;
-  font-size: 12px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  cursor: pointer;
-}
-
-.input-group .dog-list ul li:hover {
-  background-color: #ccc;
-}
-
-.dog-area {
-  width: 400px;
-  position: relative;
-}
-
-.dog-area img {
-  max-width: 100%;
-}
-
-.dog-area .loading {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border-left: 3px solid red;
-  border-right: 3px solid red;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-animation: loading 1s forwards infinite;
-          animation: loading 1s forwards infinite;
-}
-
-@-webkit-keyframes loading {
-  to {
-    -webkit-transform: rotate(306deg);
-            transform: rotate(306deg);
-  }
-}
-
-@keyframes loading {
-  to {
-    -webkit-transform: rotate(306deg);
-            transform: rotate(306deg);
-  }
+footer div ul li a {
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

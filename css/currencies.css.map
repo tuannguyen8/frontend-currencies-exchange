@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAGY,WAHD,CACP,gBAAgB,CACZ,IAAI,CACA,UAAU,CAAA;EACN,gBAAgB,EAAE,aAAa;EAC/B,MAAM,EAAE,IAAI;CAEf;;AAPb,AAUgB,WAVL,CACP,gBAAgB,CACZ,IAAI,CAMA,WAAW,CAEP,YAAY,CAAA;EACR,gBAAgB,EAAE,QAAQ;EAC1B,MAAM,EAAE,IAAI;CACf;;AAbjB,AAcgB,WAdL,CACP,gBAAgB,CACZ,IAAI,CAMA,WAAW,CAMP,YAAY,CAAA;EACR,gBAAgB,EAAE,SAAS;EAC3B,MAAM,EAAE,IAAI;CACf",
+    "sources": [
+        "../scss/currencies.scss"
+    ],
+    "names": [],
+    "file": "currencies.css"
+}

@@ -1,0 +1,15 @@
+.currencies .container-fluid .row .left-side {
+  background-color: lavenderblush;
+  height: 74vh;
+}
+
+.currencies .container-fluid .row .right-side .right-upper {
+  background-color: lavender;
+  height: 37vh;
+}
+
+.currencies .container-fluid .row .right-side .right-lower {
+  background-color: lightgray;
+  height: 37vh;
+}
+/*# sourceMappingURL=currencies.css.map */
