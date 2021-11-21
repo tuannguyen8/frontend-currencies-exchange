@@ -2,14 +2,37 @@
 	.container-fluid {
 		.row {
 			.left-side {
-				.left-upper {
-					background-color: lavender;
-					height: 37vh;
+				//background-color: lightgray;
+				height: 74vh;
+				
+				h2{
+					color: blue;
+					font-weight: 700;
 				}
-				.left-lower {
-					background-color: lightgray;
-					height: 37vh;
+				.currency-list{
+					//background-color: orange;
+					height: 92%;
+					overflow: scroll;
+					box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+					.all-currencies-header{
+						padding: 10px 10px 0px 10px;
+					}
+					.all-currencies{
+						padding: 0px 10px;
+						cursor: pointer;
+						:hover{
+							background-color: orange;
+						}
+						li{
+							.currency-key{
+								font-weight: 700;
+								margin-right: 10px;
+							}
+						}
+						
+					}
 				}
+				
 			}
 
 			.right-side {

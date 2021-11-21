@@ -1,79 +1,32 @@
+const all_currencies_api = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json"
 
-const get_all_breeds = "https://dog.ceo/api/breeds/list/all"
-//get all breeds
-const getAllBreeds = () => {  
-    $.get(get_all_breeds, data => {
-        if (data.status === "success"){
-            const list = Object.keys(data.message)
-            Object.keys(data.message).forEach(val => {
-                $(".list").append(`<li>${val}</li>`);
+/* let allCurrencies = {};
+let lastestPrice_Eur = {}; */
+/* $.get(all_currencies_api, data => {  
+        allCurrencies = data;    
+}); */
+
+const getAllCurrencies = () => {  
+    $.get(all_currencies_api, data => {  
+        Object.keys(data).forEach(key => {
+            //console.log(key, data[key]);
+            const latest_price_usd =`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${key}/usd.json`
+            $.get(latest_price_usd, price =>{
+                console.log(price.usd)
+                $(".all-currencies").append(`<li class ="flex j-between a-center">
+                 <span> <span class="currency-key">${key.toUpperCase()}</span>: <span>${data[key]}</span> </span>
+                 <span>${price.usd.toFixed(6)}</span>
+                 </li>`)
             })
 
-            //set default breed
-            $(".dog-breeds").text(list[0])
-        }
+            
+        });
         
     });
+    /* Object.keys(allCurrencies).forEach(key => {
+        console.log(key, allCurrencies[key]);
+        $(".all-currencies").append(`<li> ${key}: ${allCurrencies[key]}</li>`)
+    }); */
+    //return data;
 }
-
-//fetch data
-const fetchData = (breed) => {
-    const api_url = `https://dog.ceo/api/breed/${breed}/images/random`
-    $.get(api_url, data => {
-        if (data.status === "success"){
-            $("img").attr("src", data.message)
-        }
-    });
-}
-
-
-//handle click li - select a specific breed
-$(document).on("click", ".list li", function () {
-    const val = $(this).text()
-    $(".dog-breeds").text(val)
-    $(".list").fadeOut(100);
-});
-
-//select breeds 
-$(".dog-breeds").click(function (e) { 
-    e.preventDefault();
-    $(".list").slideToggle();
-});
-
-
-/* 
-//set url cho input
-$("input").val(api_url) */
-
-//calling 
-getAllBreeds();
-
-
-//fetchData();
-
-$("button").click(function (e) { 
-    //console.log("hello");
-    e.preventDefault();
-    const breed = $(".dog-breeds").text()
-    fetchData(breed);
-});
-
-/* const fetchData = () => {
-    
-    //loading icon
-    $(".dog-area").append(
-        `<span class="loading"></span>`
-    )
-    //remove previous image
-    $(".dog-image").attr("src", "");
-    $.get(api_url, (data)=>{
-        if(data.status === "success"){
-            $(".dog-image").attr("src", data.message)
-        }
-    }).done(()=>{
-        
-        $(".dog-area  .loading").remove();
-    }).fail(()=>{
-        $(".dog-area  .loading").remove();
-    })
-} */
+getAllCurrencies();

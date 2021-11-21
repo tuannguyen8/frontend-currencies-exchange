@@ -1,11 +1,35 @@
-.convert .container-fluid .row .left-side .left-upper {
-  background-color: lavender;
-  height: 37vh;
+.convert .container-fluid .row .left-side {
+  height: 74vh;
 }
 
-.convert .container-fluid .row .left-side .left-lower {
-  background-color: lightgray;
-  height: 37vh;
+.convert .container-fluid .row .left-side h2 {
+  color: blue;
+  font-weight: 700;
+}
+
+.convert .container-fluid .row .left-side .currency-list {
+  height: 92%;
+  overflow: scroll;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.convert .container-fluid .row .left-side .currency-list .all-currencies-header {
+  padding: 10px 10px 0px 10px;
+}
+
+.convert .container-fluid .row .left-side .currency-list .all-currencies {
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
+.convert .container-fluid .row .left-side .currency-list .all-currencies :hover {
+  background-color: orange;
+}
+
+.convert .container-fluid .row .left-side .currency-list .all-currencies li .currency-key {
+  font-weight: 700;
+  margin-right: 10px;
 }
 
 .convert .container-fluid .row .right-side .right-upper {

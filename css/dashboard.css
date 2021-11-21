@@ -3,8 +3,13 @@
   height: 74vh;
 }
 
-.currencies .container-fluid .row .right-side .right-upper {
+.currencies .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left {
   background-color: lavender;
+  height: 37vh;
+}
+
+.currencies .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right {
+  background-color: orange;
   height: 37vh;
 }
 

@@ -9,8 +9,18 @@
             .right-side{
                 
                 .right-upper{
-                    background-color: lavender;
-                    height: 37vh;
+                    .container-fluid{
+                        .right-upper-left{
+                            background-color: lavender;
+                            height: 37vh;
+                        }
+                        .right-upper-right{
+                            background-color: orange;
+                            height: 37vh;
+                        }
+                    }
+                    
+                    
                 }
                 .right-lower{
                     background-color: lightgray;
