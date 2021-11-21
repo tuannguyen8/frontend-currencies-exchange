@@ -63,14 +63,48 @@
 						<div class="right-upper"> Top 5 highest </div>
 
 						<div class="right-lower"> 
-                            <form action="/action_page.php">
+                            <!-- <form > -->
                                 <div class="input-group">
-                                    <label for="quantity"></label>
-                                    <input type="number" id="quantity" name="quantity" min="1" max="5">
+                                    <div class="currency-choice flex">
+                                        <div class="currency-list-input">
+                                            <div >From: </div>
+                                            <div class="currency-type-input"></div>
+                                            <ul class="list-input">
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="currency-list-output">
+                                            <div>To: </div>
+                                            <div class="currency-type-output"></div>
+                                            <ul class="list-output">
+                                            </ul>
+                                        </div>
+                                        <div class="quantity-input">
+                                            <label for="quantity">Value:</label>
+                                            <input type="number" id="quantity" name="quantity" min="1" max="5">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="convert-btn flex j-center a-center">
+                                        <button>Convert</button>
+                                    </div>
+                                    
+
+                                    <div class="converted-result flex j-center a-center">
+                                        <div>
+                                            <span>Result: </span>
+                                            <span class="value-input">1</span>
+                                            <span class="currency-code-input">USD</span>
+                                            <span> = </span>
+                                            <span class="value-output">22800</span>
+                                            <span class="cunrrency-code-ouput">VND</span>
+                                        </div>
+                                        
+                                    </div>
                                 </div>
                                 
-                                <input type="submit">
-                            </form>
+                                
+                            <!-- </form> -->
                         </div>
 					</div>
 				</div>
