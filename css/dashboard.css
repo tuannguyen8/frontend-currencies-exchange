@@ -1,19 +1,52 @@
-.currencies .container-fluid .row .left-side {
-  background-color: lavenderblush;
+.dashboard .container-fluid .row .left-side {
   height: 74vh;
 }
 
-.currencies .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left {
+.dashboard .container-fluid .row .left-side h2 {
+  color: blue;
+  font-weight: 700;
+}
+
+.dashboard .container-fluid .row .left-side .currency-list {
+  height: 92%;
+  overflow: scroll;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.dashboard .container-fluid .row .left-side .currency-list .all-currencies-header {
+  padding: 10px 10px 0px 10px;
+}
+
+.dashboard .container-fluid .row .left-side .currency-list .all-currencies-header li {
+  font-weight: 700;
+}
+
+.dashboard .container-fluid .row .left-side .currency-list .all-currencies {
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
+.dashboard .container-fluid .row .left-side .currency-list .all-currencies :hover {
+  background-color: orange;
+}
+
+.dashboard .container-fluid .row .left-side .currency-list .all-currencies li .currency-key {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left {
   background-color: lavender;
   height: 37vh;
 }
 
-.currencies .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right {
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right {
   background-color: orange;
   height: 37vh;
 }
 
-.currencies .container-fluid .row .right-side .right-lower {
+.dashboard .container-fluid .row .right-side .right-lower {
   background-color: lightgray;
   height: 37vh;
 }

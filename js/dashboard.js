@@ -7,12 +7,14 @@ const getAllCurrencies = () => {
             $.get(latest_price_usd, price =>{
                 console.log(price.usd)
                 $(".all-currencies").append(`<li class ="flex j-between a-center">
-                 <span> <span class="currency-key">${key.toUpperCase()}</span>: <span>${data[key]}</span> </span>
-                 <span>${price.usd.toFixed(6)}</span>
+                    <span>
+                        <a href="#">
+                            <span class="currency-key">${key.toUpperCase()}</span>: <span>${data[key]}</span>
+                        
+                        </a>  
+                    </span>
                  </li>`)
             })
-
-            
         });
         
     });

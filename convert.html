@@ -58,9 +58,20 @@
                             </ul>
                         </div>
                     </div>
+
 					<div class="right-side col-sm-6">
 						<div class="right-upper"> Top 5 highest </div>
-						<div class="right-lower"> Converter </div>
+
+						<div class="right-lower"> 
+                            <form action="/action_page.php">
+                                <div class="input-group">
+                                    <label for="quantity"></label>
+                                    <input type="number" id="quantity" name="quantity" min="1" max="5">
+                                </div>
+                                
+                                <input type="submit">
+                            </form>
+                        </div>
 					</div>
 				</div>
 			</div>
@@ -82,5 +93,5 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 
-	<script src="js/main.js"></script>
+	<script src="js/convert.js"></script>
 </html>

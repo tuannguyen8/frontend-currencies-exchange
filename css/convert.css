@@ -18,6 +18,10 @@
   padding: 10px 10px 0px 10px;
 }
 
+.convert .container-fluid .row .left-side .currency-list .all-currencies-header li {
+  font-weight: 700;
+}
+
 .convert .container-fluid .row .left-side .currency-list .all-currencies {
   padding: 0px 10px;
   cursor: pointer;
