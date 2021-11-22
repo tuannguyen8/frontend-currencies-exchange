@@ -175,4 +175,9 @@
   background-color: lightgray;
   height: 37vh;
 }
+
+.dashboard .container-fluid .row .right-side .right-lower #myChart {
+  height: 50%;
+  width: 100%;
+}
 /*# sourceMappingURL=dashboard.css.map */
