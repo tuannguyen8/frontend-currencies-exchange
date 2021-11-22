@@ -60,9 +60,10 @@ const convertCurrency = (inputCurrency, outputCurrency, inputValue) => {
     $.get(ratio_api, price =>{
         //console.log(price.date)
         let ratio = price[Object.keys(price)[1]];
-        let value = inputValue * ratio
+        let value = inputValue * ratio;
+        let inputVal = +inputValue; //convert to number
         let formattedValue = value.toLocaleString("en-US");
-        let formattedInputValue = value.toLocaleString("en-US");
+        let formattedInputValue = inputVal.toLocaleString("en-US");
         $( ".result" ).remove();
         $(".converted-result").append(`
             <div class = "result">
