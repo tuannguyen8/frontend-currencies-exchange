@@ -1,4 +1,24 @@
 body {
-	background-color: white;
-	color: white;
+}
+.outer_row {
+	//background-image: url("https://www.wallpapers4u.org/wp-content/uploads/banknote_currency_money_numbers_50323_1920x1080.jpg");
+}
+.row {
+	//background-image: url("https://www.wallpapers4u.org/wp-content/uploads/banknote_currency_money_numbers_50323_1920x1080.jpg");
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: center;
+	height: 350px;
+	padding: 10px;
+}
+.img {
+	height: 320px;
+	width: 100%;
+}
+.head {
+	font-size: 3vw;
+	margin: auto;
+	width: 100%;
+	text-align: center;
+	color: rgb(16, 84, 124);
 }

@@ -1,5 +1,21 @@
-body {
-  background-color: white;
-  color: white;
+.row {
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  height: 350px;
+  padding: 10px;
+}
+
+.img {
+  height: 320px;
+  width: 100%;
+}
+
+.head {
+  font-size: 3vw;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  color: #10547c;
 }
 /*# sourceMappingURL=about.css.map */
