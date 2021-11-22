@@ -1,13 +1,17 @@
-.row {
+.outer_row {
+  background-image: url("/frontend-currencies-exchange/bg_about.jpg");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
-  height: 350px;
+}
+
+.row {
+  height: 380px;
   padding: 10px;
 }
 
 .img {
-  height: 320px;
+  height: 302px;
   width: 100%;
 }
 
@@ -16,6 +20,21 @@
   margin: auto;
   width: 100%;
   text-align: center;
-  color: #10547c;
+  color: #1e85ca;
+}
+
+ul li {
+  color: white;
+  font-size: 2vw;
+}
+
+.header1 {
+  color: white;
+  font-size: 3vw;
+}
+
+#col-sm-6 {
+  height: 350px;
+  color: white;
 }
 /*# sourceMappingURL=about.css.map */
