@@ -42,12 +42,17 @@
 }
 
 .convert .container-fluid .row .right-side .right-lower {
-  background-color: lavenderblush;
+  -webkit-box-shadow: 0px 2px 10px -2px #ccc;
+          box-shadow: 0px 2px 10px -2px #ccc;
   height: 37vh;
 }
 
 .convert .container-fluid .row .right-side .right-lower .input-group {
   margin-bottom: 20px;
+}
+
+.convert .container-fluid .row .right-side .right-lower .input-group .currency-choice {
+  margin-left: 10px;
 }
 
 .convert .container-fluid .row .right-side .right-lower .input-group .currency-choice .currency-list-input {
@@ -59,6 +64,7 @@
   margin-top: 5px;
   background-color: orange;
   color: white;
+  text-align: center;
   padding: 15px 20px;
   width: 180px;
   height: 50px;
@@ -100,8 +106,6 @@
   margin-top: 5px;
   background-color: orange;
   color: white;
-  /* display: flex;
-									align-items: center; */
   text-align: center;
   padding: 15px 20px;
   width: 180px;

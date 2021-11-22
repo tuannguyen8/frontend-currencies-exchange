@@ -42,8 +42,133 @@
 }
 
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right {
-  background-color: orange;
   height: 37vh;
+  -webkit-box-shadow: 0px 2px 10px -2px #ccc;
+          box-shadow: 0px 2px 10px -2px #ccc;
+  height: 37vh;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group {
+  margin-bottom: 20px;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice {
+  margin-left: 10px;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice .currency-list-input {
+  position: relative;
+  margin-right: 50px;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice .currency-list-input .currency-type-input {
+  margin-top: 5px;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  width: 90px;
+  height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice .currency-list-input ul {
+  background: white;
+  height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 10px -2px #ccc;
+          box-shadow: 0px 2px 10px -2px #ccc;
+  z-index: 10;
+  display: none;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice .currency-list-input ul li {
+  padding: 10px;
+  font-size: 12px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice .currency-list-input ul li:hover {
+  background-color: #ccc;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice .currency-list-output {
+  margin-right: 50px;
+  position: relative;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice .currency-list-output .currency-type-output {
+  margin-top: 5px;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  width: 90px;
+  height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice .currency-list-output ul {
+  background: white;
+  height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 10px -2px #ccc;
+          box-shadow: 0px 2px 10px -2px #ccc;
+  z-index: 10;
+  display: none;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice .currency-list-output ul li {
+  padding: 10px;
+  font-size: 12px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice .currency-list-output ul li:hover {
+  background-color: #ccc;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice .quantity-input label {
+  font-weight: 400;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .currency-choice .quantity-input input {
+  display: block;
+  border: orange 1px solid;
+  color: black;
+  padding: 15px 20px;
+  width: 90px;
+  height: 50px;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group button {
+  padding: 10px;
+  margin: 20px 0px;
+  background: #1a91db;
+  color: white;
+  cursor: pointer;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .converted-result div {
+  background-color: orange;
+  padding: 10px 20px;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right .input-group .converted-result div span {
+  font-size: 18px;
+  color: white;
 }
 
 .dashboard .container-fluid .row .right-side .right-lower {
