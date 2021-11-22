@@ -44,11 +44,12 @@
 					height: 37vh;
 				}
 				.right-lower {
-					background-color: lavenderblush;
+					box-shadow: 0px 2px 10px -2px #ccc;
 					height: 37vh;		
 					.input-group{
 						margin-bottom: 20px;
 						.currency-choice{
+							margin-left: 10px;
 							.currency-list-input{
 								position: relative;
 								margin-right: 50px;
