@@ -23,17 +23,17 @@
   color: #1e85ca;
 }
 
-ul li {
+.members {
   color: white;
-  font-size: 2vw;
+  font-size: 1vw;
 }
 
 .header1 {
   color: white;
-  font-size: 3vw;
+  font-size: 2vw;
 }
 
-#col-sm-6 {
+.col-sm-6 {
   height: 350px;
   color: white;
 }
