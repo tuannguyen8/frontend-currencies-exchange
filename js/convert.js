@@ -114,7 +114,7 @@ const top_5_curr = () => {
 
 	const today = new Date();
 	const yesterday = new Date(today);
-	yesterday.setDate(yesterday.getDate() - 10);
+	yesterday.setDate(yesterday.getDate() - 1);
 	today.toDateString();
 	yesterday.toDateString();
 	let todays_date = formatDate(today);
