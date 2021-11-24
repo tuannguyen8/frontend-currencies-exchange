@@ -114,7 +114,7 @@ const top_5_curr = () => {
 
 	const today = new Date();
 	const yesterday = new Date(today);
-	yesterday.setDate(yesterday.getDate() - 1);
+	yesterday.setDate(yesterday.getDate() - 7);
 	today.toDateString();
 	yesterday.toDateString();
 	let todays_date = formatDate(today);
@@ -129,7 +129,7 @@ const top_5_curr = () => {
 		app.append(element);
 	};
 	datetoDOM("Today's Date     :: " + todays_date);
-	datetoDOM("Yesterday's Date :: " + yesterday_date);
+	datetoDOM("A Week Ago Date  :: " + yesterday_date);
 	console.log("TODAYS DATE " + todays_date);
 	console.log("Yesterdays DATE " + yesterday_date);
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
@@ -162,32 +162,87 @@ const top_5_curr = () => {
 		let day2 = [];
 		for (const each in data1) {
 			curr.push(`${each}`);
-			day1.push(`${data1[each]}`);
+			day1.push(Number(`${data1[each]}`));
 		}
-		let diff = 3.14;
-		let f32 = new Float32Array(180);
+		let diff = "3.14";
+		//console.log(Number(diff) +1);
+		//console.log(typeof diff);
+		//let f32 = new Float32Array(180);
 		for (const each in data2) {
-			day2.push(`${data1[each]}`);
+			day2.push(Number(`${data2[each]}`));
 		}
-		console.log(day1[0]);
-		console.log(day2[0]);
+
+		console.log(typeof parseFloat(day1[0]));
 		for (let i = 0; i < day1.length; ++i) {
 			//console.log(day1[i]);
 			//console.log(day2[i]);
-			diff = day1[i] - day2[i];
+			//console.log(typeof day2[i]);
+			diff = (day1[i] - day2[i]).toPrecision(6);
+			//console.log(diff);
 			//console.log(i);
 			difference.push(diff);
 		}
 		console.log(difference);
-		// var sorted_price = {};
-		// for (var i = 0; i < curr.length; i++) {
-		// 	sorted_price[curr[i]] = difference[i];
+
+		//Sorting the Array Object to find Top and Bottom Gainers
+		var sorted_price = {};
+		for (var i = 0; i < curr.length; i++) {
+			sorted_price[curr[i]] = difference[i];
+		}
+		//console.log(sorted_price);
+		const sortable = Object.entries(sorted_price)
+			.sort(([, a], [, b]) => a - b)
+			.reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+		console.log(sortable);
+		// Adding
+		let gainers = document.querySelector(".Top_gainer");
+		let loosers = document.querySelector(".Top_loosers");
+		const ToptoDOM = (key, value) => {
+			let element = document.createElement("li");
+			element.classList.add("top");
+			let name = document.createElement("h5");
+			let price = document.createElement("h5");
+			name = key;
+			price = value;
+			element.append(name + " :   ");
+			element.append(price);
+			loosers.append(element);
+		};
+		const ToptoDOM1 = (key, value) => {
+			let element = document.createElement("li");
+			element.classList.add("top");
+			let name = document.createElement("h5");
+			let price = document.createElement("h5");
+			name = key;
+			price = value;
+			element.append(name + " :   ");
+			element.append(price);
+			gainers.append(element);
+		};
+		// let a = 0;
+		// for (const property in sortable) {
+		// 	if (a < 4) {
+		// 		ToptoDOM(`${property}`, `${sortable[property]}`);
+		// 		++a;
+		// 	}
 		// }
-		// //console.log(sorted_price);
-		// const sortable = Object.entries(sorted_price)
-		// 	.sort(([, a], [, b]) => a - b)
-		// 	.reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-		// console.log(sortable);
+
+		for (let keys = Object.keys(sortable), i = 0, end = 8; i < end; ++i) {
+			let key = keys[i],
+				value = sortable[key];
+			ToptoDOM(key.toUpperCase(), value + " USD");
+		}
+		const sortable1 = Object.entries(sorted_price)
+			.sort(([, a], [, b]) => b - a)
+			.reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+		console.log(sortable1);
+		for (let keys = Object.keys(sortable1), i = 0, end = 8; i < end; ++i) {
+			let key = keys[i],
+				value = sortable1[key];
+			ToptoDOM1(key.toUpperCase(), " + " + value + " USD");
+		}
+		ToptoDOM(sortable);
+		ToptoDOM1(sortable);
 	}
 	get_data();
 };
