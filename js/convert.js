@@ -99,7 +99,7 @@ function formatDate(date) {
 	return [year, month, day].join("-");
 }
 const top_5_curr = () => {
-	let app = document.querySelector(".right-upper");
+	let app = document.querySelector(".dates");
 	let yes_price_data = "";
 	let price_data = "";
 	let curr_name = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json";
@@ -114,7 +114,7 @@ const top_5_curr = () => {
 
 	const today = new Date();
 	const yesterday = new Date(today);
-	yesterday.setDate(yesterday.getDate() - 1);
+	yesterday.setDate(yesterday.getDate() - 10);
 	today.toDateString();
 	yesterday.toDateString();
 	let todays_date = formatDate(today);
@@ -150,10 +150,46 @@ const top_5_curr = () => {
 		yes_price_data = await yesterdays_price(yes_price_url);
 		console.log(price_data);
 		console.log(yes_price_data);
+		let data1 = price_data.usd;
+		let data2 = yes_price_data.usd;
+		let difference = [];
+		console.log(data1);
+		console.log(data2);
+
+		// Finding the TOP PRICE MOVERS!!
+		let curr = [];
+		let day1 = [];
+		let day2 = [];
+		for (const each in data1) {
+			curr.push(`${each}`);
+			day1.push(`${data1[each]}`);
+		}
+		let diff = 3.14;
+		let f32 = new Float32Array(180);
+		for (const each in data2) {
+			day2.push(`${data1[each]}`);
+		}
+		console.log(day1[0]);
+		console.log(day2[0]);
+		for (let i = 0; i < day1.length; ++i) {
+			//console.log(day1[i]);
+			//console.log(day2[i]);
+			diff = day1[i] - day2[i];
+			console.log(i);
+			difference.push(diff);
+		}
+		console.log(difference);
+		// var sorted_price = {};
+		// for (var i = 0; i < curr.length; i++) {
+		// 	sorted_price[curr[i]] = difference[i];
+		// }
+		// //console.log(sorted_price);
+		// const sortable = Object.entries(sorted_price)
+		// 	.sort(([, a], [, b]) => a - b)
+		// 	.reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+		// console.log(sortable);
 	}
 	get_data();
-
-	//console.log("Todays Date :: " + curr_date);
 };
 
 top_5_curr();
