@@ -167,7 +167,6 @@ const top_5_curr = () => {
 		let diff = "3.14";
 		//console.log(Number(diff) +1);
 		//console.log(typeof diff);
-		//let f32 = new Float32Array(180);
 		for (const each in data2) {
 			day2.push(Number(`${data2[each]}`));
 		}
@@ -198,38 +197,35 @@ const top_5_curr = () => {
 		let gainers = document.querySelector(".Top_gainer");
 		let loosers = document.querySelector(".Top_loosers");
 		const ToptoDOM = (key, value) => {
-			let element = document.createElement("li");
-			element.classList.add("top");
-			let name = document.createElement("h5");
-			let price = document.createElement("h5");
-			name = key;
-			price = value;
-			element.append(name + " :   ");
-			element.append(price);
-			loosers.append(element);
+			if (key && value) {
+				let element = document.createElement("li");
+				element.classList.add("top");
+				let name = document.createElement("h5");
+				let price = document.createElement("h5");
+				name = key;
+				price = value;
+				element.append(name + " :   ");
+				element.append(price);
+				loosers.append(element);
+			}
 		};
 		const ToptoDOM1 = (key, value) => {
-			let element = document.createElement("li");
-			element.classList.add("top");
-			let name = document.createElement("h5");
-			let price = document.createElement("h5");
-			name = key;
-			price = value;
-			element.append(name + " :   ");
-			element.append(price);
-			gainers.append(element);
+			if (key && value) {
+				let element = document.createElement("li");
+				element.classList.add("top");
+				let name = document.createElement("h5");
+				let price = document.createElement("h5");
+				name = key;
+				price = value;
+				element.append(name + " :   ");
+				element.append(price);
+				gainers.append(element);
+			}
 		};
-		// let a = 0;
-		// for (const property in sortable) {
-		// 	if (a < 4) {
-		// 		ToptoDOM(`${property}`, `${sortable[property]}`);
-		// 		++a;
-		// 	}
-		// }
-
 		for (let keys = Object.keys(sortable), i = 0, end = 8; i < end; ++i) {
 			let key = keys[i],
 				value = sortable[key];
+			console.log(key, value);
 			ToptoDOM(key.toUpperCase(), value + " USD");
 		}
 		const sortable1 = Object.entries(sorted_price)
@@ -239,6 +235,7 @@ const top_5_curr = () => {
 		for (let keys = Object.keys(sortable1), i = 0, end = 8; i < end; ++i) {
 			let key = keys[i],
 				value = sortable1[key];
+			console.log(key, value);
 			ToptoDOM1(key.toUpperCase(), " + " + value + " USD");
 		}
 		ToptoDOM(sortable);
