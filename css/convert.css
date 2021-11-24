@@ -41,6 +41,16 @@
   height: 37vh;
 }
 
+.convert .container-fluid .row .right-side .right-upper .right-upper-left {
+  background-color: greenyellow;
+  height: 70%;
+}
+
+.convert .container-fluid .row .right-side .right-upper .right-upper-right {
+  background-color: #c53e1d;
+  height: 70%;
+}
+
 .convert .container-fluid .row .right-side .right-lower {
   -webkit-box-shadow: 0px 2px 10px -2px #ccc;
           box-shadow: 0px 2px 10px -2px #ccc;
