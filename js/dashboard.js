@@ -140,4 +140,4 @@ let myChart = new Chart(bar_chart, {
 		],
 	},
 });
-myChart();
+//myChart();

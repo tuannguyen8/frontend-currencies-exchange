@@ -175,7 +175,7 @@ const top_5_curr = () => {
 			//console.log(day1[i]);
 			//console.log(day2[i]);
 			diff = day1[i] - day2[i];
-			console.log(i);
+			//console.log(i);
 			difference.push(diff);
 		}
 		console.log(difference);
