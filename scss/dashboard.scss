@@ -1,178 +1,173 @@
-.dashboard{
-    .container-fluid{
-        .row{
-            .left-side{
-                //background-color: lavenderblush;
-                height: 74vh;
-                h2{
+.dashboard {
+	.container-fluid {
+		.row {
+			.left-side {
+				//background-color: lavenderblush;
+				height: 74vh;
+				h2 {
 					color: blue;
 					font-weight: 700;
 				}
-                .currency-list{
+				.currency-list {
 					//background-color: orange;
 					height: 92%;
 					overflow: scroll;
 					box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-					.all-currencies-header{
+					.all-currencies-header {
 						padding: 10px 10px 0px 10px;
-                        li{
-                            font-weight: 700;
-                        }
+						li {
+							font-weight: 700;
+						}
 					}
-					.all-currencies{
+					.all-currencies {
 						padding: 0px 10px;
 						cursor: pointer;
-						:hover{
+						:hover {
 							background-color: orange;
 						}
-						li{
-							.currency-key{
+						li {
+							.currency-key {
 								font-weight: 700;
 								margin-right: 10px;
 							}
 						}
-						
 					}
 				}
-				
+			}
+			.right-side {
+				.right-upper {
+					.container-fluid {
+						.right-upper-left {
+							background-color: lavender;
+							height: 37vh;
+						}
+						.right-upper-right {
+							height: 37vh;
+							box-shadow: 0px 2px 10px -2px #ccc;
+							height: 37vh;
+							.input-group {
+								margin-bottom: 20px;
+								.currency-choice {
+									margin-left: 10px;
+									.currency-list-input {
+										position: relative;
+										margin-right: 50px;
 
-            } 
-            .right-side{
-                
-                .right-upper{
-                    .container-fluid{
-                        .right-upper-left{
-                            background-color: lavender;
-                            height: 37vh;
-                        }
-                        .right-upper-right{
-                            height: 37vh;
-                            box-shadow: 0px 2px 10px -2px #ccc;
-					        height: 37vh;		
-                            .input-group{
-                                margin-bottom: 20px;
-                                .currency-choice{
-                                    margin-left: 10px;
-                                    .currency-list-input{
-                                        position: relative;
-                                        margin-right: 50px;
-                                        
-                                        .currency-type-input{
-                                            margin-top: 5px;
-                                            background-color: orange;
-                                            color: white;
-                                            text-align: center;
-                                            padding: 15px 20px;
-                                            width: 90px;
-                                            height: 50px;
-                                            white-space: nowrap;
-                                            overflow: hidden;
-                                            text-overflow: ellipsis;
+										.currency-type-input {
+											margin-top: 5px;
+											background-color: orange;
+											color: white;
+											text-align: center;
+											padding: 15px 20px;
+											width: 90px;
+											height: 50px;
+											white-space: nowrap;
+											overflow: hidden;
+											text-overflow: ellipsis;
+										}
+										ul {
+											background: white;
+											height: 200px;
+											overflow-y: auto;
+											position: absolute;
+											width: 100%;
+											box-shadow: 0px 2px 10px -2px #ccc;
+											z-index: 10;
+											display: none;
+											li {
+												padding: 10px;
+												font-size: 12px;
+												transition: 0.4s;
+												cursor: pointer;
+												&:hover {
+													background-color: #ccc;
+												}
+											}
+										}
+									}
 
-                                        }
-                                        ul{
-                                            background: white;
-                                            height: 200px;
-                                            overflow-y: auto;
-                                            position: absolute;
-                                            width: 100%;
-                                            box-shadow: 0px 2px 10px -2px #ccc;
-                                            z-index: 10;
-                                            display: none;
-                                            li{
-                                                padding: 10px;
-                                                font-size: 12px;
-                                                transition: 0.4s;
-                                                cursor: pointer;
-                                                &:hover{ 
-                                                    background-color: #ccc;
-                                                }
-                                            }
-                                        }
-                                    }
+									.currency-list-output {
+										margin-right: 50px;
+										position: relative;
+										.currency-type-output {
+											margin-top: 5px;
+											background-color: orange;
+											color: white;
+											text-align: center;
+											padding: 15px 20px;
+											width: 90px;
+											height: 50px;
+											white-space: nowrap;
+											overflow: hidden;
+											text-overflow: ellipsis;
+										}
+										ul {
+											background: white;
+											height: 200px;
+											overflow-y: auto;
+											position: absolute;
+											width: 100%;
+											box-shadow: 0px 2px 10px -2px #ccc;
+											z-index: 10;
+											display: none;
+											li {
+												padding: 10px;
+												font-size: 12px;
+												transition: 0.4s;
+												cursor: pointer;
+												&:hover {
+													background-color: #ccc;
+												}
+											}
+										}
+									}
 
-                                    .currency-list-output{
-                                        margin-right: 50px;
-                                        position: relative;
-                                        .currency-type-output{
-                                            margin-top: 5px;
-                                            background-color: orange;
-                                            color: white;
-                                            text-align: center;
-                                            padding: 15px 20px;
-                                            width: 90px;
-                                            height: 50px;
-                                            white-space: nowrap;
-                                            overflow: hidden;
-                                            text-overflow: ellipsis;
-                                        }
-                                        ul{
-                                            background: white;
-                                            height: 200px;
-                                            overflow-y: auto;
-                                            position: absolute;
-                                            width: 100%;
-                                            box-shadow: 0px 2px 10px -2px #ccc;
-                                            z-index: 10;
-                                            display: none;
-                                            li{
-                                                padding: 10px;
-                                                font-size: 12px;
-                                                transition: 0.4s;
-                                                cursor: pointer;
-                                                &:hover{ 
-                                                    background-color: #ccc;
-                                                }
-                                            }
-                                        }
-                                    }
+									.quantity-input {
+										label {
+											font-weight: 400;
+										}
+										input {
+											display: block;
+											border: orange 1px solid;
+											color: black;
+											padding: 15px 20px;
+											width: 90px;
+											height: 50px;
+										}
+									}
+								}
+								button {
+									padding: 10px;
+									margin: 20px 0px;
+									background: #1a91db;
+									color: white;
+									cursor: pointer;
+								}
 
-                                    .quantity-input{
-                                        label{
-                                            font-weight: 400;
-                                        }
-                                        input{
-                                            display: block;
-                                            border: orange 1px solid;
-                                            color: black;
-                                            padding: 15px 20px;
-                                            width: 90px;
-                                            height: 50px;
-                                            
-                                        }
-                                    }
-                                }
-                                button{
-                                    padding: 10px;
-                                    margin: 20px 0px;
-                                    background: #1a91db;
-                                    color: white;
-                                    cursor: pointer;
-                                }
-
-                                .converted-result{
-                                    div{
-                                        background-color: orange;
-                                        padding: 10px 20px;
-                                        span{
-                                            font-size: 18px;
-                                            color: white;
-                                        }
-                                    }
-                                    
-                                }
-                                
-                            }
-                        }
-                    }
-                    
-                    
-                }
-                .right-lower{
-                    background-color: lightgray;
-                    height: 37vh;
-                }
-            }
-        }
-    }
+								.converted-result {
+									div {
+										background-color: orange;
+										padding: 10px 20px;
+										span {
+											font-size: 18px;
+											color: white;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				.right-lower {
+					background-color: lightgray;
+					height: 37vh;
+					
+					#myChart {
+						height: 50%;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
 }

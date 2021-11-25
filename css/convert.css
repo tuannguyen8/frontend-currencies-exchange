@@ -37,8 +37,55 @@
 }
 
 .convert .container-fluid .row .right-side .right-upper {
-  background-color: lavender;
+  background-color: #afafe0;
   height: 37vh;
+}
+
+.convert .container-fluid .row .right-side .right-upper {
+  padding: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.convert .container-fluid .row .right-side .right-upper .right-upper-left {
+  background-color: greenyellow;
+  height: 70%;
+  border-radius: 5px;
+}
+
+.convert .container-fluid .row .right-side .right-upper .right-upper-left li {
+  list-style-type: none;
+  font-size: .8vw;
+}
+
+.convert .container-fluid .row .right-side .right-upper .right-upper-left li:hover {
+  background-color: #1a91db;
+  color: white;
+}
+
+.convert .container-fluid .row .right-side .right-upper .right-upper-left .Top_gainer {
+  font-size: .9w;
+}
+
+.convert .container-fluid .row .right-side .right-upper .right-upper-right {
+  background-color: #c97560;
+  height: 70%;
+  border-radius: 5px;
+}
+
+.convert .container-fluid .row .right-side .right-upper .right-upper-right li {
+  list-style-type: none;
+  font-size: .8vw;
+}
+
+.convert .container-fluid .row .right-side .right-upper .right-upper-right li:hover {
+  background-color: #1a91db;
+  color: white;
+}
+
+.convert .container-fluid .row .right-side .right-upper .right-upper-right .Top_loosers {
+  font-size: .9vw;
 }
 
 .convert .container-fluid .row .right-side .right-lower {

@@ -10,7 +10,7 @@
 		/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<script src="https://kit.fontawesome.com/a7ebbfc552.js" crossorigin="anonymous"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -68,7 +68,7 @@
 												<div class="currency-type-input"></div>
 												<ul class="list-input"> </ul>
 											</div>
-									
+
 											<div class="currency-list-output">
 												<div>To: </div>
 												<div class="currency-type-output"></div>
@@ -76,23 +76,31 @@
 											</div>
 											<div class="quantity-input">
 												<label for="quantity">Value:</label>
-												<input class="input-value" type="number" value="1" id="quantity" name="quantity" min="0" />
+												<input
+													class="input-value"
+													type="number"
+													value="1"
+													id="quantity"
+													name="quantity"
+													min="0"
+												/>
 											</div>
 										</div>
-									
+
 										<div class="convert-btn flex j-center a-center">
 											<button>Convert</button>
 										</div>
-									
+
 										<div class="converted-result flex j-center a-center">
 											<!-- converted result will be here -->
-											
 										</div>
 									</div>					
+
 								</div>
 							</div>
 						</div>
-						<div class="right-lower"> Converter </div>
+						<div class="right-lower"> Bar Chart 
+							<canvas id="myChart"></canvas> </div>
 					</div>
 				</div>
 			</div>
