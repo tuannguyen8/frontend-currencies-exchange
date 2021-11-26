@@ -160,11 +160,12 @@
 				}
 				.right-lower {
 					background-color: lightgray;
-					height: 37vh;
-					
-					#myChart {
-						height: 50%;
-						width: 100%;
+					height: 35vh;
+					color: red;
+				
+					#lineChart {
+						width: 0px;
+						height: 100%;
 					}
 				}
 			}

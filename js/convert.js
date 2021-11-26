@@ -112,6 +112,7 @@ const top_5_curr = () => {
 			console.log(data);
 		});
 
+		
 	const today = new Date();
 	const yesterday = new Date(today);
 	yesterday.setDate(yesterday.getDate() - 1);

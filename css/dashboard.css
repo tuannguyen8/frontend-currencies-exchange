@@ -173,11 +173,12 @@
 
 .dashboard .container-fluid .row .right-side .right-lower {
   background-color: lightgray;
-  height: 37vh;
+  height: 35vh;
+  color: red;
 }
 
-.dashboard .container-fluid .row .right-side .right-lower #myChart {
-  height: 50%;
-  width: 100%;
+.dashboard .container-fluid .row .right-side .right-lower #lineChart {
+  width: 0px;
+  height: 100%;
 }
 /*# sourceMappingURL=dashboard.css.map */
