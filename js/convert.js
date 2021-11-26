@@ -114,7 +114,7 @@ const top_5_curr = () => {
 
 	const today = new Date();
 	const yesterday = new Date(today);
-	yesterday.setDate(yesterday.getDate() - 7);
+	yesterday.setDate(yesterday.getDate() - 3);
 	today.toDateString();
 	yesterday.toDateString();
 	let todays_date = formatDate(today);
@@ -173,15 +173,26 @@ const top_5_curr = () => {
 
 		console.log(typeof parseFloat(day1[0]));
 		for (let i = 0; i < day1.length; ++i) {
+			let increase = 0;
+			let decrease = 0;
 			//console.log(day1[i]);
 			//console.log(day2[i]);
 			//console.log(typeof day2[i]);
 			diff = (day1[i] - day2[i]).toPrecision(6);
-			//console.log(diff);
+			if (diff > 0) {
+				increase = ((diff % day2[i]) * 100).toPrecision(9);
+				difference.push(increase);
+			} else {
+				decrease = ((diff % day1[i]) * 100).toPrecision(9);
+				-Math.abs(decrease);
+				difference.push(decrease);
+			}
+			console.log(" percentage " + increase);
+			console.log(" percentage " + decrease);
 			//console.log(i);
-			difference.push(diff);
+			//difference.push(diff);
 		}
-		console.log(difference);
+		//console.log(difference);
 
 		//Sorting the Array Object to find Top and Bottom Gainers
 		var sorted_price = {};
@@ -192,7 +203,7 @@ const top_5_curr = () => {
 		const sortable = Object.entries(sorted_price)
 			.sort(([, a], [, b]) => a - b)
 			.reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-		console.log(sortable);
+		//console.log(sortable);
 		// Adding
 		let gainers = document.querySelector(".Top_gainer");
 		let loosers = document.querySelector(".Top_loosers");
@@ -225,8 +236,8 @@ const top_5_curr = () => {
 		for (let keys = Object.keys(sortable), i = 0, end = 8; i < end; ++i) {
 			let key = keys[i],
 				value = sortable[key];
-			console.log(key, value);
-			ToptoDOM(key.toUpperCase(), value + " USD");
+			//console.log(key, value);
+			ToptoDOM(key.toUpperCase(), value + " %");
 		}
 		const sortable1 = Object.entries(sorted_price)
 			.sort(([, a], [, b]) => b - a)
@@ -235,8 +246,8 @@ const top_5_curr = () => {
 		for (let keys = Object.keys(sortable1), i = 0, end = 8; i < end; ++i) {
 			let key = keys[i],
 				value = sortable1[key];
-			console.log(key, value);
-			ToptoDOM1(key.toUpperCase(), " + " + value + " USD");
+			//console.log(key, value);
+			ToptoDOM1(key.toUpperCase(), " + " + value + " %");
 		}
 		ToptoDOM(sortable);
 		ToptoDOM1(sortable);
