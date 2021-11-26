@@ -114,7 +114,7 @@ const top_5_curr = () => {
 
 	const today = new Date();
 	const yesterday = new Date(today);
-	yesterday.setDate(yesterday.getDate() - 3);
+	yesterday.setDate(yesterday.getDate() - 1);
 	today.toDateString();
 	yesterday.toDateString();
 	let todays_date = formatDate(today);
@@ -180,10 +180,10 @@ const top_5_curr = () => {
 			//console.log(typeof day2[i]);
 			diff = (day1[i] - day2[i]).toPrecision(6);
 			if (diff > 0) {
-				increase = ((diff % day2[i]) * 100).toPrecision(9);
+				increase = ((diff / day2[i]) * 100).toPrecision(9);
 				difference.push(increase);
 			} else {
-				decrease = ((diff % day1[i]) * 100).toPrecision(9);
+				decrease = ((diff / day1[i]) * 100).toPrecision(9);
 				-Math.abs(decrease);
 				difference.push(decrease);
 			}
