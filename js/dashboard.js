@@ -114,14 +114,39 @@ const top_5_curr = () => {
 	const today = new Date();
 	const yesterday = new Date(today);
 	const day_before = new Date(yesterday);
+	const day_before1 = new Date(yesterday);
+	const day_before2 = new Date(yesterday);
+	const day_before3 = new Date(yesterday);
+	const day_before4 = new Date(yesterday);
+
 	yesterday.setDate(yesterday.getDate() - 1);
 	day_before.setDate(day_before.getDate() - 2);
+	day_before1.setDate(day_before.getDate() - 3);
+	day_before2.setDate(day_before.getDate() - 4);
+	day_before3.setDate(day_before.getDate() - 5);
+	day_before4.setDate(day_before.getDate() - 6);
+
 	today.toDateString();
 	yesterday.toDateString();
 	day_before.toDateString();
+	day_before1.toDateString();
+	day_before2.toDateString();
+	day_before3.toDateString();
+	day_before4.toDateString();
+
 	let todays_date = formatDate(today);
 	let yesterday_date = formatDate(yesterday);
 	let day_before_yes = formatDate(day_before);
+	let day_before_yes1 = formatDate(day_before1);
+	let day_before_yes2 = formatDate(day_before2);
+	let day_before_yes3 = formatDate(day_before3);
+	let day_before_yes4 = formatDate(day_before4);
+
+	let day_before_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes}/currencies/usd.json`;
+	let day_before_url1 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes1}/currencies/usd.json`;
+	let day_before_url2 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes2}/currencies/usd.json`;
+	let day_before_url3 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes3}/currencies/usd.json`;
+	let day_before_url4 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes4}/currencies/usd.json`;
 
 	// Adding Date to DOM
 	const datetoDOM = (date) => {
@@ -230,26 +255,31 @@ const top_5_curr = () => {
 		for (let keys = Object.keys(sortable1), i = 0, end = 8; i < end; ++i) {
 			let key = keys[i],
 				value = sortable1[key];
-			Gainer_label.push(key);
+			Gainer_label.push(key.toLocaleUpperCase());
 			Gainer_data.push(value);
-			//console.log(key, value);
-			//ToptoDOM1(key.toUpperCase(), " + " + value + " %");
 		}
-		//ToptoDOM(sortable);
-		//ToptoDOM1(sortable);
+
+		console.log(day_before_yes, yesterday_date, todays_date);
 		let bar_chart = document.getElementById("lineChart");
 		let myChart = new Chart(bar_chart, {
 			type: "line",
 			maintainAspectRatio: false,
 			responsive: false,
 			responsiveAnimationDuration: 2,
+
 			data: {
-				labels: ["2", "2", "2", "1", "2", day_before_yes, yesterday_date, todays_date],
+				labels: [, , , todays_date, day_before_yes, yesterday_date, todays_date],
 				datasets: [
 					{
 						label: Gainer_label[0],
 						data: Gainer_data[0],
 						borderColor: [
+							"rgba(255,99,132,1)",
+							"rgba(54, 162, 235, 1)",
+							"rgba(255, 206, 86, 1)",
+							"rgba(75, 192, 192, 1)",
+							"rgba(153, 102, 255, 1)",
+							"rgba(255, 159, 64, 1)",
 							"rgba(255,99,132,1)",
 							"rgba(54, 162, 235, 1)",
 							"rgba(255, 206, 86, 1)",
@@ -268,6 +298,13 @@ const top_5_curr = () => {
 							"rgba(255, 206, 86, 1)",
 							"rgba(75, 192, 192, 1)",
 							"rgba(153, 102, 255, 1)",
+							"rgba(255, 159, 64, 1)",
+							"rgba(255,99,132,1)",
+							"rgba(54, 162, 235, 1)",
+							"rgba(255, 206, 86, 1)",
+							"rgba(75, 192, 192, 1)",
+							"rgba(153, 102, 255, 1)",
+							"rgba(255, 159, 64, 1)",
 						],
 						borderWidth: 1,
 					},
@@ -277,6 +314,11 @@ const top_5_curr = () => {
 						borderColor: [
 							"rgba(255,99,132,1)",
 							"rgba(54, 162, 235, 1)",
+							"rgba(255, 206, 86, 1)",
+							"rgba(75, 192, 192, 1)",
+							"rgba(153, 102, 255, 1)",
+							"rgba(255, 159, 64, 1)",
+							"rgba(255,99,132,1)",
 							"rgba(54, 162, 235, 1)",
 							"rgba(255, 206, 86, 1)",
 							"rgba(75, 192, 192, 1)",
@@ -295,6 +337,12 @@ const top_5_curr = () => {
 							"rgba(75, 192, 192, 1)",
 							"rgba(153, 102, 255, 1)",
 							"rgba(255, 159, 64, 1)",
+							"rgba(255,99,132,1)",
+							"rgba(54, 162, 235, 1)",
+							"rgba(255, 206, 86, 1)",
+							"rgba(75, 192, 192, 1)",
+							"rgba(153, 102, 255, 1)",
+							"rgba(255, 159, 64, 1)",
 						],
 						borderWidth: 1,
 					},
@@ -306,6 +354,10 @@ const top_5_curr = () => {
 							"rgba(54, 162, 235, 1)",
 							"rgba(255, 206, 86, 1)",
 							"rgba(75, 192, 192, 1)",
+							"rgba(153, 102, 255, 1)",
+							"rgba(255, 159, 64, 1)",
+							"rgba(255,99,132,1)",
+							"rgba(54, 162, 235, 1)",
 							"rgba(255, 206, 86, 1)",
 							"rgba(75, 192, 192, 1)",
 							"rgba(153, 102, 255, 1)",
@@ -319,6 +371,13 @@ const top_5_curr = () => {
 						borderColor: [
 							"rgba(255,99,132,1)",
 							"rgba(54, 162, 235, 1)",
+							"rgba(255, 206, 86, 1)",
+							"rgba(75, 192, 192, 1)",
+							"rgba(153, 102, 255, 1)",
+							"rgba(255, 159, 64, 1)",
+							"rgba(255,99,132,1)",
+							"rgba(54, 162, 235, 1)",
+							"rgba(255, 206, 86, 1)",
 							"rgba(75, 192, 192, 1)",
 							"rgba(153, 102, 255, 1)",
 							"rgba(255, 159, 64, 1)",
@@ -335,17 +394,9 @@ const top_5_curr = () => {
 							"rgba(75, 192, 192, 1)",
 							"rgba(153, 102, 255, 1)",
 							"rgba(255, 159, 64, 1)",
-						],
-						borderWidth: 1,
-					},
-					{
-						label: Gainer_label[7],
-						data: Gainer_data[7],
-						borderColor: [
 							"rgba(255,99,132,1)",
 							"rgba(54, 162, 235, 1)",
 							"rgba(255, 206, 86, 1)",
-							"rgba(75, 192, 192, 1)",
 							"rgba(75, 192, 192, 1)",
 							"rgba(153, 102, 255, 1)",
 							"rgba(255, 159, 64, 1)",
