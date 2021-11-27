@@ -177,8 +177,36 @@
   color: red;
 }
 
-.dashboard .container-fluid .row .right-side .right-lower #lineChart {
+.dashboard .container-fluid .row .right-side .right-lower right-lower-right #lineChart {
   width: 0px;
   height: 100%;
+}
+
+.dashboard .container-fluid .row .right-side .right-lower .right-lower-left {
+  /* The container <div> - needed to position the dropdown content */
+  /* Dropdown Content (Hidden by Default) */
+}
+
+.dashboard .container-fluid .row .right-side .right-lower .right-lower-left .dropbtn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dashboard .container-fluid .row .right-side .right-lower .right-lower-left .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dashboard .container-fluid .row .right-side .right-lower .right-lower-left .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 /*# sourceMappingURL=dashboard.css.map */
