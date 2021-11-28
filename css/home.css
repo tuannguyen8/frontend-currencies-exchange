@@ -18,6 +18,72 @@
           animation: run 1s linear 1;
 }
 
+.img-bf {
+  height: 15vw;
+  margin-top: 13%;
+  margin-left: 25%;
+  -webkit-animation: bf1 1s linear 1;
+          animation: bf1 1s linear 1;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.img-bf-coin {
+  height: 15vw;
+  margin-top: -5%;
+  margin-left: 58%;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation: bf2 1s linear 1;
+          animation: bf2 1s linear 1;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+@-webkit-keyframes bf1 {
+  0% {
+    -webkit-transform: translate(-700px, -100px);
+            transform: translate(-700px, -100px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes bf1 {
+  0% {
+    -webkit-transform: translate(-700px, -100px);
+            transform: translate(-700px, -100px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@-webkit-keyframes bf2 {
+  0% {
+    -webkit-transform: translate(600px, -100px);
+            transform: translate(600px, -100px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes bf2 {
+  0% {
+    -webkit-transform: translate(600px, -100px);
+            transform: translate(600px, -100px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
 @-webkit-keyframes run {
   0% {
     -webkit-transform: translate(-300px, -100px);

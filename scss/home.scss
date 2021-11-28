@@ -15,6 +15,38 @@
 	font-weight: bold;
 	animation: run 1s linear 1;
 }
+.img-bf {
+	height: 15vw;
+	margin-top: 13%;
+	margin-left: 25%;
+	
+	animation: bf1 1s linear 1;
+	animation-delay: 0.5s;
+}
+.img-bf-coin {
+	height: 15vw;
+	margin-top: -5%;
+	margin-left: 58%;
+	animation-delay: 2s;
+	animation: bf2 1s linear 1;
+	animation-delay: 1.5s;
+}
+@keyframes bf1 {
+	0% {
+		transform: translate(-700px, -100px);
+	}
+	100% {
+		transform: translate(0px, 0px);
+	}
+}
+@keyframes bf2 {
+	0% {
+		transform: translate(600px, -100px);
+	}
+	100% {
+		transform: translate(0px, 0px);
+	}
+}
 @keyframes run {
 	0% {
 		transform: translate(-300px, -100px);
@@ -46,7 +78,7 @@
 	padding: 10px;
 	width: 50vw;
 }
-@media screen and (max-width:670px) {
+@media screen and (max-width: 670px) {
 	.row {
 		position: absolute;
 		top: 45%;
@@ -57,5 +89,5 @@
 		padding: 10px;
 		width: 50vw;
 	}
-  }
+}
 /*# sourceMappingURL=home.css.map */
