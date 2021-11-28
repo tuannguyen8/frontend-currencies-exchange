@@ -8,15 +8,65 @@
 
 .welcome {
   font-size: 1.2vw;
+  font-family: cursive;
   margin: auto;
   width: 100%;
   text-align: center;
   color: #4545d4;
+  font-weight: bold;
+  -webkit-animation: run 1s linear 1;
+          animation: run 1s linear 1;
+}
+
+@-webkit-keyframes run {
+  0% {
+    -webkit-transform: translate(-300px, -100px);
+            transform: translate(-300px, -100px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes run {
+  0% {
+    -webkit-transform: translate(-300px, -100px);
+            transform: translate(-300px, -100px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
 }
 
 .btn.btn-success {
   margin: auto;
   width: 100%;
+  -webkit-animation: spin 1s linear 1;
+          animation: spin 1s linear 1;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: translate(300px, 110px);
+            transform: translate(300px, 110px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: translate(300px, 110px);
+            transform: translate(300px, 110px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
 }
 
 .row {
@@ -28,5 +78,18 @@
   border-radius: 5px;
   padding: 10px;
   width: 50vw;
+}
+
+@media screen and (max-width: 670px) {
+  .row {
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    border: 2px solid #5497e4;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 50vw;
+  }
 }
 /*# sourceMappingURL=home.css.map */
