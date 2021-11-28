@@ -1,16 +1,10 @@
-body {
-}
 .outer_row {
-	background-image: url("../images/bg_about.jpg");
+	//background-image: url("../images/bg_about.jpg");
 	background-repeat: no-repeat;
 	background-size: auto;
 	background-position: center;
 }
-.row {
-	//background-image: url("https://www.wallpapers4u.org/wp-content/uploads/banknote_currency_money_numbers_50323_1920x1080.jpg");
-	height: 370px;
-	padding: 10px;
-}
+
 .img {
 	height: 302px;
 	width: 100%;
@@ -24,15 +18,26 @@ body {
 }
 .members {
 	text-align: center;
-	color: white;
+	color: rgb(19, 11, 11);
 	font-size: 1vw;
 }
 .header1 {
 	text-align: center;
-	color: white;
+	color: rgb(15, 10, 10);
 	font-size: 2vw;
 }
 .col-sm-6 {
 	height: 330px;
-	color: white;
+	color: rgb(19, 10, 10);
+}
+.canvas {
+	height: 100px;
+}
+.upper-right {
+	text-align: center;
+	margin-top: auto;
+	margin-bottom: auto;
+	text-align: center;
+	width: 60vw;
+	margin-left: 20%;
 }

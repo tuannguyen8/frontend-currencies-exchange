@@ -1,13 +1,7 @@
 .outer_row {
-  background-image: url("../images/bg_about.jpg");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
-}
-
-.row {
-  height: 370px;
-  padding: 10px;
 }
 
 .img {
@@ -25,18 +19,31 @@
 
 .members {
   text-align: center;
-  color: white;
+  color: #130b0b;
   font-size: 1vw;
 }
 
 .header1 {
   text-align: center;
-  color: white;
+  color: #0f0a0a;
   font-size: 2vw;
 }
 
 .col-sm-6 {
   height: 330px;
-  color: white;
+  color: #130a0a;
+}
+
+.canvas {
+  height: 100px;
+}
+
+.upper-right {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+  width: 60vw;
+  margin-left: 20%;
 }
 /*# sourceMappingURL=about.css.map */
