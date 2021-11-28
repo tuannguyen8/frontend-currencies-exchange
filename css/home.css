@@ -244,10 +244,10 @@
   }
 }
 
-@media screen and (max-width: 825px) {
+@media screen and (max-width: 957px) {
   .row {
     position: absolute;
-    top: 17%;
+    top: 16%;
     left: 25%;
     border: 2px solid #5497e4;
     background-color: white;
