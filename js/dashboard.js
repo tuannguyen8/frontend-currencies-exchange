@@ -84,6 +84,8 @@ $("button").click(function (e) {
 
 getAllCurrencies();
 
+//--------------------------Chart Function----------------------------------//
+
 // Format Date to year-month-date
 function formatDate(date) {
 	let d = new Date(date),
@@ -94,18 +96,13 @@ function formatDate(date) {
 	if (day.length < 2) day = "0" + day;
 	return [year, month, day].join("-");
 }
-const top_5_curr = () => {
+const renderChart = () => {
 	let yes_price_data = "";
 	let curr_name = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json";
-
-	fetch(curr_name) // Getting Currency Name
-		.then((response) => response.json())
-		.then((data) => {
-			console.log(data);
-		});
-	let date_label = [];
 	seven = [];
-	date_label.push(formatDate(new Date()));
+	//date_label.push(formatDate(new Date()));
+
+	// Creating Date for last 7 days
 	const today = new Date();
 	const yesterday = new Date(today);
 	const day_before = new Date(yesterday);
@@ -114,6 +111,7 @@ const top_5_curr = () => {
 	const day_before3 = new Date(yesterday);
 	const day_before4 = new Date(yesterday);
 
+	// Setting date for last 7 days
 	yesterday.setDate(yesterday.getDate() - 1);
 	day_before.setDate(day_before.getDate() - 2);
 	day_before1.setDate(day_before1.getDate() - 3);
@@ -121,6 +119,7 @@ const top_5_curr = () => {
 	day_before3.setDate(day_before3.getDate() - 5);
 	day_before4.setDate(day_before4.getDate() - 6);
 
+	//Changing Date to String to Convert into right format
 	today.toDateString();
 	yesterday.toDateString();
 	day_before.toDateString();
@@ -129,6 +128,7 @@ const top_5_curr = () => {
 	day_before3.toDateString();
 	day_before4.toDateString();
 
+	//Changing date to right format 2022-22-01
 	let todays_date = formatDate(today);
 	let yesterday_date = formatDate(yesterday);
 	let day_before_yes = formatDate(day_before);
@@ -146,7 +146,6 @@ const top_5_curr = () => {
 		day_before_yes4
 	);
 	let today_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${todays_date}/currencies/usd.json`;
-
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
 	let day_before_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes}/currencies/usd.json`;
 	let day_before_url1 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes1}/currencies/usd.json`;
@@ -154,19 +153,19 @@ const top_5_curr = () => {
 	let day_before_url3 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes3}/currencies/usd.json`;
 	let day_before_url4 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes4}/currencies/usd.json`;
 
-	// Adding Date to DOM
-	const datetoDOM = (date) => {
-		let element = document.createElement("div");
-		element.classList.add("Current_dates");
-		let name = document.createElement("h5");
-		name.textContent = date;
-		element.append(name);
-		//app.append(element);
-	};
-	datetoDOM("Today's Date     :: " + todays_date);
-	datetoDOM("A Week Ago Date  :: " + yesterday_date);
-	console.log("TODAYS DATE " + todays_date);
-	console.log("Yesterdays DATE " + yesterday_date);
+	// // Adding Date to DOM
+	// const datetoDOM = (date) => {
+	// 	let element = document.createElement("div");
+	// 	element.classList.add("Current_dates");
+	// 	let name = document.createElement("h5");
+	// 	name.textContent = date;
+	// 	element.append(name);
+	// 	//app.append(element);
+	// };
+	// datetoDOM("Today's Date     :: " + todays_date);
+	// datetoDOM("A Week Ago Date  :: " + yesterday_date);
+	// console.log("TODAYS DATE " + todays_date);
+	// console.log("Yesterdays DATE " + yesterday_date);
 
 	// Todays Price
 	async function get_price(curr) {
@@ -178,14 +177,16 @@ const top_5_curr = () => {
 	async function yesterdays_price(yes_price) {
 		let response = await fetch(yes_price);
 		let data = await response.json();
-		//console.log(data);
 		return data;
 	}
 
 	async function get_data() {
 		//today_price_data = await get_price(today_price_url);
+		// Getting the Currency Names
 		get_names = await get_price(curr_name);
-		console.log(get_names);
+		//console.log(get_names);
+
+		// Fetching Currency data for last 7 days
 		todays_price = await get_price(yes_price_url);
 		yes_price_data = await yesterdays_price(yes_price_url);
 		yes_price_data1 = await yesterdays_price(day_before_url);
@@ -193,6 +194,8 @@ const top_5_curr = () => {
 		yes_price_data3 = await yesterdays_price(day_before_url2);
 		yes_price_data4 = await yesterdays_price(day_before_url3);
 		yes_price_data5 = await yesterdays_price(day_before_url4);
+
+		// getting the use USD in an Array
 		let data1 = yes_price_data.usd;
 		let data2 = yes_price_data1.usd;
 		let data3 = yes_price_data2.usd;
@@ -216,7 +219,6 @@ const top_5_curr = () => {
 		for (const each in data2) {
 			day2.push(Number(`${data2[each]}`));
 		}
-
 		for (let i = 0; i < day1.length; ++i) {
 			let increase = 0;
 			let decrease = 0;
@@ -295,5 +297,4 @@ const top_5_curr = () => {
 	}
 	get_data();
 };
-
-top_5_curr();
+renderChart();
