@@ -47,6 +47,8 @@
 }
 
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left .slide .item .right-upper-left-gainers {
+  margin-right: 5px;
+  width: 48%;
   background-color: greenyellow;
   height: 70%;
   border-radius: 5px;
@@ -67,6 +69,7 @@
 }
 
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left .slide .item .right-upper-left-loosers {
+  width: 50%;
   background-color: #c97560;
   height: 70%;
   border-radius: 5px;
@@ -253,41 +256,17 @@
 }
 
 .dashboard .container-fluid .row .right-side .right-lower {
-  background-color: lightgray;
   height: 35vh;
-  color: red;
-}
-
-.dashboard .container-fluid .row .right-side .right-lower right-lower-right #lineChart {
-  width: 0px;
-  height: 100%;
-}
-
-.dashboard .container-fluid .row .right-side .right-lower .right-lower-left {
-  /* The container <div> - needed to position the dropdown content */
-  /* Dropdown Content (Hidden by Default) */
-}
-
-.dashboard .container-fluid .row .right-side .right-lower .right-lower-left .dropbtn {
-  background-color: #04aa6d;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-
-.dashboard .container-fluid .row .right-side .right-lower .right-lower-left .dropdown {
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 50%;
   position: relative;
-  display: inline-block;
 }
 
-.dashboard .container-fluid .row .right-side .right-lower .right-lower-left .dropdown-content {
-  display: none;
+.dashboard .container-fluid .row .right-side .right-lower canvas {
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  bottom: 0%;
+  left: 50%;
+  background-color: yellowgreen;
 }
 /*# sourceMappingURL=dashboard.css.map */

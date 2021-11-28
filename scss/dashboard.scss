@@ -46,6 +46,8 @@
 							.slide{
 								.item{
 									.right-upper-left-gainers {
+										margin-right: 5px;
+										width: 48%;
 										background-color: greenyellow;
 										height: 70%;
 										border-radius: 5px;
@@ -62,6 +64,7 @@
 										}
 									}
 									.right-upper-left-loosers {
+										width: 50%;
 										background-color: rgb(201, 117, 96);
 										height: 70%;
 										border-radius: 5px;
@@ -237,40 +240,22 @@
 					}
 				}
 				.right-lower {
-					background-color: lightgray;
+					//background-color: yellowgreen;
 					height: 35vh;
-					color: red;
-					right-lower-right {
-						#lineChart {
-							width: 0px;
-							height: 100%;
-						}
+					margin-top: 15px;
+					margin-left: 15px;
+					width: 50%;
+					position: relative;
+					canvas{
+						
+						position: absolute;
+						bottom: 0%;
+						left: 50%;
+						//transform: translate(50%, 50%%);
+						background-color: yellowgreen;
+						//margin-top: 20px;
 					}
-					.right-lower-left {
-						.dropbtn {
-							background-color: #04aa6d;
-							color: white;
-							padding: 16px;
-							font-size: 16px;
-							border: none;
-						}
-
-						/* The container <div> - needed to position the dropdown content */
-						.dropdown {
-							position: relative;
-							display: inline-block;
-						}
-
-						/* Dropdown Content (Hidden by Default) */
-						.dropdown-content {
-							display: none;
-							position: absolute;
-							background-color: #f1f1f1;
-							min-width: 160px;
-							box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-							z-index: 1;
-						}
-					}
+					
 				}
 			}
 		}

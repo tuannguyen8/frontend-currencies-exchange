@@ -70,6 +70,8 @@
 
 .convert .container-fluid .row .right-side .right-upper .slide .item .right-upper-left {
   background-color: greenyellow;
+  width: 48%;
+  margin-right: 5px;
   height: 70%;
   border-radius: 5px;
 }
@@ -90,6 +92,7 @@
 
 .convert .container-fluid .row .right-side .right-upper .slide .item .right-upper-right {
   background-color: #c97560;
+  width: 48%;
   height: 70%;
   border-radius: 5px;
 }
