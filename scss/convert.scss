@@ -38,45 +38,107 @@
 
 			.right-side {
 				.right-upper {
+					position: relative;
 					background-color: rgb(175, 175, 224);
 					height: 37vh;
-				}
-				.right-upper {
 					padding: 10px;
 					justify-content: space-between;
-					.right-upper-left {
-						background-color: greenyellow;
-						height: 70%;
-						border-radius: 5px;
-						li {
-							list-style-type: none;
-							font-size: .8vw;
+					.slide{
+						.item{
+							
+							.right-upper-left {
+								background-color: greenyellow;
+								height: 70%;
+								border-radius: 5px;
+								li {
+									list-style-type: none;
+									font-size: .8vw;
+								}
+								li:hover {
+									background-color: #1a91db;
+									color: white;
+								}
+								.Top_gainer{
+									font-size: .9w;
+								}
+							}
+							.right-upper-right {
+								background-color: rgb(201, 117, 96);
+							
+								height: 70%;
+								border-radius: 5px;
+								li {
+									list-style-type: none;
+									font-size: .8vw;
+								}
+								li:hover {
+									background-color: #1a91db;
+									color: white;
+								}
+								.Top_loosers{
+									font-size: .9vw;
+								}
+							}
 						}
-						li:hover {
-							background-color: #1a91db;
-							color: white;
+						/* .owl-nav{
+							margin-top: 0;
+							position: absolute;
+							top: 50%;
+							transform: translateY(-50%);
+							display: flex;
+							justify-content: space-between;
+							width: 100%;
+							button{
+								i{
+									color: white;
+									font-size: 15px;
+								}
+							}
+							//phut 41:54, video 10-1-2021
+							[class*=owl-]:hover{
+								background: none;
+							}
+						} */
+						.owl-item.active{
+							.item{
+								.content{
+									h2{
+										animation: fadeFromTop 1s forwards;
+									}
+									button{
+										animation: fadeFromBottom 1s 2s forwards;
+									}
+								}
+							}
 						}
-						.Top_gainer{
-							font-size: .9w;
+						.owl-dots{
+							position: absolute;
+							bottom: -30px;
+							display: flex;
+							justify-content: center;
+							width: 100%;
+							.owl-dot{
+								span{
+									width: 15px;
+									height: 15px;
+									background-color: white;
+								}
+								&:hover{
+									span{
+										//khi thêm !important thì nó sẽ bỏ hết các thuộc tính css khác
+										//mà chỉ lấy thuộc tính của dòng important
+										background-color: rgba(#27ae60, 0.5) !important;
+									}
+								}
+								&.active{
+									span{
+										background: #27ae60;
+									}       
+								}
+							}
 						}
 					}
-					.right-upper-right {
-						background-color: rgb(201, 117, 96);
 					
-						height: 70%;
-						border-radius: 5px;
-						li {
-							list-style-type: none;
-							font-size: .8vw;
-						}
-						li:hover {
-							background-color: #1a91db;
-							color: white;
-						}
-						.Top_loosers{
-							font-size: .9vw;
-						}
-					}
 				}
 				.right-lower {
 					box-shadow: 0px 2px 10px -2px #ccc;
