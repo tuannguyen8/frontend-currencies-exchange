@@ -93,7 +93,7 @@ const convertCurrency = (inputCurrency, outputCurrency, inputValue) => {
         `);
 	});
 };
-$(".convert-btn").click(function (e) {
+$(".convert-click").click(function (e) {
 	//console.log("hello");
 	e.preventDefault();
 	/* const breed = $(".dog-breeds").text()

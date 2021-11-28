@@ -38,8 +38,86 @@
 				.right-upper {
 					.container-fluid {
 						.right-upper-left {
-							background-color: lavender;
+							position: relative;
+							background-color: rgb(175, 175, 224);
 							height: 37vh;
+							padding: 10px;
+							justify-content: space-between;
+							.slide{
+								.item{
+									.right-upper-left-gainers {
+										background-color: greenyellow;
+										height: 70%;
+										border-radius: 5px;
+										li {
+											list-style-type: none;
+											font-size: .8vw;
+										}
+										li:hover {
+											background-color: #1a91db;
+											color: white;
+										}
+										.Top_gainer{
+											font-size: .9w;
+										}
+									}
+									.right-upper-left-loosers {
+										background-color: rgb(201, 117, 96);
+										height: 70%;
+										border-radius: 5px;
+										li {
+											list-style-type: none;
+											font-size: .8vw;
+										}
+										li:hover {
+											background-color: #1a91db;
+											color: white;
+										}
+										.Top_loosers{
+											font-size: .9vw;
+										}
+									}
+								}
+								
+								.owl-item.active{
+									.item{
+										.content{
+											h2{
+												animation: fadeFromTop 1s forwards;
+											}
+											button{
+												animation: fadeFromBottom 1s 2s forwards;
+											}
+										}
+									}
+								}
+								.owl-dots{
+									position: absolute;
+									bottom: -30px;
+									display: flex;
+									justify-content: center;
+									width: 100%;
+									.owl-dot{
+										span{
+											width: 15px;
+											height: 15px;
+											background-color: white;
+										}
+										&:hover{
+											span{
+												//khi thêm !important thì nó sẽ bỏ hết các thuộc tính css khác
+												//mà chỉ lấy thuộc tính của dòng important
+												background-color: rgba(#27ae60, 0.5) !important;
+											}
+										}
+										&.active{
+											span{
+												background: #27ae60;
+											}       
+										}
+									}
+								}
+							}
 						}
 						.right-upper-right {
 							height: 37vh;
