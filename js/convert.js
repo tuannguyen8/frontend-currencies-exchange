@@ -1,17 +1,17 @@
 $(".owl-carousel").owlCarousel({
-	items: 1,
-	//margin: 10,
-	loop: true,
-
-	/* autoplay: true,
+    items: 1,
+    //margin: 10,
+    loop: true,
+	autoHeight:true,
+    /* autoplay: true,
     autoplayTimeout: 5000, */
-	nav: false,
-	//bắt buộc là dấu nháy đơn
-	/* navText: [
+    nav: false,
+    //bắt buộc là dấu nháy đơn
+    /* navText: [
         '<i class="fas fa-angle-left"></i>',
         '<i class="fas fa-angle-right"></i>',
     ], */
-	dots: true,
+    dots: true,
 });
 
 /* setTimeout(()=>{
@@ -26,7 +26,6 @@ $(document).click(function (e) {
         $(".modal").fadeOut();
     }
 }); */
-
 
 
 
@@ -144,6 +143,7 @@ const top_5_curr = () => {
 			/* console.log(data); */
 		});
 
+		
 	const today = new Date();
 	const yesterday = new Date(today);
 	yesterday.setDate(yesterday.getDate() - 1);
@@ -161,7 +161,7 @@ const top_5_curr = () => {
 		app.append(element);
 	};
 	datetoDOM("Today's Date     :: " + todays_date);
-	datetoDOM("A Yesterdays Date  :: " + yesterday_date);
+	datetoDOM("A Week Ago Date  :: " + yesterday_date);
 	/* console.log("TODAYS DATE " + todays_date);
 	console.log("Yesterdays DATE " + yesterday_date); */
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
@@ -301,6 +301,7 @@ const top_5_week = () => {
 			/* console.log(data); */
 		});
 
+		
 	const today = new Date();
 	const yesterday = new Date(today);
 	yesterday.setDate(yesterday.getDate() - 7);
@@ -314,7 +315,7 @@ const top_5_week = () => {
 			<h5>Today's Date     :: ${todays_date}</h5>
 		</div>
 		<div class="Current_dates">
-			<h5>A Week Ago Date  :: ${yesterday_date}</h5>
+			<h5>A Month Ago Date  :: ${yesterday_date}</h5>
 		</div>
 	`);
 	/* console.log("TODAYS DATE " + todays_date);
@@ -396,14 +397,14 @@ const top_5_week = () => {
 		let loosers = document.querySelector(".Top_looser_week");
 		const ToptoDOM = (key, value) => {
 			if (key && value) {
-				$(".Top_looser_week").append(`
+				$(".Top_gainer_week").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
 		};
 		const ToptoDOM1 = (key, value) => {
 			if (key && value) {
-				$(".Top_gainer_week").append(`
+				$(".Top_looser_week").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
@@ -430,7 +431,7 @@ const top_5_week = () => {
 	get_data();
 };
 
-const top_5_month = () => {
+const top_5_month = () =>{
 	let app = document.querySelector(".date_month");
 	let yes_price_data = "";
 	let price_data = "";
@@ -440,7 +441,9 @@ const top_5_month = () => {
 
 	fetch(curr_name)
 		.then((response) => response.json())
-		.then((data) => {});
+		.then((data) => {
+
+		});
 	const today = new Date();
 	const yesterday = new Date(today);
 	yesterday.setDate(yesterday.getDate() - 30);
@@ -491,6 +494,7 @@ const top_5_month = () => {
 			day2.push(Number(`${data2[each]}`));
 		}
 
+		
 		for (let i = 0; i < day1.length; ++i) {
 			let increase = 0;
 			let decrease = 0;
@@ -520,14 +524,15 @@ const top_5_month = () => {
 		let loosers = document.querySelector(".Top_looser_month");
 		const ToptoDOM = (key, value) => {
 			if (key && value) {
-				$(".Top_looser_month").append(`
+				$(".Top_gainer_month").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
+
 			}
 		};
 		const ToptoDOM1 = (key, value) => {
 			if (key && value) {
-				$(".Top_gainer_month").append(`
+				$(".Top_looser_month").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
@@ -552,7 +557,8 @@ const top_5_month = () => {
 		ToptoDOM1(sortable);
 	}
 	get_data();
-};
+}
+
 
 const top_5_year = () => {
 	let app = document.querySelector(".date_year");
@@ -568,9 +574,10 @@ const top_5_year = () => {
 			/* console.log(data); */
 		});
 
+		
 	const today = new Date();
 	const yesterday = new Date(today);
-	yesterday.setDate(yesterday.getDate() - 60);
+	yesterday.setDate(yesterday.getDate() - 365);
 	today.toDateString();
 	yesterday.toDateString();
 	let todays_date = formatDate(today);
@@ -581,7 +588,7 @@ const top_5_year = () => {
 			<h5>Today's Date     :: ${todays_date}</h5>
 		</div>
 		<div class="Current_dates">
-			<h5>2 Months Ago Date  :: ${yesterday_date}</h5>
+			<h5>A Month Ago Date  :: ${yesterday_date}</h5>
 		</div>
 	`);
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
@@ -661,14 +668,14 @@ const top_5_year = () => {
 		let loosers = document.querySelector(".Top_looser_year");
 		const ToptoDOM = (key, value) => {
 			if (key && value) {
-				$(".Top_looser_year").append(`
+				$(".Top_gainer_year").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
 		};
 		const ToptoDOM1 = (key, value) => {
 			if (key && value) {
-				$(".Top_gainer_year").append(`
+				$(".Top_looser_year").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
