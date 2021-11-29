@@ -554,7 +554,7 @@ const top_5_year = () => {
 
 	const today = new Date();
 	const yesterday = new Date(today);
-	yesterday.setDate(yesterday.getDate() - 363);
+	yesterday.setDate(yesterday.getDate() - 60);
 	today.toDateString();
 	yesterday.toDateString();
 	let todays_date = formatDate(today);
@@ -565,7 +565,7 @@ const top_5_year = () => {
 			<h5>Today's Date     :: ${todays_date}</h5>
 		</div>
 		<div class="Current_dates">
-			<h5>A Year Ago Date  :: ${yesterday_date}</h5>
+			<h5>2 Months Ago Date  :: ${yesterday_date}</h5>
 		</div>
 	`);
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
