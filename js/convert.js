@@ -2,7 +2,7 @@ $(".owl-carousel").owlCarousel({
     items: 1,
     //margin: 10,
     loop: true,
-	autoHeight:true,
+	
     /* autoplay: true,
     autoplayTimeout: 5000, */
     nav: false,
@@ -511,7 +511,7 @@ const top_5_month = () =>{
 		let loosers = document.querySelector(".Top_looser_month");
 		const ToptoDOM = (key, value) => {
 			if (key && value) {
-				$(".Top_gainer_month").append(`
+				$(".Top_looser_month").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 
@@ -519,7 +519,7 @@ const top_5_month = () =>{
 		};
 		const ToptoDOM1 = (key, value) => {
 			if (key && value) {
-				$(".Top_looser_month").append(`
+				$(".Top_gainer_month").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
@@ -655,14 +655,14 @@ const top_5_year = () => {
 		let loosers = document.querySelector(".Top_looser_year");
 		const ToptoDOM = (key, value) => {
 			if (key && value) {
-				$(".Top_gainer_year").append(`
+				$(".Top_looser_year").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
 		};
 		const ToptoDOM1 = (key, value) => {
 			if (key && value) {
-				$(".Top_looser_year").append(`
+				$(".Top_gainer_year").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
