@@ -1,3 +1,69 @@
+/* .modal{
+    //display: none;
+    height: 100vh;
+    //position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(#333, 0.8);
+	//background: red;
+    width: 100%;
+    .modal-content{
+        border-radius: 10px;
+        height: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        //background-image: url("../images/modal.jpg");
+        background-size: no-repeat;
+        background: url(https://d-themes.com/wordpress/riode/demo-1/wp-content/uploads/sites/5/2020/09/newsletter-popup.jpg) no-repeat;
+        width: 700px;
+        .modal-body{
+            //cursor: pointer;
+            margin-left: 50%;
+            text-align: center;
+            padding:100px 0px 20px;
+            h3{
+                span{
+                    color: #0085c8;
+                }
+            }
+            .input-group{
+                margin-top: 20px;
+
+                input{
+                    border: 1px solid rgba($secondary, 0.7);
+                    height: 37px;
+                    padding: 5px 10px;
+                }
+                button{
+                    cursor: pointer;
+                    background: $primary;
+                    padding: 10px 25px;
+                    &:hover{
+                        background: rgba($primary, 0.7);
+                    }
+                }
+            }
+        }
+        .remove-modal{
+            cursor: pointer;
+            position: absolute;
+            right: -8px;
+            top: -18px;
+            font-size: 20px;
+            transform: rotate(35deg);
+            i{
+                color: gray;
+            }
+            
+        }
+    }
+}
+ */
+
 .convert {
 	.container-fluid {
 		.row {
