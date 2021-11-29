@@ -184,7 +184,7 @@ const renderChart = (currencyKey) => {
 	}
 
 	async function get_data() {
-
+		console.log(currencyKey);
 		get_names = await get_price(curr_name);
 
 		// Fetching Currency data for last 7 days
@@ -247,7 +247,7 @@ const renderChart = (currencyKey) => {
 				labels: labels,
 				datasets: [
 					{
-						label: get_names.ada,
+						label: (currencyKey.toUpperCase()),
 						data: arrayData,
 						borderColor: borderColor,
 						borderWidth: 1,
@@ -271,7 +271,7 @@ $(document).on("click", ".currency-key", function (event) {
 	$("canvas#lineChart").remove();
 	$("div.right-lower").append('<canvas id="lineChart" class="animated fadeIn" height="150"></canvas>');
 	let currencyKey = $(this).text().toLowerCase();
-	//console.log(currencyKey);
+	
 	renderChart(currencyKey);
 	
 });
