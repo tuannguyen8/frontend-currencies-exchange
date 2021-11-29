@@ -113,13 +113,11 @@ function formatDate(date) {
 	if (day.length < 2) day = "0" + day;
 	return [year, month, day].join("-");
 }
-const renderChart = () => {
+
+const renderChart = (currencyKey) => {
 	let yes_price_data = "";
 	let curr_name = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json";
-	seven = [];
-	//date_label.push(formatDate(new Date()));
 
-	// Creating Date for last 7 days
 	const today = new Date();
 	const yesterday = new Date(today);
 	const day_before = new Date(yesterday);
@@ -153,7 +151,7 @@ const renderChart = () => {
 	let day_before_yes2 = formatDate(day_before2);
 	let day_before_yes3 = formatDate(day_before3);
 	let day_before_yes4 = formatDate(day_before4);
-	console.log(
+/* 	console.log(
 		todays_date,
 		yesterday_date,
 		day_before_yes,
@@ -161,7 +159,7 @@ const renderChart = () => {
 		day_before_yes2,
 		day_before_yes3,
 		day_before_yes4
-	);
+	); */
 	let today_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${todays_date}/currencies/usd.json`;
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
 	let day_before_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes}/currencies/usd.json`;
@@ -170,19 +168,6 @@ const renderChart = () => {
 	let day_before_url3 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes3}/currencies/usd.json`;
 	let day_before_url4 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes4}/currencies/usd.json`;
 
-	// // Adding Date to DOM
-	// const datetoDOM = (date) => {
-	// 	let element = document.createElement("div");
-	// 	element.classList.add("Current_dates");
-	// 	let name = document.createElement("h5");
-	// 	name.textContent = date;
-	// 	element.append(name);
-	// 	//app.append(element);
-	// };
-	// datetoDOM("Today's Date     :: " + todays_date);
-	// datetoDOM("A Week Ago Date  :: " + yesterday_date);
-	// console.log("TODAYS DATE " + todays_date);
-	// console.log("Yesterdays DATE " + yesterday_date);
 
 	// Todays Price
 	async function get_price(curr) {
@@ -194,17 +179,17 @@ const renderChart = () => {
 	async function yesterdays_price(yes_price) {
 		let response = await fetch(yes_price);
 		let data = await response.json();
+		//console.log(data);
 		return data;
 	}
 
 	async function get_data() {
-		//today_price_data = await get_price(today_price_url);
-		// Getting the Currency Names
+
 		get_names = await get_price(curr_name);
-		//console.log(get_names);
 
 		// Fetching Currency data for last 7 days
-		todays_price = await get_price(yes_price_url);
+		todays_price = await get_price(today_price_url);
+		//console.log(todays_price);
 		yes_price_data = await yesterdays_price(yes_price_url);
 		yes_price_data1 = await yesterdays_price(day_before_url);
 		yes_price_data2 = await yesterdays_price(day_before_url1);
@@ -213,67 +198,32 @@ const renderChart = () => {
 		yes_price_data5 = await yesterdays_price(day_before_url4);
 
 		// getting the use USD in an Array
+		let data0 = todays_price.usd;
 		let data1 = yes_price_data.usd;
+		//console.log(data1);
 		let data2 = yes_price_data1.usd;
 		let data3 = yes_price_data2.usd;
 		let data4 = yes_price_data3.usd;
 		let data5 = yes_price_data4.usd;
 		let data6 = yes_price_data5.usd;
 
-		console.log(data1);
-		console.log(data2);
-		console.log(data3);
-		console.log(typeof data4);
-		// Finding the TOP PRICE MOVERS!!
-		let curr = [];
-		let day1 = [];
-		let day2 = [];
-		for (const each in data1) {
-			curr.push(`${each}`);
-			day1.push(Number(`${data1[each]}`));
-		}
-		let diff = "3.14";
-		for (const each in data2) {
-			day2.push(Number(`${data2[each]}`));
-		}
-		for (let i = 0; i < day1.length; ++i) {
-			let increase = 0;
-			let decrease = 0;
-			diff = (day1[i] - day2[i]).toPrecision(6);
-			if (diff > 0) {
-				increase = ((diff / day2[i]) * 100).toPrecision(9);
-			} else {
-				decrease = ((diff / day1[i]) * 100).toPrecision(9);
-				-Math.abs(decrease);
-			}
-		}
-		var sorted_price = {};
-		//console.log(sorted_price);
-		const sortable = Object.entries(sorted_price)
-			.sort(([, a], [, b]) => a - b)
-			.reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-		//console.log(sortable);
-		let Gainer_label = [];
-		let Gainer_data = [];
-		let Looser_label = [];
-		let Looser_data = [];
-		for (let keys = Object.keys(sortable), i = 0, end = 8; i < end; ++i) {
-			let key = keys[i],
-				value = sortable[key];
-			Looser_label.push(key);
-			Looser_data.push(value);
-		}
-		const sortable1 = Object.entries(sorted_price)
-			.sort(([, a], [, b]) => b - a)
-			.reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-		for (let keys = Object.keys(sortable1), i = 0, end = 8; i < end; ++i) {
-			let key = keys[i],
-				value = sortable1[key];
-			Gainer_label.push(key);
-			Gainer_data.push(value);
-		}
-		let bar_chart = document.getElementById("lineChart");
-		let myChart = new Chart(bar_chart, {
+		let line_chart = document.getElementById("lineChart");
+		
+		let arrayData = [ data6[currencyKey], data5[currencyKey], data4[currencyKey],
+						data3[currencyKey], data2[currencyKey], data1[currencyKey], 
+						data0[currencyKey]];
+		
+		let labels = [
+					day_before_yes4,
+					day_before_yes3,
+					day_before_yes2,
+					day_before_yes1,
+					day_before_yes,
+					yesterday_date,
+					todays_date,
+				];
+		
+		let myChart = new Chart(line_chart, {
 			type: "line",
 			maintainAspectRatio: false,
 			responsive: false,
@@ -281,17 +231,18 @@ const renderChart = () => {
 
 			data: {
 				labels: [
-					yesterday_date,
-					day_before_yes,
-					day_before_yes1,
-					day_before_yes2,
-					day_before_yes3,
 					day_before_yes4,
+					day_before_yes3,
+					day_before_yes2,
+					day_before_yes1,
+					day_before_yes,
+					yesterday_date,
+					todays_date,
 				],
 				datasets: [
 					{
 						label: get_names.ada,
-						data: [data1.ada, data2.ada, data3.ada, data4.ada, data5.ada, data6.ada],
+						data: arrayData,
 						borderColor: [
 							"rgba(255,99,132,1)",
 							"rgba(54, 162, 235, 1)",
@@ -311,13 +262,28 @@ const renderChart = () => {
 				],
 			},
 		});
+		
 	}
+	
 	get_data();
 };
-renderChart();
+/* currencyKey= "ada"
+renderChart(currencyKey); */
+$(document).on("click", ".currency-key", function (event) {
+	//e.preventDefault();
+    /* console.log("clickkkkk");
+	console.log(event.target.className); */
+	let currencyKey = $(this).text().toLowerCase();
+	console.log(currencyKey);
+	renderChart(currencyKey);
+	myChart.destroy();
+	renderCahrt(currencyKey);
+});
+
+
 
 //--------------------------Gainers and Loosers----------------------------------//
-function formatDate(date) {
+/* function formatDate(date) {
 	let d = new Date(date),
 		month = "" + (d.getMonth() + 1),
 		day = "" + d.getDate(),
@@ -326,7 +292,7 @@ function formatDate(date) {
 	if (day.length < 2) day = "0" + day;
 	return [year, month, day].join("-");
 }
-
+ */
 const top_5_curr = () => {
 	let app = document.querySelector(".dates");
 	let yes_price_data = "";
