@@ -1,19 +1,18 @@
 $(".owl-carousel").owlCarousel({
-    items: 1,
-    //margin: 10,
-    loop: true,
-	autoHeight:true,
-    /* autoplay: true,
+	items: 1,
+	//margin: 10,
+	loop: true,
+	autoHeight: true,
+	/* autoplay: true,
     autoplayTimeout: 5000, */
-    nav: false,
-    //bắt buộc là dấu nháy đơn
-    /* navText: [
+	nav: false,
+	//bắt buộc là dấu nháy đơn
+	/* navText: [
         '<i class="fas fa-angle-left"></i>',
         '<i class="fas fa-angle-right"></i>',
     ], */
-    dots: true,
+	dots: true,
 });
-
 
 const all_currencies_api =
 	"https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json";
@@ -151,7 +150,7 @@ const renderChart = (currencyKey) => {
 	let day_before_yes2 = formatDate(day_before2);
 	let day_before_yes3 = formatDate(day_before3);
 	let day_before_yes4 = formatDate(day_before4);
-/* 	console.log(
+	/* 	console.log(
 		todays_date,
 		yesterday_date,
 		day_before_yes,
@@ -167,7 +166,6 @@ const renderChart = (currencyKey) => {
 	let day_before_url2 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes2}/currencies/usd.json`;
 	let day_before_url3 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes3}/currencies/usd.json`;
 	let day_before_url4 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes4}/currencies/usd.json`;
-
 
 	// Todays Price
 	async function get_price(curr) {
@@ -208,35 +206,41 @@ const renderChart = (currencyKey) => {
 		let data6 = yes_price_data5.usd;
 
 		let line_chart = document.getElementById("lineChart");
-		
-		let arrayData = [ data6[currencyKey], data5[currencyKey], data4[currencyKey],
-						data3[currencyKey], data2[currencyKey], data1[currencyKey], 
-						data0[currencyKey]];
-		
+
+		let arrayData = [
+			data6[currencyKey],
+			data5[currencyKey],
+			data4[currencyKey],
+			data3[currencyKey],
+			data2[currencyKey],
+			data1[currencyKey],
+			data0[currencyKey],
+		];
+
 		let labels = [
-					day_before_yes4,
-					day_before_yes3,
-					day_before_yes2,
-					day_before_yes1,
-					day_before_yes,
-					yesterday_date,
-					todays_date,
-				];
+			day_before_yes4,
+			day_before_yes3,
+			day_before_yes2,
+			day_before_yes1,
+			day_before_yes,
+			yesterday_date,
+			todays_date,
+		];
 		let borderColor = [
-							"rgba(255,99,132,1)",
-							"rgba(54, 162, 235, 1)",
-							"rgba(255, 206, 86, 1)",
-							"rgba(75, 192, 192, 1)",
-							"rgba(153, 102, 255, 1)",
-							"rgba(255, 159, 64, 1)",
-							"rgba(255,99,132,1)",
-							"rgba(54, 162, 235, 1)",
-							"rgba(255, 206, 86, 1)",
-							"rgba(75, 192, 192, 1)",
-							"rgba(153, 102, 255, 1)",
-							"rgba(255, 159, 64, 1)",
-						]
-		
+			"rgba(255,99,132,1)",
+			"rgba(54, 162, 235, 1)",
+			"rgba(255, 206, 86, 1)",
+			"rgba(75, 192, 192, 1)",
+			"rgba(153, 102, 255, 1)",
+			"rgba(255, 159, 64, 1)",
+			"rgba(255,99,132,1)",
+			"rgba(54, 162, 235, 1)",
+			"rgba(255, 206, 86, 1)",
+			"rgba(75, 192, 192, 1)",
+			"rgba(153, 102, 255, 1)",
+			"rgba(255, 159, 64, 1)",
+		];
+
 		let myChart = new Chart(line_chart, {
 			type: "line",
 			maintainAspectRatio: false,
@@ -247,7 +251,7 @@ const renderChart = (currencyKey) => {
 				labels: labels,
 				datasets: [
 					{
-						label: (currencyKey.toUpperCase()),
+						label: currencyKey.toUpperCase(),
 						data: arrayData,
 						borderColor: borderColor,
 						borderWidth: 1,
@@ -255,28 +259,24 @@ const renderChart = (currencyKey) => {
 				],
 			},
 		});
-
-
-		
 	}
-	
+
 	get_data();
 };
-currencyKey= "ada"
+currencyKey = "ada";
 renderChart(currencyKey);
 $(document).on("click", ".currency-key", function (event) {
 	//e.preventDefault();
-    /* console.log("clickkkkk");
+	/* console.log("clickkkkk");
 	console.log(event.target.className); */
 	$("canvas#lineChart").remove();
-	$("div.right-lower").append('<canvas id="lineChart" class="animated fadeIn" height="150"></canvas>');
+	$("div.right-lower").append(
+		'<canvas id="lineChart" class="animated fadeIn" height="150"></canvas>'
+	);
 	let currencyKey = $(this).text().toLowerCase();
-	
+
 	renderChart(currencyKey);
-	
 });
-
-
 
 //--------------------------Gainers and Loosers----------------------------------//
 
@@ -294,7 +294,6 @@ const top_5_curr = () => {
 			/* console.log(data); */
 		});
 
-		
 	const today = new Date();
 	const yesterday = new Date(today);
 	yesterday.setDate(yesterday.getDate() - 1);
@@ -452,7 +451,6 @@ const top_5_week = () => {
 			/* console.log(data); */
 		});
 
-		
 	const today = new Date();
 	const yesterday = new Date(today);
 	yesterday.setDate(yesterday.getDate() - 7);
@@ -548,14 +546,14 @@ const top_5_week = () => {
 		let loosers = document.querySelector(".Top_looser_week");
 		const ToptoDOM = (key, value) => {
 			if (key && value) {
-				$(".Top_gainer_week").append(`
+				$(".Top_looser_week").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
 		};
 		const ToptoDOM1 = (key, value) => {
 			if (key && value) {
-				$(".Top_looser_week").append(`
+				$(".Top_gainer_week").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
@@ -582,7 +580,7 @@ const top_5_week = () => {
 	get_data();
 };
 
-const top_5_month = () =>{
+const top_5_month = () => {
 	let app = document.querySelector(".date_month");
 	let yes_price_data = "";
 	let price_data = "";
@@ -592,9 +590,7 @@ const top_5_month = () =>{
 
 	fetch(curr_name)
 		.then((response) => response.json())
-		.then((data) => {
-
-		});
+		.then((data) => {});
 	const today = new Date();
 	const yesterday = new Date(today);
 	yesterday.setDate(yesterday.getDate() - 30);
@@ -645,7 +641,6 @@ const top_5_month = () =>{
 			day2.push(Number(`${data2[each]}`));
 		}
 
-		
 		for (let i = 0; i < day1.length; ++i) {
 			let increase = 0;
 			let decrease = 0;
@@ -675,15 +670,14 @@ const top_5_month = () =>{
 		let loosers = document.querySelector(".Top_looser_month");
 		const ToptoDOM = (key, value) => {
 			if (key && value) {
-				$(".Top_gainer_month").append(`
+				$(".Top_looser_month").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
-
 			}
 		};
 		const ToptoDOM1 = (key, value) => {
 			if (key && value) {
-				$(".Top_looser_month").append(`
+				$(".Top_gainer_month").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
@@ -708,7 +702,7 @@ const top_5_month = () =>{
 		ToptoDOM1(sortable);
 	}
 	get_data();
-}
+};
 
 const top_5_year = () => {
 	let app = document.querySelector(".date_year");
@@ -724,7 +718,6 @@ const top_5_year = () => {
 			/* console.log(data); */
 		});
 
-		
 	const today = new Date();
 	const yesterday = new Date(today);
 	yesterday.setDate(yesterday.getDate() - 365);
@@ -818,14 +811,14 @@ const top_5_year = () => {
 		let loosers = document.querySelector(".Top_looser_year");
 		const ToptoDOM = (key, value) => {
 			if (key && value) {
-				$(".Top_gainer_year").append(`
+				$(".Top_looser_year").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
 		};
 		const ToptoDOM1 = (key, value) => {
 			if (key && value) {
-				$(".Top_looser_year").append(`
+				$(".Top_gainer_year").append(`
 					<li class="top">${key} :    ${value}</li>
 				`);
 			}
