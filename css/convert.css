@@ -1,3 +1,16 @@
+.navbar-nav > li {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+li.active {
+  background-color: #ec782a;
+}
+
+.convert {
+  height: 40vw;
+}
+
 .convert .container-fluid .row .left-side {
   height: 74vh;
 }
