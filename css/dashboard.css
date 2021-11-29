@@ -1,5 +1,18 @@
+.navbar-nav > li {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+li.active {
+  background-color: #ec782a;
+}
+
+.dashboard {
+  height: 40vw;
+}
+
 .dashboard .container-fluid .row .left-side {
-  height: 74vh;
+  height: 81vh;
 }
 
 .dashboard .container-fluid .row .left-side h2 {
@@ -36,6 +49,10 @@
   margin-right: 10px;
 }
 
+.dashboard .container-fluid .row .right-side .right-upper {
+  margin-top: 5%;
+}
+
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left {
   position: relative;
   background-color: #afafe0;
@@ -56,7 +73,7 @@
 
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left .slide .item .right-upper-left-gainers li {
   list-style-type: none;
-  font-size: .8vw;
+  font-size: 0.8vw;
 }
 
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left .slide .item .right-upper-left-gainers li:hover {
@@ -65,7 +82,7 @@
 }
 
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left .slide .item .right-upper-left-gainers .Top_gainer {
-  font-size: .9w;
+  font-size: 0.9w;
 }
 
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left .slide .item .right-upper-left-loosers {
@@ -77,7 +94,7 @@
 
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left .slide .item .right-upper-left-loosers li {
   list-style-type: none;
-  font-size: .8vw;
+  font-size: 0.8vw;
 }
 
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left .slide .item .right-upper-left-loosers li:hover {
@@ -86,7 +103,7 @@
 }
 
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left .slide .item .right-upper-left-loosers .Top_loosers {
-  font-size: .9vw;
+  font-size: 0.9vw;
 }
 
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left .slide .owl-item.active .item .content h2 {
@@ -259,14 +276,23 @@
   height: 35vh;
   margin-top: 15px;
   margin-left: 15px;
-  width: 50%;
+  width: 56%;
   position: relative;
+  color: white;
+  left: 20%;
 }
 
-.dashboard .container-fluid .row .right-side .right-lower canvas {
+.dashboard .container-fluid .row .right-side .right-lower .note {
+  width: 10vw;
+  color: black;
   position: absolute;
-  bottom: 0%;
-  left: 50%;
-  background-color: yellowgreen;
+  z-index: 2;
+  left: -249px;
+}
+
+.dashboard .container-fluid .row .right-side .right-lower #lineChart {
+  border-radius: 5px;
+  border-style: groove;
+  background-color: #d0ec83;
 }
 /*# sourceMappingURL=dashboard.css.map */

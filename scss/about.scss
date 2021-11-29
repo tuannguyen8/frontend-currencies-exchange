@@ -1,3 +1,13 @@
+.about {
+	height: 40vw;
+}
+.navbar-nav > li {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+li.active {
+	background-color: #ec782a;
+}
 .outer_row {
 	//background-image: url("../images/bg_about.jpg");
 	background-repeat: no-repeat;
@@ -38,6 +48,6 @@
 	margin-top: auto;
 	margin-bottom: auto;
 	text-align: center;
-	width: 35vw;
-	margin-left: 32.9%;
+	width: 23vw;
+	margin-left: 38.6%;
 }
