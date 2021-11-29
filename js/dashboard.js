@@ -311,7 +311,7 @@ const top_5_curr = () => {
 		app.append(element);
 	};
 	datetoDOM("Today's Date     :: " + todays_date);
-	datetoDOM("A Week Ago Date  :: " + yesterday_date);
+	datetoDOM("A Yesterday's Date  :: " + yesterday_date);
 	/* console.log("TODAYS DATE " + todays_date);
 	console.log("Yesterdays DATE " + yesterday_date); */
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
@@ -464,7 +464,7 @@ const top_5_week = () => {
 			<h5>Today's Date     :: ${todays_date}</h5>
 		</div>
 		<div class="Current_dates">
-			<h5>A Month Ago Date  :: ${yesterday_date}</h5>
+			<h5>A Week Ago Date  :: ${yesterday_date}</h5>
 		</div>
 	`);
 	/* console.log("TODAYS DATE " + todays_date);
@@ -731,7 +731,7 @@ const top_5_year = () => {
 			<h5>Today's Date     :: ${todays_date}</h5>
 		</div>
 		<div class="Current_dates">
-			<h5>A Month Ago Date  :: ${yesterday_date}</h5>
+			<h5>A Year Ago Date  :: ${yesterday_date}</h5>
 		</div>
 	`);
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
