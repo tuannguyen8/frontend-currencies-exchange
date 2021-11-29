@@ -256,8 +256,15 @@ li.active {
 					width: 56%;
 					position: relative;
 					color: white;
-					left: 10%;
-
+					left: 20%;
+					.note{
+						width:10vw;
+						color:black;
+						position: absolute;
+						z-index: 2;
+						left:-249px;
+					
+					}
 					#lineChart {
 						border-radius: 5px;
 						border-style: groove;

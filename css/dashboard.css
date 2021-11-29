@@ -279,7 +279,15 @@ li.active {
   width: 56%;
   position: relative;
   color: white;
-  left: 10%;
+  left: 20%;
+}
+
+.dashboard .container-fluid .row .right-side .right-lower .note {
+  width: 10vw;
+  color: black;
+  position: absolute;
+  z-index: 2;
+  left: -249px;
 }
 
 .dashboard .container-fluid .row .right-side .right-lower #lineChart {
