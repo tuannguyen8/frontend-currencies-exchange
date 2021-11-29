@@ -1,17 +1,9 @@
-.navbar-nav > li {
-	padding-left: 30px;
-	padding-right: 30px;
-}
-li.active {
-	background-color: #ec782a;
-}
 .dashboard {
-	height: 40vw;
 	.container-fluid {
 		.row {
 			.left-side {
 				//background-color: lavenderblush;
-				height: 81vh;
+				height: 74vh;
 				h2 {
 					color: blue;
 					font-weight: 700;
@@ -44,7 +36,6 @@ li.active {
 			}
 			.right-side {
 				.right-upper {
-					margin-top: 5%;
 					.container-fluid {
 						.right-upper-left {
 							position: relative;
@@ -52,8 +43,8 @@ li.active {
 							height: 37vh;
 							padding: 10px;
 							justify-content: space-between;
-							.slide {
-								.item {
+							.slide{
+								.item{
 									.right-upper-left-gainers {
 										margin-right: 5px;
 										width: 48%;
@@ -62,14 +53,14 @@ li.active {
 										border-radius: 5px;
 										li {
 											list-style-type: none;
-											font-size: 0.8vw;
+											font-size: .8vw;
 										}
 										li:hover {
 											background-color: #1a91db;
 											color: white;
 										}
-										.Top_gainer {
-											font-size: 0.9w;
+										.Top_gainer{
+											font-size: .9w;
 										}
 									}
 									.right-upper-left-loosers {
@@ -79,53 +70,53 @@ li.active {
 										border-radius: 5px;
 										li {
 											list-style-type: none;
-											font-size: 0.8vw;
+											font-size: .8vw;
 										}
 										li:hover {
 											background-color: #1a91db;
 											color: white;
 										}
-										.Top_loosers {
-											font-size: 0.9vw;
+										.Top_loosers{
+											font-size: .9vw;
 										}
 									}
 								}
-
-								.owl-item.active {
-									.item {
-										.content {
-											h2 {
+								
+								.owl-item.active{
+									.item{
+										.content{
+											h2{
 												animation: fadeFromTop 1s forwards;
 											}
-											button {
+											button{
 												animation: fadeFromBottom 1s 2s forwards;
 											}
 										}
 									}
 								}
-								.owl-dots {
+								.owl-dots{
 									position: absolute;
 									bottom: -30px;
 									display: flex;
 									justify-content: center;
 									width: 100%;
-									.owl-dot {
-										span {
+									.owl-dot{
+										span{
 											width: 15px;
 											height: 15px;
 											background-color: white;
 										}
-										&:hover {
-											span {
+										&:hover{
+											span{
 												//khi thêm !important thì nó sẽ bỏ hết các thuộc tính css khác
 												//mà chỉ lấy thuộc tính của dòng important
 												background-color: rgba(#27ae60, 0.5) !important;
 											}
 										}
-										&.active {
-											span {
+										&.active{
+											span{
 												background: #27ae60;
-											}
+											}       
 										}
 									}
 								}
@@ -253,25 +244,18 @@ li.active {
 					height: 35vh;
 					margin-top: 15px;
 					margin-left: 15px;
-					width: 56%;
+					width: 50%;
 					position: relative;
-					color: white;
-					left: 20%;
-					.note{
-						width:10vw;
-						color:black;
+					canvas{
+						
 						position: absolute;
-						z-index: 2;
-						left:-249px;
-					
-					}
-					#lineChart {
-						border-radius: 5px;
-						border-style: groove;
+						bottom: 0%;
+						left: 50%;
 						//transform: translate(50%, 50%%);
-						background-color: rgb(208, 236, 131);
+						background-color: yellowgreen;
 						//margin-top: 20px;
 					}
+					
 				}
 			}
 		}

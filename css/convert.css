@@ -63,21 +63,8 @@
     }
 }
  */
-.navbar-nav > li {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-li.active {
-  background-color: #ec782a;
-}
-
-.convert {
-  height: 40vw;
-}
-
 .convert .container-fluid .row .left-side {
-  height: 81vh;
+  height: 74vh;
 }
 
 .convert .container-fluid .row .left-side h2 {
@@ -115,7 +102,6 @@ li.active {
 }
 
 .convert .container-fluid .row .right-side .right-upper {
-  margin-top: 7%;
   position: relative;
   background-color: #afafe0;
   height: 37vh;
