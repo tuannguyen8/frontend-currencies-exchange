@@ -1,25 +1,121 @@
 $(".owl-carousel").owlCarousel({
 	items: 1,
-	//margin: 10,
 	loop: true,
-
-	/* autoplay: true,
-    autoplayTimeout: 5000, */
 	nav: false,
-	//bắt buộc là dấu nháy đơn
-	/* navText: [
-        '<i class="fas fa-angle-left"></i>',
-        '<i class="fas fa-angle-right"></i>',
-    ], */
 	dots: true,
 });
 
-/* setTimeout(()=>{
-    $(".modal").fadeIn();
-}, 100) 
+const all_currencies_api =
+	"https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json";
+const getAllCurrenciesModal = () => {
+	$.get(all_currencies_api, (data) => {
+		Object.keys(data).forEach((key) => {
+			//console.log(key, data[key]);
+			const latest_price_usd = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${key}/usd.json`;
+			$.get(latest_price_usd, (price) => {
+
+				$(".all-currencies-modal").append(`<li class ="flex j-between a-center">
+                 <span> <span class="currency-key-tag">${key.toUpperCase()}</span>: <span>${
+					data[key]
+				}</span> </span>
+                 <span>${price.usd.toFixed(6)}</span>
+                 </li>`);
+			});
+
+			//render currencies list in the right-lower position
+			$(".list-input-modal").append(`<li>${key.toUpperCase()}</li>`);
+			$(".list-output-modal").append(`<li>${key.toUpperCase()}</li>`);
+		});
+		$(document).on("click", ".currency-key-tag", function (event) {
+			//e.preventDefault();
+			//console.log("clickkkkk");
+			//console.log(event.target.className);
+			$(".modal").fadeIn();
+			let currencyKey = $(this).text().toLowerCase();
+			//console.log(currencyKey);
+			$(".currency-type-input-modal").text(currencyKey.toUpperCase());
+			$(".currency-type-output-modal").text(Object.keys(data)[159].toUpperCase());
+			const inputCurrency = $(".currency-type-input-modal").text().toLowerCase();
+			const outputCurrency = $(".currency-type-output-modal").text().toLowerCase();
+			const inputValue = $(".input-value-modal").val();
+			convertCurrencyModal(inputCurrency, outputCurrency, inputValue);
+		});
+
+		$(document).on("click", ".currency-name-tag", function (event) {
+			//e.preventDefault();
+			//console.log("clickkkkk");
+			//console.log(event.target.className);
+			$(".modal").fadeIn();
+			let currencyKey = $(this).prev().text().toLowerCase();
+			//console.log(currencyKey);
+			$(".currency-type-input-modal").text(currencyKey.toUpperCase());
+			$(".currency-type-output-modal").text(Object.keys(data)[159].toUpperCase());
+			const inputCurrency = $(".currency-type-input-modal").text().toLowerCase();
+			const outputCurrency = $(".currency-type-output-modal").text().toLowerCase();
+			const inputValue = $(".input-value-modal").val();
+			convertCurrencyModal(inputCurrency, outputCurrency, inputValue);
+		});
+		//$(".currency-type-input-modal").text(Object.keys(data)[159].toUpperCase());
+		//$(".currency-type-output-modal").text(Object.keys(data)[159].toUpperCase());
+	});
+};
+const convertCurrencyModal = (inputCurrency, outputCurrency, inputValue) => {
+	const ratio_api = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${inputCurrency}/${outputCurrency}.json`;
+	$.get(ratio_api, (price) => {
+		//console.log(price.date)
+		let ratio = price[Object.keys(price)[1]];
+		let value = inputValue * ratio;
+		let inputVal = +inputValue; //convert to number
+		let formattedValue = value.toLocaleString("en-US");
+		let formattedInputValue = inputVal.toLocaleString("en-US");
+		$(".result-modal").remove();
+		$(".converted-result-modal").append(`
+            <div class = "result-modal">
+                <span>Result: </span>
+                <span class="value-input-modal">${formattedInputValue}</span>
+                <span class="currency-code-input-modal">${inputCurrency.toUpperCase()}</span>
+                <span> = </span>
+                <span class="value-output-modal">${formattedValue}</span>
+                <span class="cunrrency-code-ouput-modal">${outputCurrency.toUpperCase()}</span>
+            </div>
+        `);
+	});
+};
+
+$(".convert-click-modal").click(function (e) {
+	console.log("hello");
+	e.preventDefault();
+	/* const breed = $(".dog-breeds").text()
+    fetchData(breed); */
+	const inputCurrency = $(".currency-type-input-modal").text().toLowerCase();
+	const outputCurrency = $(".currency-type-output-modal").text().toLowerCase();
+	const inputValue = $(".input-value-modal").val();
+	convertCurrencyModal(inputCurrency, outputCurrency, inputValue);
+});
+
+$(document).on("click", ".currency-key-tag", function (event) {
+	//e.preventDefault();
+	//console.log("clickkkkk");
+	//console.log(event.target.className);
+	$(".modal").fadeIn();
+	let currencyKey = $(this).text().toLowerCase();
+	console.log(currencyKey);
+});
+$(document).on("click", ".currency-name-tag", function (event) {
+	//e.preventDefault();
+	//console.log("clickkkkk");
+	//console.log(event.target.className);
+	$(".modal").fadeIn();
+	let currencyKey = $(this).text().toLowerCase();
+	console.log(currencyKey);
+});
 $(".remove-modal").click(function (e) { 
     $(".modal").fadeOut();
 });
+
+
+
+/*
 $(document).click(function (e) { 
     //console.log(e.target.closest)
     if(!e.target.closest(".modal-content")){
@@ -27,11 +123,30 @@ $(document).click(function (e) {
     }
 }); */
 
+//click to select currency in modal
+$(document).on("click", ".list-input-modal li", function () {
+	const val = $(this).text();
+	$(".currency-type-input-modal").text(val);
+	$(".list-input-modal").fadeOut(100);
+});
+//select
+$(".currency-type-input-modal").click(function (e) {
+	e.preventDefault();
+	$(".list-input-modal").slideToggle();
+});
+//handle click li - select a specific
+$(document).on("click", ".list-output-modal li", function () {
+	const val = $(this).text();
+	$(".currency-type-output-modal").text(val);
+	$(".list-output-modal").fadeOut(100);
+});
+//select
+$(".currency-type-output-modal").click(function (e) {
+	e.preventDefault();
+	$(".list-output-modal").slideToggle();
+});
 
 
-
-const all_currencies_api =
-	"https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json";
 const getAllCurrencies = () => {
 	$.get(all_currencies_api, (data) => {
 		Object.keys(data).forEach((key) => {
@@ -41,10 +156,11 @@ const getAllCurrencies = () => {
 				//console.log(price.usd)
 				//render currencies in the left position
 				$(".all-currencies").append(`<li class ="flex j-between a-center">
-                 <span> <span class="currency-key">${key.toUpperCase()}</span>: <span>${
-					data[key]
-				}</span> </span>
-                 <span>${price.usd.toFixed(6)}</span>
+                 <span> 
+				 	<span class="currency-key-tag">${key.toUpperCase()}</span>: 
+				 	<span class="currency-name-tag">${data[key]}</span> 
+				</span>
+                <span>${price.usd.toFixed(6)}</span>
                  </li>`);
 			});
 
@@ -62,24 +178,24 @@ const getAllCurrencies = () => {
 		$(".currency-type-output").text(Object.keys(data)[159].toUpperCase());
 	});
 };
-//handle click li - select a specific breed
+//handle click li - select a specific 
 $(document).on("click", ".list-input li", function () {
 	const val = $(this).text();
 	$(".currency-type-input").text(val);
 	$(".list-input").fadeOut(100);
 });
-//select breeds
+//select
 $(".currency-type-input").click(function (e) {
 	e.preventDefault();
 	$(".list-input").slideToggle();
 });
-//handle click li - select a specific breed
+//handle click li - select a specific
 $(document).on("click", ".list-output li", function () {
 	const val = $(this).text();
 	$(".currency-type-output").text(val);
 	$(".list-output").fadeOut(100);
 });
-//select breeds
+//select
 $(".currency-type-output").click(function (e) {
 	e.preventDefault();
 	$(".list-output").slideToggle();
@@ -117,6 +233,7 @@ $(".convert-click").click(function (e) {
 	const inputValue = $(".input-value").val();
 	convertCurrency(inputCurrency, outputCurrency, inputValue);
 });
+
 
 // Top 5 currencies from the day
 
@@ -701,3 +818,4 @@ top_5_month();
 top_5_year();
 
 getAllCurrencies();
+getAllCurrenciesModal();

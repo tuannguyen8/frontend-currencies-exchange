@@ -1,53 +1,138 @@
 
-/* .modal{
+.modal{
     //display: none;
     height: 100vh;
-    //position: relative;
+    position: relative;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
-    background: rgba(#333, 0.8);
+	background: rgba(#333, 0.8);
+    //background: white;
 	//background: red;
     width: 100%;
     .modal-content{
-        border-radius: 10px;
-        height: 400px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        //background-image: url("../images/modal.jpg");
-        background-size: no-repeat;
-        background: url(https://d-themes.com/wordpress/riode/demo-1/wp-content/uploads/sites/5/2020/09/newsletter-popup.jpg) no-repeat;
-        width: 700px;
+       position: absolute;
+	   //height: 50vh;
+	   width: 50%;
+	   bottom: 50%;
+	   left: 50%;
+	   transform: translate(-50%, 50%);
+	   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         .modal-body{
-            //cursor: pointer;
-            margin-left: 50%;
-            text-align: center;
-            padding:100px 0px 20px;
-            h3{
-                span{
-                    color: #0085c8;
-                }
-            }
-            .input-group{
-                margin-top: 20px;
+            background-color: white;
+			width: 100%;
+			.input-group-modal {
+				margin-bottom: 20px;
+				.currency-choice-modal {
+					margin-left: 10px;
+					.currency-list-input-modal {
+						position: relative;
+						margin-right: 50px;
 
-                input{
-                    border: 1px solid rgba($secondary, 0.7);
-                    height: 37px;
-                    padding: 5px 10px;
-                }
-                button{
-                    cursor: pointer;
-                    background: $primary;
-                    padding: 10px 25px;
-                    &:hover{
-                        background: rgba($primary, 0.7);
-                    }
-                }
-            }
+						.currency-type-input-modal {
+							margin-top: 5px;
+							background-color: orange;
+							color: white;
+							text-align: center;
+							padding: 15px 20px;
+							width: 180px;
+							height: 50px;
+							white-space: nowrap;
+							overflow: hidden;
+							text-overflow: ellipsis;
+						}
+						ul {
+							background: white;
+							height: 200px;
+							overflow-y: auto;
+							position: absolute;
+							width: 100%;
+							box-shadow: 0px 2px 10px -2px #ccc;
+							z-index: 10;
+							display: none;
+							li {
+								padding: 10px;
+								font-size: 12px;
+								transition: 0.4s;
+								cursor: pointer;
+								&:hover {
+									background-color: #ccc;
+								}
+							}
+						}
+					}
+
+					.currency-list-output-modal {
+						margin-right: 50px;
+						position: relative;
+						.currency-type-output-modal {
+							margin-top: 5px;
+							background-color: orange;
+							color: white;
+							text-align: center;
+							padding: 15px 20px;
+							width: 180px;
+							height: 50px;
+							white-space: nowrap;
+							overflow: hidden;
+							text-overflow: ellipsis;
+						}
+						ul {
+							background: white;
+							height: 200px;
+							overflow-y: auto;
+							position: absolute;
+							width: 100%;
+							box-shadow: 0px 2px 10px -2px #ccc;
+							z-index: 10;
+							display: none;
+							li {
+								padding: 10px;
+								font-size: 12px;
+								transition: 0.4s;
+								cursor: pointer;
+								&:hover {
+									background-color: #ccc;
+								}
+							}
+						}
+					}
+
+					.quantity-input-modal {
+						label {
+							font-weight: 400;
+						}
+						input {
+							display: block;
+							border: orange 1px solid;
+							color: black;
+							padding: 15px 20px;
+							width: 180px;
+							height: 50px;
+						}
+					}
+				}
+				button {
+					padding: 10px;
+					margin: 20px 0px;
+					background: #1a91db;
+					color: white;
+					cursor: pointer;
+				}
+
+				.converted-result-modal {
+					div {
+						background-color: orange;
+						padding: 10px 20px;
+						span {
+							font-size: 18px;
+							color: white;
+						}
+					}
+				}
+			}
+			
         }
         .remove-modal{
             cursor: pointer;
@@ -57,14 +142,15 @@
             font-size: 20px;
             transform: rotate(35deg);
             i{
-                color: gray;
+                color: red;
             }
             
         }
     }
 }
- */
-.navbar-nav > li{
+
+
+ .navbar-nav > li{
 	padding-left:30px;
 	padding-right:30px;
   }

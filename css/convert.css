@@ -1,68 +1,167 @@
-/* .modal{
-    //display: none;
-    height: 100vh;
-    //position: relative;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    background: rgba(#333, 0.8);
-	//background: red;
-    width: 100%;
-    .modal-content{
-        border-radius: 10px;
-        height: 400px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        //background-image: url("../images/modal.jpg");
-        background-size: no-repeat;
-        background: url(https://d-themes.com/wordpress/riode/demo-1/wp-content/uploads/sites/5/2020/09/newsletter-popup.jpg) no-repeat;
-        width: 700px;
-        .modal-body{
-            //cursor: pointer;
-            margin-left: 50%;
-            text-align: center;
-            padding:100px 0px 20px;
-            h3{
-                span{
-                    color: #0085c8;
-                }
-            }
-            .input-group{
-                margin-top: 20px;
-
-                input{
-                    border: 1px solid rgba($secondary, 0.7);
-                    height: 37px;
-                    padding: 5px 10px;
-                }
-                button{
-                    cursor: pointer;
-                    background: $primary;
-                    padding: 10px 25px;
-                    &:hover{
-                        background: rgba($primary, 0.7);
-                    }
-                }
-            }
-        }
-        .remove-modal{
-            cursor: pointer;
-            position: absolute;
-            right: -8px;
-            top: -18px;
-            font-size: 20px;
-            transform: rotate(35deg);
-            i{
-                color: gray;
-            }
-            
-        }
-    }
+.modal {
+  height: 100vh;
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(51, 51, 51, 0.8);
+  width: 100%;
 }
- */
+
+.modal .modal-content {
+  position: absolute;
+  width: 50%;
+  bottom: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.modal .modal-content .modal-body {
+  background-color: white;
+  width: 100%;
+}
+
+.modal .modal-content .modal-body .input-group-modal {
+  margin-bottom: 20px;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal {
+  margin-left: 10px;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-input-modal {
+  position: relative;
+  margin-right: 50px;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-input-modal .currency-type-input-modal {
+  margin-top: 5px;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  width: 180px;
+  height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-input-modal ul {
+  background: white;
+  height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 10px -2px #ccc;
+          box-shadow: 0px 2px 10px -2px #ccc;
+  z-index: 10;
+  display: none;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-input-modal ul li {
+  padding: 10px;
+  font-size: 12px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-input-modal ul li:hover {
+  background-color: #ccc;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-output-modal {
+  margin-right: 50px;
+  position: relative;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-output-modal .currency-type-output-modal {
+  margin-top: 5px;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  width: 180px;
+  height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-output-modal ul {
+  background: white;
+  height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 10px -2px #ccc;
+          box-shadow: 0px 2px 10px -2px #ccc;
+  z-index: 10;
+  display: none;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-output-modal ul li {
+  padding: 10px;
+  font-size: 12px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-output-modal ul li:hover {
+  background-color: #ccc;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal .quantity-input-modal label {
+  font-weight: 400;
+}
+
+.modal .modal-content .modal-body .input-group-modal .currency-choice-modal .quantity-input-modal input {
+  display: block;
+  border: orange 1px solid;
+  color: black;
+  padding: 15px 20px;
+  width: 180px;
+  height: 50px;
+}
+
+.modal .modal-content .modal-body .input-group-modal button {
+  padding: 10px;
+  margin: 20px 0px;
+  background: #1a91db;
+  color: white;
+  cursor: pointer;
+}
+
+.modal .modal-content .modal-body .input-group-modal .converted-result-modal div {
+  background-color: orange;
+  padding: 10px 20px;
+}
+
+.modal .modal-content .modal-body .input-group-modal .converted-result-modal div span {
+  font-size: 18px;
+  color: white;
+}
+
+.modal .modal-content .remove-modal {
+  cursor: pointer;
+  position: absolute;
+  right: -8px;
+  top: -18px;
+  font-size: 20px;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+}
+
+.modal .modal-content .remove-modal i {
+  color: red;
+}
+
 .navbar-nav > li {
   padding-left: 30px;
   padding-right: 30px;

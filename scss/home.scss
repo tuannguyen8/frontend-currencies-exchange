@@ -11,17 +11,37 @@ li.active{
 	background-size: auto;
 	background-position: center;
 	height: 40vw;
+	.home-content{
+		display: flex;
+		flex-direction: column;
+		.row {
+			position: absolute;
+			top: 25%;
+			left: 25%;
+			border: 2px solid rgb(84, 151, 228);
+			background-color: white;
+			border-radius: 5px;
+			padding: 10px;
+			width: 50vw;
+			.welcome {
+				font-size: 1.2vw;
+				font-family: cursive;
+				margin: auto;
+				width: 100%;
+				text-align: center;
+				color: rgb(69, 69, 212);
+				font-weight: bold;
+				animation: run 1s linear 1;
+			}
+			.btn.btn-success {
+				margin: auto;
+				width: 100%;
+				animation: spin 1s linear 1;
+			}
+		}
+	}
 }
-.welcome {
-	font-size: 1.2vw;
-	font-family: cursive;
-	margin: auto;
-	width: 100%;
-	text-align: center;
-	color: rgb(69, 69, 212);
-	font-weight: bold;
-	animation: run 1s linear 1;
-}
+
 .img-bf {
 	height: 15vw;
 	margin-top: 16%;
@@ -30,14 +50,14 @@ li.active{
 	animation: bf1 1s linear 1;
 
 }
-.img-bf-coin {
+/* .img-bf-coin {
 	height: 15vw;
 
 	margin-left: 58%;
 	animation-delay: 2s;
 	animation: bf2 1s linear 1;
 	
-}
+} */
 @keyframes bf1 {
 	0% {
 		transform: translate(-700px, -100px);
@@ -62,11 +82,7 @@ li.active{
 		transform: translate(0px, 0px);
 	}
 }
-.btn.btn-success {
-	margin: auto;
-	width: 100%;
-	animation: spin 1s linear 1;
-}
+
 @keyframes spin {
 	0% {
 		transform: translate(300px, 110px);
@@ -75,16 +91,7 @@ li.active{
 		transform: translate(0px, 0px);
 	}
 }
-.row {
-	position: absolute;
-	top: 25%;
-	left: 25%;
-	border: 2px solid rgb(84, 151, 228);
-	background-color: white;
-	border-radius: 5px;
-	padding: 10px;
-	width: 50vw;
-}
+
 @media screen and (max-width: 670px) {
 	.row {
 		position: absolute;
@@ -169,7 +176,7 @@ li.active{
 		animation-delay: 1.5s;
 	}
 }
-@media screen and (max-width: 957px) {
+@media screen and (max-width: 1300px) {
 	.row {
 		position: absolute;
 		top: 16%;
@@ -196,4 +203,6 @@ li.active{
 		animation-delay: 1.5s;
 	}
 }
+
+
 /*# sourceMappingURL=home.css.map */

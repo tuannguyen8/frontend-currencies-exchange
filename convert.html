@@ -26,24 +26,49 @@
 	</head>
 
 	<body>
-		<!-- <div class="modal">
+		<div class="modal">
 			<div class="modal-content">
 		
 				<div class="modal-body">
-					<h3>UP TO <span>20% OFF</span></h3>
-					<h2>Sign up to RIODE</h2>
-					<p>Subscribe to the Riode eCommerce newsletter to receive timely updates from your favorite products</p>
-					<div class="input-group">
-						<input type="text">
-						<button>Submit</button>
+					<div class="input-group-modal">
+						<div class="currency-choice-modal flex">
+							<div class="currency-list-input-modal">
+								<div>From: </div>
+								<div class="currency-type-input-modal"></div>
+								<ul class="list-input-modal"> </ul>
+							</div>
+					
+							<div class="currency-list-output-modal">
+								<div>To: </div>
+								<div class="currency-type-output-modal"></div>
+								<ul class="list-output-modal"> </ul>
+							</div>
+							<div class="quantity-input-modal">
+								<label for="quantity-modal">Value:</label>
+								<input class="input-value-modal" type="number" value="1" id="quantity" name="quantity" min="0" />
+							</div>
+						</div>
+						<div class="convert-btn-modal flex j-center a-center">
+							<button class="convert-click-modal">Convert</button>
+						</div>
+					
+						<div class="converted-result-modal flex j-center a-center">
+							<div class="result-modal">
+								<span>Result: </span>
+								<span class="value-input-modal">1</span>
+								<span class="currency-code-input-modal">USD</span>
+								<span> = </span>
+								<span class="value-output-modal">1</span>
+								<span class="cunrrency-code-ouput-modal">USD</span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="remove-modal">
 					<i class="fas fa-times "></i>
 				</div>
 			</div>
-		
-		</div> -->
+		</div>
 
 		<header>
 			<div class="">
@@ -155,14 +180,14 @@
 								</div>
 
 								<div class="converted-result flex j-center a-center">
-									<!-- <div>
+									<div class="result">
 										<span>Result: </span>
 										<span class="value-input">1</span>
 										<span class="currency-code-input">USD</span>
 										<span> = </span>
-										<span class="value-output">22800</span>
-										<span class="cunrrency-code-ouput">VND</span>
-									</div> -->
+										<span class="value-output">1</span>
+										<span class="cunrrency-code-ouput">USD</span>
+									</div>
 								</div>
 							</div>
 						</div>

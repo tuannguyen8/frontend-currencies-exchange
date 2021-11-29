@@ -122,6 +122,7 @@ const renderChart = (currencyKey) => {
 	const day_before2 = new Date(yesterday);
 	const day_before3 = new Date(yesterday);
 	const day_before4 = new Date(yesterday);
+	const day_before5 = new Date(yesterday);
 
 	// Setting date for last 7 days
 	yesterday.setDate(yesterday.getDate() - 1);
@@ -130,6 +131,7 @@ const renderChart = (currencyKey) => {
 	day_before2.setDate(day_before2.getDate() - 4);
 	day_before3.setDate(day_before3.getDate() - 5);
 	day_before4.setDate(day_before4.getDate() - 6);
+	day_before5.setDate(day_before5.getDate() - 7);
 
 	//Changing Date to String to Convert into right format
 	today.toDateString();
@@ -139,31 +141,25 @@ const renderChart = (currencyKey) => {
 	day_before2.toDateString();
 	day_before3.toDateString();
 	day_before4.toDateString();
+	day_before5.toDateString();
 
 	//Changing date to right format 2022-22-01
-	let todays_date = formatDate(today);
 	let yesterday_date = formatDate(yesterday);
 	let day_before_yes = formatDate(day_before);
 	let day_before_yes1 = formatDate(day_before1);
 	let day_before_yes2 = formatDate(day_before2);
 	let day_before_yes3 = formatDate(day_before3);
 	let day_before_yes4 = formatDate(day_before4);
-	/* 	console.log(
-		todays_date,
-		yesterday_date,
-		day_before_yes,
-		day_before_yes1,
-		day_before_yes2,
-		day_before_yes3,
-		day_before_yes4
-	); */
-	let today_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${todays_date}/currencies/usd.json`;
+	let day_before_yes5 = formatDate(day_before5);
+
+	//let today_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${todays_date}/currencies/usd.json`;
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
 	let day_before_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes}/currencies/usd.json`;
 	let day_before_url1 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes1}/currencies/usd.json`;
 	let day_before_url2 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes2}/currencies/usd.json`;
 	let day_before_url3 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes3}/currencies/usd.json`;
 	let day_before_url4 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes4}/currencies/usd.json`;
+	let day_before_url5 = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${day_before_yes5}/currencies/usd.json`;
 
 	// Todays Price
 	async function get_price(curr) {
@@ -184,7 +180,7 @@ const renderChart = (currencyKey) => {
 		get_names = await get_price(curr_name);
 
 		// Fetching Currency data for last 7 days
-		todays_price = await get_price(today_price_url);
+		//todays_price = await get_price(today_price_url);
 		//console.log(todays_price);
 		yes_price_data = await yesterdays_price(yes_price_url);
 		yes_price_data1 = await yesterdays_price(day_before_url);
@@ -192,9 +188,10 @@ const renderChart = (currencyKey) => {
 		yes_price_data3 = await yesterdays_price(day_before_url2);
 		yes_price_data4 = await yesterdays_price(day_before_url3);
 		yes_price_data5 = await yesterdays_price(day_before_url4);
+		yes_price_data6 = await yesterdays_price(day_before_url5);
 
 		// getting the use USD in an Array
-		let data0 = todays_price.usd;
+		//let data0 = todays_price.usd;
 		let data1 = yes_price_data.usd;
 		//console.log(data1);
 		let data2 = yes_price_data1.usd;
@@ -202,27 +199,30 @@ const renderChart = (currencyKey) => {
 		let data4 = yes_price_data3.usd;
 		let data5 = yes_price_data4.usd;
 		let data6 = yes_price_data5.usd;
+		let data7 = yes_price_data6.usd;
 
 		let line_chart = document.getElementById("lineChart");
 
 		let arrayData = [
+			data7[currencyKey],
 			data6[currencyKey],
 			data5[currencyKey],
 			data4[currencyKey],
 			data3[currencyKey],
 			data2[currencyKey],
 			data1[currencyKey],
-			data0[currencyKey],
+			//data0[currencyKey],
 		];
 
 		let labels = [
+			day_before_yes5,
 			day_before_yes4,
 			day_before_yes3,
 			day_before_yes2,
 			day_before_yes1,
 			day_before_yes,
 			yesterday_date,
-			todays_date,
+			//todays_date,
 		];
 		let borderColor = [
 			"rgba(255,99,132,1)",
@@ -261,12 +261,15 @@ const renderChart = (currencyKey) => {
 
 	get_data();
 };
+// render default chart
 currencyKey = "ada";
 renderChart(currencyKey);
+
+//update chart by click the name or code of currency
 $(document).on("click", ".currency-key-tag", function (event) {
 	//e.preventDefault();
-	/* console.log("clickkkkk");
-	console.log(event.target.className); */
+	//console.log("clickkkkk");
+	//console.log(event.target.className);
 	$("canvas#lineChart").remove();
 	$("div.right-lower").append(
 		'<canvas id="lineChart" class="animated fadeIn" height="150"></canvas>'
@@ -274,16 +277,17 @@ $(document).on("click", ".currency-key-tag", function (event) {
 	let currencyKey = $(this).text().toLowerCase();
 	
 
-	let myKey = $(this).prev().text().toLowerCase();
+	//let myKey = $(this).prev().text().toLowerCase();
 	//console.log(currencyKey);
-	console.log(myKey);
+	//console.log(myKey);
 
 	renderChart(currencyKey);
 });
+
 $(document).on("click", ".currency-name-tag", function (event) {
 	//e.preventDefault();
-	/* console.log("clickkkkk");
-	console.log(event.target.className); */
+	//console.log("clickkkkk");
+	//console.log(event.target.className); 
 	$("canvas#lineChart").remove();
 	$("div.right-lower").append(
 		'<canvas id="lineChart" class="animated fadeIn" height="150"></canvas>'
@@ -742,7 +746,7 @@ const top_5_year = () => {
 	yesterday.toDateString();
 	let todays_date = formatDate(today);
 	let yesterday_date = formatDate(yesterday);
-	console.log(yesterday_date);
+	//console.log(yesterday_date);
 	// Adding Date to DOM
 	$(".date_year").append(`
 		<div class="Current_dates">
@@ -773,8 +777,8 @@ const top_5_year = () => {
 		let data1 = price_data.usd;
 		let data2 = yes_price_data.usd;
 		let difference = [];
-		console.log(data1);
-		console.log(data2);
+		/* console.log(data1);
+		console.log(data2); */
 
 		// Finding the TOP PRICE MOVERS!!
 		let curr = [];

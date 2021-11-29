@@ -15,7 +15,28 @@ li.active {
   height: 40vw;
 }
 
-.welcome {
+#container-fluid .home-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#container-fluid .home-content .row {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  border: 2px solid #5497e4;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  width: 50vw;
+}
+
+#container-fluid .home-content .row .welcome {
   font-size: 1.2vw;
   font-family: cursive;
   margin: auto;
@@ -27,6 +48,13 @@ li.active {
           animation: run 1s linear 1;
 }
 
+#container-fluid .home-content .row .btn.btn-success {
+  margin: auto;
+  width: 100%;
+  -webkit-animation: spin 1s linear 1;
+          animation: spin 1s linear 1;
+}
+
 .img-bf {
   height: 15vw;
   margin-top: 16%;
@@ -35,15 +63,14 @@ li.active {
           animation: bf1 1s linear 1;
 }
 
-.img-bf-coin {
-  height: 15vw;
-  margin-left: 58%;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation: bf2 1s linear 1;
-          animation: bf2 1s linear 1;
-}
+/* .img-bf-coin {
+	height: 15vw;
 
+	margin-left: 58%;
+	animation-delay: 2s;
+	animation: bf2 1s linear 1;
+	
+} */
 @-webkit-keyframes bf1 {
   0% {
     -webkit-transform: translate(-700px, -100px);
@@ -54,7 +81,6 @@ li.active {
             transform: translate(0px, 0px);
   }
 }
-
 @keyframes bf1 {
   0% {
     -webkit-transform: translate(-700px, -100px);
@@ -110,13 +136,6 @@ li.active {
   }
 }
 
-.btn.btn-success {
-  margin: auto;
-  width: 100%;
-  -webkit-animation: spin 1s linear 1;
-          animation: spin 1s linear 1;
-}
-
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: translate(300px, 110px);
@@ -137,17 +156,6 @@ li.active {
     -webkit-transform: translate(0px, 0px);
             transform: translate(0px, 0px);
   }
-}
-
-.row {
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  border: 2px solid #5497e4;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px;
-  width: 50vw;
 }
 
 @media screen and (max-width: 670px) {
@@ -249,7 +257,7 @@ li.active {
   }
 }
 
-@media screen and (max-width: 957px) {
+@media screen and (max-width: 1300px) {
   .row {
     position: absolute;
     top: 16%;
