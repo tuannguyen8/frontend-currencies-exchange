@@ -12,7 +12,7 @@ li.active {
 }
 
 .convert .container-fluid .row .left-side {
-  height: 74vh;
+  height: 81vh;
 }
 
 .convert .container-fluid .row .left-side h2 {
@@ -50,6 +50,7 @@ li.active {
 }
 
 .convert .container-fluid .row .right-side .right-upper {
+  margin-top: 7%;
   position: relative;
   background-color: #afafe0;
   height: 37vh;

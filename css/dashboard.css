@@ -12,7 +12,7 @@ li.active {
 }
 
 .dashboard .container-fluid .row .left-side {
-  height: 74vh;
+  height: 81vh;
 }
 
 .dashboard .container-fluid .row .left-side h2 {
@@ -47,6 +47,10 @@ li.active {
 .dashboard .container-fluid .row .left-side .currency-list .all-currencies li .currency-key {
   font-weight: 700;
   margin-right: 10px;
+}
+
+.dashboard .container-fluid .row .right-side .right-upper {
+  margin-top: 5%;
 }
 
 .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left {
