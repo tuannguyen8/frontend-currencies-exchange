@@ -2,7 +2,7 @@ $(".owl-carousel").owlCarousel({
 	items: 1,
 	//margin: 10,
 	loop: true,
-	autoHeight: true,
+
 	/* autoplay: true,
     autoplayTimeout: 5000, */
 	nav: false,
@@ -328,10 +328,9 @@ const top_5_curr = () => {
 	};
 	
 	datetoDOM("Today's Date     :: " + todays_date);
-	datetoDOM("A Week Ago Date  :: " + yesterday_date);
-	/* $(".Top_gainer").append(`
-					<li class="top">ada :    111</li>
-				`); */
+	datetoDOM("A Yesterday's Date  :: " + yesterday_date);
+
+
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
 	// Todays Price
 	async function get_price(curr_price) {
@@ -482,7 +481,7 @@ const top_5_week = () => {
 			<h5>Today's Date     :: ${todays_date}</h5>
 		</div>
 		<div class="Current_dates">
-			<h5>A Month Ago Date  :: ${yesterday_date}</h5>
+			<h5>A Week Ago Date  :: ${yesterday_date}</h5>
 		</div>
 	`);
 	/* console.log("TODAYS DATE " + todays_date);
@@ -738,21 +737,23 @@ const top_5_year = () => {
 
 	const today = new Date();
 	const yesterday = new Date(today);
-	yesterday.setDate(yesterday.getDate() - 365);
+	yesterday.setDate(yesterday.getDate() - 60);
 	today.toDateString();
 	yesterday.toDateString();
 	let todays_date = formatDate(today);
 	let yesterday_date = formatDate(yesterday);
+	console.log(yesterday_date);
 	// Adding Date to DOM
 	$(".date_year").append(`
 		<div class="Current_dates">
 			<h5>Today's Date     :: ${todays_date}</h5>
 		</div>
 		<div class="Current_dates">
-			<h5>A Month Ago Date  :: ${yesterday_date}</h5>
+			<h5>2 Months Ago Date  :: ${yesterday_date}</h5>
 		</div>
 	`);
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
+
 	// Todays Price
 	async function get_price(curr_price) {
 		let response = await fetch(curr_price);
@@ -768,13 +769,12 @@ const top_5_year = () => {
 	async function get_data() {
 		price_data = await get_price(curr_price_url);
 		yes_price_data = await yesterdays_price(yes_price_url);
-		/* console.log(price_data);
-		console.log(yes_price_data); */
+
 		let data1 = price_data.usd;
 		let data2 = yes_price_data.usd;
 		let difference = [];
-		/* console.log(data1);
-		console.log(data2); */
+		console.log(data1);
+		console.log(data2);
 
 		// Finding the TOP PRICE MOVERS!!
 		let curr = [];
