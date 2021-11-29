@@ -222,77 +222,64 @@ const renderChart = (currencyKey) => {
 					yesterday_date,
 					todays_date,
 				];
+		let borderColor = [
+							"rgba(255,99,132,1)",
+							"rgba(54, 162, 235, 1)",
+							"rgba(255, 206, 86, 1)",
+							"rgba(75, 192, 192, 1)",
+							"rgba(153, 102, 255, 1)",
+							"rgba(255, 159, 64, 1)",
+							"rgba(255,99,132,1)",
+							"rgba(54, 162, 235, 1)",
+							"rgba(255, 206, 86, 1)",
+							"rgba(75, 192, 192, 1)",
+							"rgba(153, 102, 255, 1)",
+							"rgba(255, 159, 64, 1)",
+						]
 		
 		let myChart = new Chart(line_chart, {
 			type: "line",
 			maintainAspectRatio: false,
-			responsive: false,
+			responsive: true,
 			responsiveAnimationDuration: 2,
 
 			data: {
-				labels: [
-					day_before_yes4,
-					day_before_yes3,
-					day_before_yes2,
-					day_before_yes1,
-					day_before_yes,
-					yesterday_date,
-					todays_date,
-				],
+				labels: labels,
 				datasets: [
 					{
 						label: get_names.ada,
 						data: arrayData,
-						borderColor: [
-							"rgba(255,99,132,1)",
-							"rgba(54, 162, 235, 1)",
-							"rgba(255, 206, 86, 1)",
-							"rgba(75, 192, 192, 1)",
-							"rgba(153, 102, 255, 1)",
-							"rgba(255, 159, 64, 1)",
-							"rgba(255,99,132,1)",
-							"rgba(54, 162, 235, 1)",
-							"rgba(255, 206, 86, 1)",
-							"rgba(75, 192, 192, 1)",
-							"rgba(153, 102, 255, 1)",
-							"rgba(255, 159, 64, 1)",
-						],
+						borderColor: borderColor,
 						borderWidth: 1,
 					},
 				],
 			},
 		});
+
+
 		
 	}
 	
 	get_data();
 };
-/* currencyKey= "ada"
-renderChart(currencyKey); */
+currencyKey= "ada"
+renderChart(currencyKey);
 $(document).on("click", ".currency-key", function (event) {
 	//e.preventDefault();
     /* console.log("clickkkkk");
 	console.log(event.target.className); */
+	$("canvas#lineChart").remove();
+	$("div.right-lower").append('<canvas id="lineChart" class="animated fadeIn" height="150"></canvas>');
 	let currencyKey = $(this).text().toLowerCase();
-	console.log(currencyKey);
+	//console.log(currencyKey);
 	renderChart(currencyKey);
-	myChart.destroy();
-	renderCahrt(currencyKey);
+	
 });
 
 
 
 //--------------------------Gainers and Loosers----------------------------------//
-/* function formatDate(date) {
-	let d = new Date(date),
-		month = "" + (d.getMonth() + 1),
-		day = "" + d.getDate(),
-		year = d.getFullYear();
-	if (month.length < 2) month = "0" + month;
-	if (day.length < 2) day = "0" + day;
-	return [year, month, day].join("-");
-}
- */
+
 const top_5_curr = () => {
 	let app = document.querySelector(".dates");
 	let yes_price_data = "";
