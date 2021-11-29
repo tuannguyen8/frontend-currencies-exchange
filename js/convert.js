@@ -14,19 +14,6 @@ $(".owl-carousel").owlCarousel({
 	dots: true,
 });
 
-/* setTimeout(()=>{
-    $(".modal").fadeIn();
-}, 100) 
-$(".remove-modal").click(function (e) { 
-    $(".modal").fadeOut();
-});
-$(document).click(function (e) { 
-    //console.log(e.target.closest)
-    if(!e.target.closest(".modal-content")){
-        $(".modal").fadeOut();
-    }
-}); */
-
 
 
 

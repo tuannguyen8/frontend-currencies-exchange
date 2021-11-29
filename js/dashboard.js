@@ -25,9 +25,11 @@ const getAllCurrencies = () => {
 				//console.log(price.usd)
 				$(".all-currencies").append(`<li class ="flex j-between a-center">
                     <span>
-                        <a class ="currency-code-a" href="#">
-                            <span class=" currency-key-tag">${key.toUpperCase()}</span>: 
-							<span class="currency-name-tag" >${data[key]}</span>
+                        <a href="#">
+                            <span class="currency-key">${key.toUpperCase()}</span>: <span>${
+					data[key]
+				}</span>
+                        
                         </a>  
                     </span>
                  </li>`);
@@ -180,7 +182,7 @@ const renderChart = (currencyKey) => {
 	}
 
 	async function get_data() {
-		//console.log(currencyKey);
+		console.log(currencyKey);
 		get_names = await get_price(curr_name);
 
 		// Fetching Currency data for last 7 days
@@ -263,7 +265,7 @@ const renderChart = (currencyKey) => {
 };
 currencyKey = "ada";
 renderChart(currencyKey);
-$(document).on("click", ".currency-key-tag", function (event) {
+$(document).on("click", ".currency-key", function (event) {
 	//e.preventDefault();
 	/* console.log("clickkkkk");
 	console.log(event.target.className); */
@@ -272,24 +274,6 @@ $(document).on("click", ".currency-key-tag", function (event) {
 		'<canvas id="lineChart" class="animated fadeIn" height="150"></canvas>'
 	);
 	let currencyKey = $(this).text().toLowerCase();
-	
-
-	let myKey = $(this).prev().text().toLowerCase();
-	//console.log(currencyKey);
-	console.log(myKey);
-
-	renderChart(currencyKey);
-});
-$(document).on("click", ".currency-name-tag", function (event) {
-	//e.preventDefault();
-	/* console.log("clickkkkk");
-	console.log(event.target.className); */
-	$("canvas#lineChart").remove();
-	$("div.right-lower").append(
-		'<canvas id="lineChart" class="animated fadeIn" height="150"></canvas>'
-	);
-	
-	let currencyKey = $(this).prev().text().toLowerCase();
 
 	renderChart(currencyKey);
 });
@@ -326,11 +310,16 @@ const top_5_curr = () => {
 		element.append(name);
 		app.append(element);
 	};
-	
 	datetoDOM("Today's Date     :: " + todays_date);
+<<<<<<< HEAD
 	datetoDOM("A Yesterday's Date  :: " + yesterday_date);
 
 
+=======
+	datetoDOM("A Week Ago Date  :: " + yesterday_date);
+	/* console.log("TODAYS DATE " + todays_date);
+	console.log("Yesterdays DATE " + yesterday_date); */
+>>>>>>> parent of be0779e (click on name to update the graph)
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
 	// Todays Price
 	async function get_price(curr_price) {
