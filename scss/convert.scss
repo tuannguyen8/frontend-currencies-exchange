@@ -1,4 +1,3 @@
-
 /* .modal{
     //display: none;
     height: 100vh;
@@ -64,22 +63,13 @@
     }
 }
  */
-.navbar-nav > li{
-	padding-left:30px;
-	padding-right:30px;
-  }
-
-li.active{
-	background-color: #ec782a;
-}
 
 .convert {
-	height: 40vw;
 	.container-fluid {
 		.row {
 			.left-side {
 				//background-color: lightgray;
-				height: 81vh;
+				height: 74vh;
 
 				h2 {
 					color: blue;
@@ -114,7 +104,6 @@ li.active{
 
 			.right-side {
 				.right-upper {
-					margin-top: 7%;
 					position: relative;
 					background-color: rgb(175, 175, 224);
 					height: 37vh;

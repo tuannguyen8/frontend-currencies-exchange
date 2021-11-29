@@ -1,18 +1,9 @@
-.navbar-nav > li {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-li.active {
-  background-color: #ec782a;
-}
-
 #container-fluid {
   background-image: url("../images/333803.jpg");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
-  height: 40vw;
+  height: 600px;
 }
 
 .welcome {
