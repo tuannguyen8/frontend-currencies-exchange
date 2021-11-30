@@ -278,8 +278,8 @@ const top_5_curr = () => {
 		element.append(name);
 		app.append(element);
 	};
-	datetoDOM("Today's Date     :: " + todays_date);
-	datetoDOM("A Yesterdays Date  :: " + yesterday_date);
+	datetoDOM("Today's Date: " + todays_date);
+	datetoDOM("A Yesterdays Date: " + yesterday_date);
 	/* console.log("TODAYS DATE " + todays_date);
 	console.log("Yesterdays DATE " + yesterday_date); */
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
@@ -429,10 +429,10 @@ const top_5_week = () => {
 	// Adding Date to DOM
 	$(".date_week").append(`
 		<div class="Current_dates">
-			<h5>Today's Date     :: ${todays_date}</h5>
+			<h5>Today's Date: ${todays_date}</h5>
 		</div>
 		<div class="Current_dates">
-			<h5>A Week Ago Date  :: ${yesterday_date}</h5>
+			<h5>A Week Ago Date: ${yesterday_date}</h5>
 		</div>
 	`);
 	/* console.log("TODAYS DATE " + todays_date);
@@ -569,10 +569,10 @@ const top_5_month = () => {
 	// Adding Date to DOM
 	$(".date_month").append(`
 		<div class="Current_dates">
-			<h5>Today's Date     :: ${todays_date}</h5>
+			<h5>Today's Date: ${todays_date}</h5>
 		</div>
 		<div class="Current_dates">
-			<h5>A Month Ago Date  :: ${yesterday_date}</h5>
+			<h5>A Month Ago Date: ${yesterday_date}</h5>
 		</div>
 	`);
 
@@ -696,10 +696,10 @@ const top_5_year = () => {
 	// Adding Date to DOM
 	$(".date_year").append(`
 		<div class="Current_dates">
-			<h5>Today's Date     :: ${todays_date}</h5>
+			<h5>Today's Date: ${todays_date}</h5>
 		</div>
 		<div class="Current_dates">
-			<h5>2 Months Ago Date  :: ${yesterday_date}</h5>
+			<h5>2 Months Ago Date: ${yesterday_date}</h5>
 		</div>
 	`);
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
