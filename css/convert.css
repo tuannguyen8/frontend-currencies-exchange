@@ -56,6 +56,18 @@ html {
   text-overflow: ellipsis;
 }
 
+@media screen and (max-width: 426px) {
+  .modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-input-modal .currency-type-input-modal {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-input-modal .currency-type-input-modal {
+    width: 330px;
+  }
+}
+
 .modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-input-modal ul {
   background: white;
   height: 200px;
@@ -98,6 +110,18 @@ html {
   text-overflow: ellipsis;
 }
 
+@media screen and (max-width: 426px) {
+  .modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-output-modal .currency-type-output-modal {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-output-modal .currency-type-output-modal {
+    width: 330px;
+  }
+}
+
 .modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-output-modal ul {
   background: white;
   height: 200px;
@@ -133,6 +157,18 @@ html {
   padding: 15px 20px;
   width: 180px;
   height: 50px;
+}
+
+@media screen and (max-width: 426px) {
+  .modal .modal-content .modal-body .input-group-modal .currency-choice-modal .quantity-input-modal input {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .modal .modal-content .modal-body .input-group-modal .currency-choice-modal .quantity-input-modal input {
+    width: 330px;
+  }
 }
 
 .modal .modal-content .modal-body .input-group-modal button {

@@ -23,19 +23,19 @@ html {
 
 				::-webkit-scrollbar-track {
 					box-shadow: inset 0 0 5px grey;
-					border-radius: 10px;
+					border-radius: 5px;
 				}
 
 				::-webkit-scrollbar-thumb {
 					background: rgb(255, 0, 0);
-					border-radius: 10px;
+					border-radius: 5px;
 				}
 
 				::-webkit-scrollbar-thumb:hover {
 					background: #c41818;
 				}
 				height: 50vw;
-				border-radius: 10px;
+				border-radius: 5px;
 				@media screen and (max-width: 1024px) {
 					height: 59vw;
 				}
@@ -63,8 +63,11 @@ html {
 					box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 					.all-currencies-header {
 						padding: 10px 10px 0px 10px;
+						border-bottom: 1px solid white;
+						
 						li {
 							font-weight: 700;
+							//color: white;
 						}
 					}
 					.all-currencies {
@@ -85,33 +88,47 @@ html {
 			.right-side {
 				.right-upper {
 					margin-top: 7%;
+					margin-left: 18px;
+					@media screen and (max-width: 768px) {
+						margin-left: 25px;
+					}
 					.container-fluid {
 						.right-upper-left {
-							margin-left: -5px;
 							position: relative;
 							background-color: rgb(243, 201, 14);
 							height: 47vh;
+							width: 49%;
+							margin-right: 20px;
 							@media screen and (max-width: 1024px) {
 								height: 57vh;
-								margin-left: -5px;
+								width: 48.5%;
 							}
 							@media screen and (max-width: 768px) {
 								height: 55vh;
-								margin-left: -5px;
+								margin-right: 13px;
+								width: 49%;
 							}
 							margin-left: -5px;
 							padding: 20px;
 							text-align: center;
-							border-radius: 10px;
-							-webkit-border-radius: 4px;
-							-moz-border-radius: 4px;
-							border-radius: 4px;
+							//border-radius: 5px;
+							-webkit-border-radius: 5px;
+							-moz-border-radius: 5px;
+							border-radius: 5px;
 							-webkit-box-shadow: 0px 0px 4px #4195fc;
 							-moz-box-shadow: 0px 0px 4px #4195fc;
 							box-shadow: 0px 0px 4px #4195fc;
 							justify-content: space-between;
 							.slide {
 								.item {
+									div{
+										h5{
+											font-size: 14px;
+											@media screen and (max-width: 1024px){
+												font-size: 12px;
+											}
+										}
+									}
 									.right-upper-left-gainers {
 										border-style: groove;
 										margin-right: 5px;
@@ -119,6 +136,13 @@ html {
 										background-color: greenyellow;
 										height: 70%;
 										border-radius: 5px;
+										/* .Top_gainer{
+											font-size: 14px;
+											@media screen and (max-width: 768px) {
+												font-size: 14px;
+											}
+										} */
+										
 										@media screen and (max-width: 1024px) {
 											width: 100%;
 										}
@@ -128,6 +152,9 @@ html {
 										li {
 											list-style-type: none;
 											font-size: 0.8vw;
+											@media screen and (max-width: 1024px){
+												font-size: 0.9vw;
+											}
 										}
 										li:hover {
 											background-color: #1a91db;
@@ -152,6 +179,9 @@ html {
 										li {
 											list-style-type: none;
 											font-size: 0.8vw;
+											@media screen and (max-width: 1024px){
+												font-size: 0.9vw;
+											}
 										}
 										li:hover {
 											background-color: #1a91db;
@@ -176,15 +206,18 @@ html {
 									}
 								}
 								.owl-dots {
+									@media screen and (max-width: 1024px){
+										bottom: -17px;
+									}
 									position: absolute;
-									bottom: -30px;
+									bottom: -54px;
 									display: flex;
 									justify-content: center;
 									width: 100%;
 									.owl-dot {
 										span {
-											width: 15px;
-											height: 15px;
+											width: 11px;
+											height: 11px;
 											background-color: white;
 										}
 										&:hover {
@@ -204,17 +237,22 @@ html {
 							}
 						}
 						.right-upper-right {
+							width: 49%;
+							
 							background-color: rgb(243, 201, 14);
 							height: 47vh;
-							padding: 20px;
+							padding: 40px;
 							box-shadow: 0px 2px 10px -2px #ccc;
 							@media screen and (max-width: 1024px) {
 								height: 57vh;
+								padding: 20px;
+								width: 49%;
 							}
 							@media screen and (max-width: 768px) {
 								height: 55vh;
+								width: 49%;
 							}
-							border-radius: 10px;
+							border-radius: 5px;
 							.input-group {
 								margin-bottom: 20px;
 								.currency-choice {
@@ -235,6 +273,12 @@ html {
 											overflow: hidden;
 											text-overflow: ellipsis;
 											border-radius: 5px;
+											@media screen and (max-width: 768px) {
+												width: 150px;
+												margin-top: 0px;
+												padding: 10px 20px;
+												height: 40px;
+											}
 										}
 										ul {
 											background: white;
@@ -261,6 +305,12 @@ html {
 										margin-right: 50px;
 										position: relative;
 										.currency-type-output {
+											@media screen and (max-width: 768px) {
+												width: 150px;
+												margin-top: 0px;
+												padding: 10px 20px;
+												height: 40px;
+											}
 											margin-top: 5px;
 											background-color: orange;
 											color: white;
@@ -302,6 +352,12 @@ html {
 											font-weight: 400;
 										}
 										input {
+											@media screen and (max-width: 768px) {
+												width: 150px;
+												margin-top: 0px;
+												padding: 10px 20px;
+												height: 40px;
+											}
 											border-radius: 5px;
 											display: block;
 											border: orange 1px solid;
@@ -313,24 +369,49 @@ html {
 										}
 									}
 								}
-								button {
-									padding: 10px;
-									margin: 20px 0px;
-									background: #1a91db;
-									color: white;
-									cursor: pointer;
-									border-radius: 5px;
+								.convert-btn{
+									@media screen and (max-width: 768px) {
+										
+										height: 60px;
+										width: 120px;
+									}
+									.convert-click{
+										padding: 10px;
+										margin: 20px 0px;
+										background: #1a91db;
+										color: white;
+										cursor: pointer;
+										border-radius: 5px;
+										@media screen and (max-width: 768px) {
+											padding: 10px 20px;
+											margin-top: 10px;
+										}
+									}
 								}
+								
 
 								.converted-result {
+									@media screen and (max-width: 768px) {
+										
+										margin-left:15px;
+										max-width: 160px;
+										
+										
+									}
 									div {
+										@media screen and (max-width: 768px) {
+											//
+											margin-left:-20px;
+											padding: 10px;
+											
+										}
 										border-radius: 5px;
 										background-color: orange;
 										padding: 10px 20px;
 										span {
 											font-size: 18px;
 											@media screen and (max-width: 768px) {
-												font-size:10px;
+												font-size:14px;
 											}
 											color: white;
 										}
@@ -376,8 +457,8 @@ html {
 						border: 5px solid black;
 						border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E")
 							1;
-						-webkit-border-radius: 4px;
-						-moz-border-radius: 4px;
+						-webkit-border-radius: 5px;
+						-moz-border-radius: 5px;
 						-webkit-box-shadow: 0px 0px 4px #4195fc;
 						-moz-box-shadow: 0px 0px 4px #4195fc;
 						box-shadow: 0px 0px 4px #4195fc;
@@ -421,9 +502,9 @@ html {
 						text-align: center;
 					}
 					.currency-list {
-						-webkit-border-radius: 4px;
-						-moz-border-radius: 4px;
-						border-radius: 4px;
+						-webkit-border-radius: 5px;
+						-moz-border-radius: 5px;
+						border-radius: 5px;
 						-webkit-box-shadow: 0px 0px 4px #4195fc;
 						-moz-box-shadow: 0px 0px 4px #4195fc;
 						box-shadow: 0px 0px 4px #4195fc;
@@ -434,9 +515,12 @@ html {
 						overflow: scroll;
 						box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 						.all-currencies-header {
-							padding: 10px 10px 0px 10px;
+							padding: 10px 10px 10px 10px;
+							//border-bottom: white 1px solid;
 							li {
 								font-weight: 700;
+								//color: white;
+								
 							}
 						}
 						.all-currencies {
@@ -463,6 +547,7 @@ html {
 								background-color: rgb(243, 201, 14);
 								height: 39vh;
 								padding: 20px;
+								margin-right: 10px;
 
 								text-align: center;
 								border-radius: 10px;
@@ -570,6 +655,9 @@ html {
 											margin-right: 50px;
 
 											.currency-type-input {
+												@media screen and (max-width: 768px){
+													
+												}
 												margin-left: 50px;
 												margin-top: -30px;
 
@@ -718,8 +806,8 @@ html {
 							border: 5px solid black;
 							border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E")
 								1;
-							-webkit-border-radius: 4px;
-							-moz-border-radius: 4px;
+							-webkit-border-radius: 5px;
+							-moz-border-radius: 5px;
 							-webkit-box-shadow: 0px 0px 4px #4195fc;
 							-moz-box-shadow: 0px 0px 4px #4195fc;
 							box-shadow: 0px 0px 4px #4195fc;

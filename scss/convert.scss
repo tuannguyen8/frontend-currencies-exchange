@@ -25,6 +25,7 @@ html{
             background-color: white;
 			width: 100%;
 			.input-group-modal {
+				
 				margin-bottom: 20px;
 				.currency-choice-modal {
 					margin-left: 10px;
@@ -33,6 +34,12 @@ html{
 						margin-right: 50px;
 
 						.currency-type-input-modal {
+							@media screen and (max-width: 426px){
+								width: 160px;
+							}
+							@media screen and (max-width: 786px){
+								width: 330px;
+							}
 							margin-top: 5px;
 							background-color: orange;
 							color: white;
@@ -69,6 +76,12 @@ html{
 						margin-right: 50px;
 						position: relative;
 						.currency-type-output-modal {
+							@media screen and (max-width: 426px){
+								width: 160px;
+							}
+							@media screen and (max-width: 786px){
+								width: 330px;
+							}
 							margin-top: 5px;
 							background-color: orange;
 							color: white;
@@ -106,6 +119,13 @@ html{
 							font-weight: 400;
 						}
 						input {
+							@media screen and (max-width: 426px){
+								width: 160px;
+							}
+							@media screen and (max-width: 786px){
+								width: 330px;
+							}
+							
 							display: block;
 							border: orange 1px solid;
 							color: black;
