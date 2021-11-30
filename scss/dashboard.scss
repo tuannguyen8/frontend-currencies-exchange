@@ -698,23 +698,23 @@ html {
 					::-webkit-scrollbar {
 						width: 20px;
 					}
-	
+
 					::-webkit-scrollbar-track {
 						box-shadow: inset 0 0 5px grey;
 						border-radius: 10px;
 					}
-	
+
 					::-webkit-scrollbar-thumb {
 						background: rgb(255, 0, 0);
 						border-radius: 10px;
 					}
-	
+
 					::-webkit-scrollbar-thumb:hover {
 						background: #c41818;
 					}
 					height: 50vw;
 					border-radius: 10px;
-	
+
 					h2 {
 						color: rgb(255, 255, 255);
 						font-weight: 700;
@@ -730,7 +730,7 @@ html {
 						background-color: rgb(243, 201, 14);
 						//background-color: orange;
 						height: 92%;
-	
+
 						overflow: scroll;
 						box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 						.all-currencies-header {
@@ -761,9 +761,9 @@ html {
 							.right-upper-left {
 								position: relative;
 								background-color: rgb(243, 201, 14);
-								height: 37vh;
+								height: 39vh;
 								padding: 20px;
-								
+
 								text-align: center;
 								border-radius: 10px;
 								-webkit-border-radius: 4px;
@@ -813,7 +813,7 @@ html {
 											}
 										}
 									}
-	
+
 									.owl-item.active {
 										.item {
 											.content {
@@ -856,10 +856,10 @@ html {
 							}
 							.right-upper-right {
 								background-color: rgb(243, 201, 14);
-								height: 37vh;
+								height: 39vh;
 								padding: 20px;
 								box-shadow: 0px 2px 10px -2px #ccc;
-								height: 37vh;
+
 								border-radius: 10px;
 								.input-group {
 									margin-bottom: 20px;
@@ -868,11 +868,11 @@ html {
 										.currency-list-input {
 											position: relative;
 											margin-right: 50px;
-	
+
 											.currency-type-input {
 												margin-left: 50px;
 												margin-top: -30px;
-											
+
 												background-color: orange;
 												color: white;
 												text-align: center;
@@ -904,7 +904,7 @@ html {
 												}
 											}
 										}
-	
+
 										.currency-list-output {
 											margin-right: 50px;
 											position: relative;
@@ -941,7 +941,7 @@ html {
 												}
 											}
 										}
-	
+
 										.quantity-input {
 											label {
 												font-weight: 400;
@@ -959,7 +959,6 @@ html {
 										}
 									}
 									button {
-										
 										padding: 10px;
 										margin: 20px 0px;
 										background: #1a91db;
@@ -967,7 +966,7 @@ html {
 										cursor: pointer;
 										border-radius: 5px;
 									}
-	
+
 									.converted-result {
 										div {
 											border-radius: 5px;
