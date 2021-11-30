@@ -203,6 +203,10 @@ html {
   color: red;
 }
 
+.nav li {
+  padding: 0px 30px;
+}
+
 li.active {
   background-color: #ec782a;
 }
