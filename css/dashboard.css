@@ -44,6 +44,12 @@ html {
   background: #c41818;
 }
 
+@media screen and (max-width: 1024px) {
+  .dashboard .container-fluid .row .left-side {
+    height: 59vw;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .dashboard .container-fluid .row .left-side {
     height: 75vw;
@@ -112,7 +118,7 @@ html {
 
 @media screen and (max-width: 1024px) {
   .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left {
-    height: 47vh;
+    height: 57vh;
     margin-left: -5px;
   }
 }
@@ -131,6 +137,12 @@ html {
   background-color: greenyellow;
   height: 70%;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left .slide .item .right-upper-left-gainers {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -159,6 +171,12 @@ html {
   background-color: #c97560;
   height: 70%;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-left .slide .item .right-upper-left-loosers {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -224,6 +242,12 @@ html {
   -webkit-box-shadow: 0px 2px 10px -2px #ccc;
           box-shadow: 0px 2px 10px -2px #ccc;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .dashboard .container-fluid .row .right-side .right-upper .container-fluid .right-upper-right {
+    height: 57vh;
+  }
 }
 
 @media screen and (max-width: 768px) {
