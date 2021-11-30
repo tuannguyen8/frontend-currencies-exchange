@@ -255,7 +255,7 @@ li.active {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
   .convert .container-fluid .row .right-side {
     margin-top: 10px;
   }
@@ -283,7 +283,7 @@ li.active {
   color: white;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
   .convert .container-fluid .row .right-side .right-upper .slide .item div h5 {
     font-size: 12px;
   }
@@ -296,6 +296,12 @@ li.active {
   height: 70%;
   border-radius: 5px;
   font-size: 14px;
+}
+
+@media screen and (max-width: 426px) {
+  .convert .container-fluid .row .right-side .right-upper .slide .item .right-upper-left {
+    width: 45%;
+  }
 }
 
 .convert .container-fluid .row .right-side .right-upper .slide .item .right-upper-left li {
@@ -315,9 +321,12 @@ li.active {
   height: 70%;
   border-radius: 5px;
   font-size: 14px;
-  /* @media screen and (max-width: 425px){
-									margin-top: 20px;
-								} */
+}
+
+@media screen and (max-width: 426px) {
+  .convert .container-fluid .row .right-side .right-upper .slide .item .right-upper-right {
+    width: 45%;
+  }
 }
 
 .convert .container-fluid .row .right-side .right-upper .slide .item .right-upper-right li {
@@ -412,7 +421,7 @@ li.active {
 
 @media screen and (max-width: 1024px) {
   .convert .container-fluid .row .right-side .right-lower .input-group .currency-choice .currency-list-input {
-    margin-right: 70px;
+    margin-right: 60px;
   }
 }
 
@@ -444,6 +453,12 @@ li.active {
 @media screen and (max-width: 768px) {
   .convert .container-fluid .row .right-side .right-lower .input-group .currency-choice .currency-list-input .currency-type-input {
     width: 180px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .convert .container-fluid .row .right-side .right-lower .input-group .currency-choice .currency-list-input .currency-type-input {
+    width: 70px;
   }
 }
 
@@ -512,6 +527,12 @@ li.active {
   }
 }
 
+@media screen and (max-width: 426px) {
+  .convert .container-fluid .row .right-side .right-lower .input-group .currency-choice .currency-list-output .currency-type-output {
+    width: 70px;
+  }
+}
+
 .convert .container-fluid .row .right-side .right-lower .input-group .currency-choice .currency-list-output ul {
   background: white;
   height: 200px;
@@ -560,6 +581,12 @@ li.active {
 @media screen and (max-width: 768px) {
   .convert .container-fluid .row .right-side .right-lower .input-group .currency-choice .quantity-input input {
     width: 180px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .convert .container-fluid .row .right-side .right-lower .input-group .currency-choice .quantity-input input {
+    width: 70px;
   }
 }
 
