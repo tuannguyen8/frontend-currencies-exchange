@@ -233,7 +233,7 @@ li.active {
 }
 
 .convert .container-fluid .row .left-side {
-  height: 80vh;
+  height: 81vh;
 }
 
 .convert .container-fluid .row .left-side h2 {
@@ -243,6 +243,7 @@ li.active {
 }
 
 .convert .container-fluid .row .left-side .currency-list {
+  border-style: groove;
   border-radius: 5px;
   background-color: #337ab7;
   height: 95%;
@@ -298,11 +299,12 @@ li.active {
 }
 
 .convert .container-fluid .row .right-side .right-upper {
+  border-style: groove;
   border-radius: 5px;
   margin-top: 8%;
   position: relative;
   background-color: #337ab7;
-  height: 37vh;
+  height: 38vh;
   padding: 10px 10px 10px 20px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -312,6 +314,7 @@ li.active {
 @media screen and (max-width: 768px) {
   .convert .container-fluid .row .right-side .right-upper {
     margin-top: 10px;
+    height: 40vh;
   }
 }
 
@@ -326,6 +329,7 @@ li.active {
 }
 
 .convert .container-fluid .row .right-side .right-upper .slide .item .right-upper-left {
+  border-style: groove;
   background-color: greenyellow;
   width: 48%;
   margin-right: 15px;
@@ -352,6 +356,7 @@ li.active {
 }
 
 .convert .container-fluid .row .right-side .right-upper .slide .item .right-upper-right {
+  border-style: groove;
   background-color: #c97560;
   width: 48%;
   height: 70%;
@@ -398,6 +403,12 @@ li.active {
   width: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+  .convert .container-fluid .row .right-side .right-upper .slide .owl-dots {
+    bottom: -23px;
+  }
+}
+
 .convert .container-fluid .row .right-side .right-upper .slide .owl-dots .owl-dot span {
   width: 11px;
   height: 11px;
@@ -413,6 +424,7 @@ li.active {
 }
 
 .convert .container-fluid .row .right-side .right-lower {
+  border-style: groove;
   border-radius: 5px;
   margin-top: 20px;
   background-color: #337ab7;

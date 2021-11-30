@@ -191,8 +191,9 @@ li.active{
 	.container-fluid {
 		height: 100%;
 		.row {
-			.left-side {		
-				height: 80vh;
+			.left-side {
+						
+				height: 81vh;
 
 				h2 {
 					color: white;
@@ -200,6 +201,7 @@ li.active{
 					text-align: center;
 				}
 				.currency-list {
+					border-style: groove;
 					border-radius: 5px;
 					background-color: #337ab7;
 					height: 95%;
@@ -245,17 +247,19 @@ li.active{
 					margin-top: 10px;
 				}
 				.right-upper {
+					border-style: groove;
 					border-radius: 5px;
 					margin-top: 8%;
 					position: relative;
 					//background-color: rgb(175, 175, 224);
 					background-color: #337ab7;
-					height: 37vh;
+					height: 38vh;
 					padding: 10px 10px 10px 20px;
 					justify-content: space-between;
 					
 					@media screen and (max-width: 768px){
 						margin-top: 10px;
+						height: 40vh;
 					}
 					.slide {
 						.item {
@@ -271,6 +275,7 @@ li.active{
 							}
 							
 							.right-upper-left {
+								border-style: groove;
 								background-color: greenyellow;
 								width: 48%;
 								margin-right: 15px;
@@ -291,6 +296,7 @@ li.active{
 								}
 							}
 							.right-upper-right {
+								border-style: groove;
 								background-color: rgb(201, 117, 96);
 								width: 48%;
 								height: 70%;
@@ -330,6 +336,9 @@ li.active{
 							display: flex;
 							justify-content: center;
 							width: 100%;
+							@media screen and (max-width: 1024px){
+								bottom: -23px;
+							}
 							.owl-dot {
 								span {
 									width: 11px;
@@ -353,6 +362,7 @@ li.active{
 					}
 				}
 				.right-lower {
+					border-style: groove;
 					border-radius: 5px;
 					margin-top: 20px;
 					background-color: #337ab7;
