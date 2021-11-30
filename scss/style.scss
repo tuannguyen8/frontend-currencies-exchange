@@ -3,6 +3,9 @@
 *{
     color: $text-color;
 }
+a {
+  text-decoration: none !important;
+}
 img{
     max-width: 100%;
 }
@@ -11,6 +14,7 @@ html,body,input, button{
 }
 
 header{
+    background-color: black;
     margin-top: 20px;
     border-bottom: 1px #337ab7 solid;
     div{
@@ -24,19 +28,47 @@ header{
     }
 
 }
-footer{
-    margin-top: 20px;
-    border-bottom: 1px #337ab7 solid;
+/* .bottom-info{
+    margin-top: 15px;
+    border-top: 1px #337ab7 solid;
+    z-index: 100;
     div{
-        ul{
-            li{
-                a{
-                    color: white;
-                }
+        background-color: #337ab7;
+        margin-top: 20px;
+        
+        a{
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 2px;
+            font-size: 14px;
+            padding: 10px;
+            &:hover{
+                background-color: #eee;
+                color: #337ab7;
             }
         }
     }
-
+} */
+footer{
+    margin-top: 15px;
+    border-top: 1px #337ab7 solid;
+    z-index: 100;
+    div{
+        background-color: #337ab7;
+        //margin-top: 20px;
+        
+        a{
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            //margin: 2px;
+            font-size: 14px;
+            //padding: 10px;
+            &:hover{
+                background-color: #eee;
+                color: #337ab7;
+            }
+        }
+    }
 }
 
 
