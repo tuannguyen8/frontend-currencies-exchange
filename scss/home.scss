@@ -1,8 +1,11 @@
-.navbar-nav > li{
-	padding-left:30px;
-	padding-right:30px;
-  }
-li.active{
+html{
+	background-color: black;
+}
+.navbar-nav > li {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+li.active {
 	background-color: #ec782a;
 }
 #container-fluid {
@@ -10,8 +13,8 @@ li.active{
 	background-repeat: no-repeat;
 	background-size: auto;
 	background-position: center;
-	height: 40vw;
-	.home-content{
+	height: 50vw;
+	.home-content {
 		background-color: black;
 		display: flex;
 		justify-content: center;
@@ -20,29 +23,28 @@ li.active{
 		bottom: 50%;
 		right: 50%;
 		transform: translate(50%, -100%);
-		@media screen and (max-width: 768px){
+		@media screen and (max-width: 768px) {
 			transform: translate(50%, -50%);
 		}
 		.row {
-			border: 2px solid rgb(84, 151, 228);
-			background-color: white;
-			border-radius: 5px;
+			border-radius: 15px;
 			padding: 10px 50px;
-			//width: 50vw;
+			--borderWidth: 10px;
+			background: #1d1f20;
+			position: relative;
 			.welcome {
 				font-size: 1.2vw;
-				//font-family: cursive;
 				margin: auto;
 				width: 100%;
 				text-align: center;
-				color: rgb(69, 69, 212);
+				color: rgb(255, 255, 255);
 				font-weight: bold;
 				animation: run 1s linear 1;
 			}
-			div{
+			div {
 				width: 70%;
 				margin: auto;
-				a{
+				a {
 					font-size: 1vw;
 					margin: auto;
 					text-align: center;
@@ -53,6 +55,41 @@ li.active{
 				margin: auto;
 				width: 100%;
 				animation: spin 1s linear 1;
+			}
+		}
+		.row:after {
+			content: "";
+			position: absolute;
+			top: calc(-1 * var(--borderWidth));
+			left: calc(-1 * var(--borderWidth));
+			height: calc(100% + var(--borderWidth) * 2);
+			width: calc(100% + var(--borderWidth) * 2);
+			background: linear-gradient(
+				60deg,
+				#f79533,
+				#f37055,
+				#ef4e7b,
+				#a166ab,
+				#5073b8,
+				#1098ad,
+				#07b39b,
+				#6fba82
+			);
+			border-radius: calc(2 * var(--borderWidth));
+			z-index: -1;
+			animation: animatedgradient 3s ease alternate infinite;
+			background-size: 300% 300%;
+		}
+
+		@keyframes animatedgradient {
+			0% {
+				background-position: 0% 50%;
+			}
+			50% {
+				background-position: 100% 50%;
+			}
+			100% {
+				background-position: 0% 50%;
 			}
 		}
 	}
@@ -91,4 +128,3 @@ li.active{
 		transform: translate(0px, 0px);
 	}
 }
-
