@@ -303,6 +303,7 @@ li.active {
 }
 
 .convert .container-fluid .row .right-side .right-upper {
+  text-align: center;
   border-style: groove;
   border-radius: 5px;
   margin-top: 8%;
