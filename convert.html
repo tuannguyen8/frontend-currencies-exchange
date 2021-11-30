@@ -26,12 +26,12 @@
 	</head>
 
 	<body>
-		<div class="modal">
+		<div class="modal flex j-center a-center">
 			<div class="modal-content">
 		
 				<div class="modal-body">
 					<div class="input-group-modal">
-						<div class="currency-choice-modal flex">
+						<div class="currency-choice-modal flex j-between a-center">
 							<div class="currency-list-input-modal">
 								<div>From: </div>
 								<div class="currency-type-input-modal"></div>
@@ -91,7 +91,7 @@
 		<div class="convert">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="left-side col-sm-6">
+					<div class="left-side col-sm-12 col-md-6">
 						<h2>All Currencies and Their Last Price</h2>
 						<div class="currency-list">
 							<ul class="all-currencies-header flex j-between a-center">
@@ -102,12 +102,15 @@
 						</div>
 					</div>
 
-					<div class="right-side col-sm-6">
+					<div class="right-side col-sm-12 col-md-6">
 						<div class="right-upper">
 							<div class="slide owl-carousel owl-theme">
 								<div class="item">		
 									<div class="dates">
-										Top 5 highest Changes Today From Yesterday
+										<h5>
+											Top 5 highest Changes Today From Yesterday
+										</h5>
+										
 									</div>
 									<div class="right-upper-left col-sm-6">
 										<div class="Top_gainer">TOP Gainers</div>
@@ -117,8 +120,10 @@
 									</div>
 								</div>
 								<div class="item">
-									Top 5 highest Changes Today From Last Week
-									<div class="date_week"></div>
+									
+									<div class="date_week">
+										<h5>Top 5 highest Changes Today From Last Week</h5>
+									</div>
 									<div class="right-upper-left col-sm-6">
 										<div class="Top_gainer_week">TOP Gainers</div>
 									</div>
@@ -127,8 +132,12 @@
 									</div>
 								</div>
 								<div class="item">
-									Top 5 highest Changes Today From Last Month
-									<div class="date_month"></div>
+									
+									<div class="date_month">
+										<h5>
+											Top 5 highest Changes Today From Last Month
+										</h5>
+									</div>
 									<div class="right-upper-left col-sm-6">
 										<div class="Top_gainer_month">TOP Gainers</div>
 									</div>
@@ -137,8 +146,10 @@
 									</div>
 								</div>
 								<div class="item">
-									Top 5 highest Changes Today From Last Year
-									<div class="date_year"></div>
+									
+									<div class="date_year">
+										<h5>Top 5 highest Changes Today From Last Year</h5>
+									</div>
 									<div class="right-upper-left col-sm-6">
 										<div class="Top_gainer_year">TOP Gainers</div>
 									</div>
@@ -164,7 +175,7 @@
 										<ul class="list-output"> </ul>
 									</div>
 									<div class="quantity-input">
-										<label for="quantity">Value:</label>
+										<label class="label-style" for="quantity">Value:</label>
 										<input
 											class="input-value"
 											type="number"
@@ -196,7 +207,7 @@
 			</div>
 		</div>
 
-		<footer>
+		<!-- <footer>
 			<div class="">
 				<nav class="navbar navbar-dark bg-primary">
 					<div class="flex j-center a-center">
@@ -206,7 +217,7 @@
 					</div>
 				</nav>
 			</div>
-		</footer>
+		</footer> -->
 	</body>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>

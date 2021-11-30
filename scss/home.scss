@@ -12,20 +12,26 @@ li.active{
 	background-position: center;
 	height: 40vw;
 	.home-content{
+		background-color: black;
 		display: flex;
+		justify-content: center;
 		flex-direction: column;
+		position: absolute;
+		bottom: 50%;
+		right: 50%;
+		transform: translate(50%, -100%);
+		@media screen and (max-width: 768px){
+			transform: translate(50%, -50%);
+		}
 		.row {
-			position: absolute;
-			top: 25%;
-			left: 25%;
 			border: 2px solid rgb(84, 151, 228);
 			background-color: white;
 			border-radius: 5px;
-			padding: 10px;
-			width: 50vw;
+			padding: 10px 50px;
+			//width: 50vw;
 			.welcome {
 				font-size: 1.2vw;
-				font-family: cursive;
+				//font-family: cursive;
 				margin: auto;
 				width: 100%;
 				text-align: center;
@@ -33,7 +39,17 @@ li.active{
 				font-weight: bold;
 				animation: run 1s linear 1;
 			}
-			.btn.btn-success {
+			div{
+				width: 70%;
+				margin: auto;
+				a{
+					font-size: 1vw;
+					margin: auto;
+					text-align: center;
+					font-weight: bold;
+				}
+			}
+			.btn-success {
 				margin: auto;
 				width: 100%;
 				animation: spin 1s linear 1;
@@ -42,22 +58,6 @@ li.active{
 	}
 }
 
-.img-bf {
-	height: 15vw;
-	margin-top: 16%;
-	margin-left: 25%;
-
-	animation: bf1 1s linear 1;
-
-}
-/* .img-bf-coin {
-	height: 15vw;
-
-	margin-left: 58%;
-	animation-delay: 2s;
-	animation: bf2 1s linear 1;
-	
-} */
 @keyframes bf1 {
 	0% {
 		transform: translate(-700px, -100px);
@@ -92,117 +92,3 @@ li.active{
 	}
 }
 
-@media screen and (max-width: 670px) {
-	.row {
-		position: absolute;
-		top: 45%;
-		left: 25%;
-		border: 2px solid rgb(84, 151, 228);
-		background-color: white;
-		border-radius: 5px;
-		padding: 10px;
-		width: 50vw;
-	}
-	.img-bf {
-		height: 15vw;
-		margin-top: 24%;
-		margin-left: 11%;
-
-		animation: bf1 1s linear 1;
-		animation-delay: 0.5s;
-	}
-	.img-bf-coin {
-		height: 15vw;
-		margin-top: -5%;
-		margin-left: 58%;
-		animation-delay: 2s;
-		animation: bf2 1s linear 1;
-		animation-delay: 1.5s;
-	}
-}
-@media screen and (max-width: 970px) {
-	.row {
-		position: absolute;
-		top: 45%;
-		left: 25%;
-		border: 2px solid rgb(84, 151, 228);
-		background-color: white;
-		border-radius: 5px;
-		padding: 10px;
-		width: 50vw;
-	}
-	.img-bf {
-		height: 15vw;
-		margin-top: 24%;
-		margin-left: 11%;
-
-		animation: bf1 1s linear 1;
-		animation-delay: 0.5s;
-	}
-	.img-bf-coin {
-		height: 15vw;
-		margin-top: -5%;
-		margin-left: 58%;
-		animation-delay: 2s;
-		animation: bf2 1s linear 1;
-		animation-delay: 1.5s;
-	}
-}
-@media screen and (max-width: 420px) {
-	.row {
-		position: absolute;
-		top: 17%;
-		left: 25%;
-		border: 2px solid rgb(84, 151, 228);
-		background-color: white;
-		border-radius: 5px;
-		padding: 10px;
-		width: 50vw;
-	}
-	.img-bf {
-		height: 15vw;
-		margin-top: 24%;
-		margin-left: 11%;
-
-		animation: bf1 1s linear 1;
-		animation-delay: 0.5s;
-	}
-	.img-bf-coin {
-		height: 15vw;
-		margin-top: -5%;
-		margin-left: 58%;
-		animation-delay: 2s;
-		animation: bf2 1s linear 1;
-		animation-delay: 1.5s;
-	}
-}
-@media screen and (max-width: 1300px) {
-	.row {
-		position: absolute;
-		top: 16%;
-		left: 25%;
-		border: 2px solid rgb(84, 151, 228);
-		background-color: white;
-		border-radius: 5px;
-		padding: 10px;
-		width: 50vw;
-	}
-	.img-bf {
-		height: 15vw;
-		margin-top: 14%;
-		margin-left: 11%;
-		animation: bf1 1s linear 1;
-		animation-delay: 0.5s;
-	}
-	.img-bf-coin {
-		height: 15vw;
-		margin-top: -5%;
-		margin-left: 58%;
-		animation-delay: 2s;
-		animation: bf2 1s linear 1;
-		animation-delay: 1.5s;
-	}
-}
-
-
-/*# sourceMappingURL=home.css.map */
