@@ -58,7 +58,7 @@ html {
 
 @media screen and (max-width: 426px) {
   .modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-input-modal .currency-type-input-modal {
-    width: 160px;
+    width: 160px !important;
   }
 }
 
@@ -112,7 +112,7 @@ html {
 
 @media screen and (max-width: 426px) {
   .modal .modal-content .modal-body .input-group-modal .currency-choice-modal .currency-list-output-modal .currency-type-output-modal {
-    width: 160px;
+    width: 160px !important;
   }
 }
 
@@ -161,7 +161,7 @@ html {
 
 @media screen and (max-width: 426px) {
   .modal .modal-content .modal-body .input-group-modal .currency-choice-modal .quantity-input-modal input {
-    width: 160px;
+    width: 160px !important;
   }
 }
 

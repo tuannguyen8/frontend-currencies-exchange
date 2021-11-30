@@ -2,6 +2,7 @@ html{
 	background-color: black;
 }
 .modal{
+	
     display: none;
     height: 100vh;
     position: relative;
@@ -14,13 +15,13 @@ html{
 	//background: red;
     width: 100%;
     .modal-content{
-       position: absolute;
-	   //height: 50vh;
-	   width: 50%;
-	   bottom: 50%;
-	   left: 50%;
-	   transform: translate(-50%, 50%);
-	   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		position: absolute;
+		//height: 50vh;
+		width: 50%;
+		bottom: 50%;
+		left: 50%;
+		transform: translate(-50%, 50%);
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         .modal-body{
             background-color: white;
 			width: 100%;
@@ -35,7 +36,8 @@ html{
 
 						.currency-type-input-modal {
 							@media screen and (max-width: 426px){
-								width: 160px;
+								width: 160px !important;
+								//color: red;
 							}
 							@media screen and (max-width: 786px){
 								width: 330px;
@@ -77,7 +79,7 @@ html{
 						position: relative;
 						.currency-type-output-modal {
 							@media screen and (max-width: 426px){
-								width: 160px;
+								width: 160px !important;
 							}
 							@media screen and (max-width: 786px){
 								width: 330px;
@@ -120,7 +122,7 @@ html{
 						}
 						input {
 							@media screen and (max-width: 426px){
-								width: 160px;
+								width: 160px !important;
 							}
 							@media screen and (max-width: 786px){
 								width: 330px;
@@ -201,6 +203,7 @@ li.active{
 					text-align: center;
 				}
 				.currency-list {
+					
 					border-style: groove;
 					border-radius: 5px;
 					background-color: #337ab7;
