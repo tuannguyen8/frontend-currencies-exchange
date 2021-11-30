@@ -1,3 +1,7 @@
+html {
+  background-color: black;
+}
+
 .navbar-nav > li {
   padding-left: 30px;
   padding-right: 30px;
@@ -12,7 +16,7 @@ li.active {
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
-  height: 40vw;
+  height: 50vw;
 }
 
 #container-fluid .home-content {
@@ -42,10 +46,11 @@ li.active {
 }
 
 #container-fluid .home-content .row {
-  border: 2px solid #5497e4;
-  background-color: white;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 10px 50px;
+  --borderWidth: 10px;
+  background: #1d1f20;
+  position: relative;
 }
 
 #container-fluid .home-content .row .welcome {
@@ -53,7 +58,7 @@ li.active {
   margin: auto;
   width: 100%;
   text-align: center;
-  color: #4545d4;
+  color: white;
   font-weight: bold;
   -webkit-animation: run 1s linear 1;
           animation: run 1s linear 1;
@@ -76,6 +81,45 @@ li.active {
   width: 100%;
   -webkit-animation: spin 1s linear 1;
           animation: spin 1s linear 1;
+}
+
+#container-fluid .home-content .row:after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  -webkit-animation: animatedgradient 3s ease alternate infinite;
+          animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+@-webkit-keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @-webkit-keyframes bf1 {
