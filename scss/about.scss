@@ -14,7 +14,9 @@ li.active {
 	background-size: auto;
 	background-position: center;
 }
-
+header{
+	background-color: white !important;
+}
 .img {
 	height: 302px;
 	width: 100%;
@@ -31,23 +33,38 @@ li.active {
 	color: rgb(19, 11, 11);
 	font-size: 1vw;
 }
+.tech{
+	text-align: center;
+	color: rgb(19, 11, 11);
+	font-size: 1vw;
+	font-weight: 700;
+}
 .header1 {
 	text-align: center;
 	color: rgb(15, 10, 10);
 	font-size: 2vw;
 }
-.col-sm-6 {
-	height: 330px;
-	color: rgb(19, 10, 10);
-}
-.canvas {
-	height: 100px;
-}
+
 .upper-right {
 	text-align: center;
 	margin-top: auto;
-	margin-bottom: auto;
+	margin-bottom: 20px;
 	text-align: center;
 	width: 23vw;
+	transform: translate(0%, 0%);
+	
 	margin-left: 38.6%;
+	@media screen and (max-width: 1024px){
+		width: 40vw;
+		transform: translate(-20%, 0%);
+	}
+	@media screen and (max-width: 768px){
+		width: 60vw;
+		transform: translate(-28%, 0%);
+
+	}
+	@media screen and (max-width: 426px){
+		width: 80vw;
+		transform: translate(-33%, 0%);
+	}
 }

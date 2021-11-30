@@ -17,6 +17,10 @@ li.active {
   background-position: center;
 }
 
+header {
+  background-color: white !important;
+}
+
 .img {
   height: 302px;
   width: 100%;
@@ -36,27 +40,51 @@ li.active {
   font-size: 1vw;
 }
 
+.tech {
+  text-align: center;
+  color: #130b0b;
+  font-size: 1vw;
+  font-weight: 700;
+}
+
 .header1 {
   text-align: center;
   color: #0f0a0a;
   font-size: 2vw;
 }
 
-.col-sm-6 {
-  height: 330px;
-  color: #130a0a;
-}
-
-.canvas {
-  height: 100px;
-}
-
 .upper-right {
   text-align: center;
   margin-top: auto;
-  margin-bottom: auto;
+  margin-bottom: 20px;
   text-align: center;
   width: 23vw;
+  -webkit-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
   margin-left: 38.6%;
+}
+
+@media screen and (max-width: 1024px) {
+  .upper-right {
+    width: 40vw;
+    -webkit-transform: translate(-20%, 0%);
+            transform: translate(-20%, 0%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .upper-right {
+    width: 60vw;
+    -webkit-transform: translate(-28%, 0%);
+            transform: translate(-28%, 0%);
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .upper-right {
+    width: 80vw;
+    -webkit-transform: translate(-33%, 0%);
+            transform: translate(-33%, 0%);
+  }
 }
 /*# sourceMappingURL=about.css.map */
