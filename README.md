@@ -21,3 +21,7 @@ Currencies API: https://github.com/fawazahmed0/currency-api#readme
 ### https://stackoverflow.com/questions/5670879/css-html-create-a-glowing-border-around-an-input-field
 
 ### https://www.w3schools.com/howto/howto_css_image_responsive.asp
+
+### https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html
+
+### https://fontawesome.com/
