@@ -16,7 +16,19 @@ li.active {
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
-  height: 50vw;
+  height: 56vw;
+}
+
+@media screen and (max-width: 768px) {
+  #container-fluid {
+    height: 80vw;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  #container-fluid {
+    height: 110vw;
+  }
 }
 
 #container-fluid .home-content {
@@ -53,6 +65,12 @@ li.active {
   position: relative;
 }
 
+@media screen and (max-width: 414px) {
+  #container-fluid .home-content .row {
+    margin-top: -35%;
+  }
+}
+
 #container-fluid .home-content .row .welcome {
   font-size: 1.2vw;
   margin: auto;
@@ -62,6 +80,12 @@ li.active {
   font-weight: bold;
   -webkit-animation: run 1s linear 1;
           animation: run 1s linear 1;
+}
+
+@media screen and (max-width: 414px) {
+  #container-fluid .home-content .row .welcome {
+    font-size: 10px;
+  }
 }
 
 #container-fluid .home-content .row div {

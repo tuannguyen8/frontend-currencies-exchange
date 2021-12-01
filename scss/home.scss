@@ -1,4 +1,4 @@
-html{
+html {
 	background-color: black;
 }
 .navbar-nav > li {
@@ -13,7 +13,13 @@ li.active {
 	background-repeat: no-repeat;
 	background-size: auto;
 	background-position: center;
-	height: 50vw;
+	height: 56vw;
+	@media screen and (max-width: 768px) {
+		height: 80vw;
+	}
+	@media screen and (max-width: 414px) {
+		height: 110vw;
+	}
 	.home-content {
 		background-color: black;
 		display: flex;
@@ -30,10 +36,16 @@ li.active {
 			border-radius: 15px;
 			padding: 10px 50px;
 			--borderWidth: 10px;
+			@media screen and (max-width: 414px) {
+				margin-top: -35%;
+			}
 			background: #1d1f20;
 			position: relative;
 			.welcome {
 				font-size: 1.2vw;
+				@media screen and (max-width: 414px) {
+					font-size: 10px;
+				}
 				margin: auto;
 				width: 100%;
 				text-align: center;
