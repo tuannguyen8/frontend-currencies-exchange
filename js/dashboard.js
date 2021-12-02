@@ -1,16 +1,10 @@
 $(".owl-carousel").owlCarousel({
 	items: 1,
-	//margin: 10,
+
 	loop: true,
 
-	/* autoplay: true,
-    autoplayTimeout: 5000, */
 	nav: false,
-	//bắt buộc là dấu nháy đơn
-	/* navText: [
-        '<i class="fas fa-angle-left"></i>',
-        '<i class="fas fa-angle-right"></i>',
-    ], */
+
 	dots: true,
 });
 
@@ -86,10 +80,7 @@ const convertCurrency = (inputCurrency, outputCurrency, inputValue) => {
 	});
 };
 $(".convert-click").click(function (e) {
-	//console.log("hello");
 	e.preventDefault();
-	/* const breed = $(".dog-breeds").text()
-    fetchData(breed); */
 	const inputCurrency = $(".currency-type-input").text().toLowerCase();
 	const outputCurrency = $(".currency-type-output").text().toLowerCase();
 	const inputValue = $(".input-value").val();
@@ -179,9 +170,6 @@ const renderChart = (currencyKey) => {
 		//console.log(currencyKey);
 		get_names = await get_price(curr_name);
 
-		// Fetching Currency data for last 7 days
-		//todays_price = await get_price(today_price_url);
-		//console.log(todays_price);
 		yes_price_data = await yesterdays_price(yes_price_url);
 		yes_price_data1 = await yesterdays_price(day_before_url);
 		yes_price_data2 = await yesterdays_price(day_before_url1);
@@ -191,9 +179,9 @@ const renderChart = (currencyKey) => {
 		yes_price_data6 = await yesterdays_price(day_before_url5);
 
 		// getting the use USD in an Array
-		//let data0 = todays_price.usd;
+
 		let data1 = yes_price_data.usd;
-		//console.log(data1);
+
 		let data2 = yes_price_data1.usd;
 		let data3 = yes_price_data2.usd;
 		let data4 = yes_price_data3.usd;
@@ -211,7 +199,6 @@ const renderChart = (currencyKey) => {
 			data3[currencyKey],
 			data2[currencyKey],
 			data1[currencyKey],
-			//data0[currencyKey],
 		];
 
 		let labels = [
@@ -222,7 +209,6 @@ const renderChart = (currencyKey) => {
 			day_before_yes1,
 			day_before_yes,
 			yesterday_date,
-			//todays_date,
 		];
 		let borderColor = [
 			"rgba(255,99,132,1)",
@@ -265,34 +251,21 @@ const renderChart = (currencyKey) => {
 currencyKey = "ada";
 renderChart(currencyKey);
 
-//update chart by click the name or code of currency
 $(document).on("click", ".currency-key-tag", function (event) {
-	//e.preventDefault();
-	//console.log("clickkkkk");
-	//console.log(event.target.className);
 	$("canvas#lineChart").remove();
 	$("div.right-lower").append(
 		'<canvas id="lineChart" class="animated fadeIn" height="150"></canvas>'
 	);
 	let currencyKey = $(this).text().toLowerCase();
-	
-
-	//let myKey = $(this).prev().text().toLowerCase();
-	//console.log(currencyKey);
-	//console.log(myKey);
-
 	renderChart(currencyKey);
 });
 
 $(document).on("click", ".currency-name-tag", function (event) {
-	//e.preventDefault();
-	//console.log("clickkkkk");
-	//console.log(event.target.className); 
 	$("canvas#lineChart").remove();
 	$("div.right-lower").append(
 		'<canvas id="lineChart" class="animated fadeIn" height="150"></canvas>'
 	);
-	
+
 	let currencyKey = $(this).prev().text().toLowerCase();
 
 	renderChart(currencyKey);
@@ -330,10 +303,9 @@ const top_5_curr = () => {
 		element.append(name);
 		app.append(element);
 	};
-	
+
 	datetoDOM("Today's Date: " + todays_date);
 	datetoDOM("A Yesterday's Date: " + yesterday_date);
-
 
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
 	// Todays Price
@@ -351,13 +323,10 @@ const top_5_curr = () => {
 	async function get_data() {
 		price_data = await get_price(curr_price_url);
 		yes_price_data = await yesterdays_price(yes_price_url);
-		/* console.log(price_data);
-		console.log(yes_price_data); */
+
 		let data1 = price_data.usd;
 		let data2 = yes_price_data.usd;
 		let difference = [];
-		/* console.log(data1);
-		console.log(data2); */
 
 		// Finding the TOP PRICE MOVERS!!
 		let curr = [];
@@ -368,19 +337,15 @@ const top_5_curr = () => {
 			day1.push(Number(`${data1[each]}`));
 		}
 		let diff = "3.14";
-		//console.log(Number(diff) +1);
-		//console.log(typeof diff);
+
 		for (const each in data2) {
 			day2.push(Number(`${data2[each]}`));
 		}
 
-		/* console.log(typeof parseFloat(day1[0])); */
 		for (let i = 0; i < day1.length; ++i) {
 			let increase = 0;
 			let decrease = 0;
-			//console.log(day1[i]);
-			//console.log(day2[i]);
-			//console.log(typeof day2[i]);
+
 			diff = (day1[i] - day2[i]).toPrecision(6);
 			if (diff > 0) {
 				increase = ((diff / day2[i]) * 100).toPrecision(9);
@@ -390,23 +355,18 @@ const top_5_curr = () => {
 				-Math.abs(decrease);
 				difference.push(decrease);
 			}
-			/* console.log(" percentage " + increase);
-			console.log(" percentage " + decrease); */
-			//console.log(i);
-			//difference.push(diff);
 		}
-		//console.log(difference);
 
 		//Sorting the Array Object to find Top and Bottom Gainers
 		var sorted_price = {};
 		for (var i = 0; i < curr.length; i++) {
 			sorted_price[curr[i]] = difference[i];
 		}
-		//console.log(sorted_price);
+
 		const sortable = Object.entries(sorted_price)
 			.sort(([, a], [, b]) => a - b)
 			.reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-		//console.log(sortable);
+
 		// Adding
 		let gainers = document.querySelector(".Top_gainer");
 		let loosers = document.querySelector(".Top_loosers");
@@ -488,8 +448,7 @@ const top_5_week = () => {
 			<h5>A Week Ago Date: ${yesterday_date}</h5>
 		</div>
 	`);
-	/* console.log("TODAYS DATE " + todays_date);
-	console.log("Last Week DATE " + yesterday_date); */
+
 	let yes_price_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${yesterday_date}/currencies/usd.json`;
 	// Todays Price
 	async function get_price(curr_price) {
@@ -506,13 +465,10 @@ const top_5_week = () => {
 	async function get_data() {
 		price_data = await get_price(curr_price_url);
 		yes_price_data = await yesterdays_price(yes_price_url);
-		/* console.log(price_data);
-		console.log(yes_price_data); */
+
 		let data1 = price_data.usd;
 		let data2 = yes_price_data.usd;
 		let difference = [];
-		/* console.log(data1);
-		console.log(data2); */
 
 		// Finding the TOP PRICE MOVERS!!
 		let curr = [];
@@ -523,8 +479,7 @@ const top_5_week = () => {
 			day1.push(Number(`${data1[each]}`));
 		}
 		let diff = "3.14";
-		//console.log(Number(diff) +1);
-		//console.log(typeof diff);
+
 		for (const each in data2) {
 			day2.push(Number(`${data2[each]}`));
 		}
@@ -533,9 +488,7 @@ const top_5_week = () => {
 		for (let i = 0; i < day1.length; ++i) {
 			let increase = 0;
 			let decrease = 0;
-			//console.log(day1[i]);
-			//console.log(day2[i]);
-			//console.log(typeof day2[i]);
+
 			diff = (day1[i] - day2[i]).toPrecision(6);
 			if (diff > 0) {
 				increase = ((diff / day2[i]) * 100).toPrecision(9);
@@ -545,23 +498,18 @@ const top_5_week = () => {
 				-Math.abs(decrease);
 				difference.push(decrease);
 			}
-			/* console.log(" percentage " + increase);
-			console.log(" percentage " + decrease); */
-			//console.log(i);
-			//difference.push(diff);
 		}
-		//console.log(difference);
 
 		//Sorting the Array Object to find Top and Bottom Gainers
 		var sorted_price = {};
 		for (var i = 0; i < curr.length; i++) {
 			sorted_price[curr[i]] = difference[i];
 		}
-		//console.log(sorted_price);
+
 		const sortable = Object.entries(sorted_price)
 			.sort(([, a], [, b]) => a - b)
 			.reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-		//console.log(sortable);
+
 		// Adding
 		let gainers = document.querySelector(".Top_gainer_week");
 		let loosers = document.querySelector(".Top_looser_week");
@@ -681,11 +629,11 @@ const top_5_month = () => {
 		for (var i = 0; i < curr.length; i++) {
 			sorted_price[curr[i]] = difference[i];
 		}
-		//console.log(sorted_price);
+
 		const sortable = Object.entries(sorted_price)
 			.sort(([, a], [, b]) => a - b)
 			.reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-		//console.log(sortable);
+
 		// Adding
 		let gainers = document.querySelector(".Top_gainer_month");
 		let loosers = document.querySelector(".Top_looser_month");
@@ -706,7 +654,7 @@ const top_5_month = () => {
 		for (let keys = Object.keys(sortable), i = 0, end = 7; i < end; ++i) {
 			let key = keys[i],
 				value = sortable[key];
-			//console.log(key, value);
+
 			ToptoDOM(key.toUpperCase(), value + " %");
 		}
 		const sortable1 = Object.entries(sorted_price)
@@ -716,7 +664,7 @@ const top_5_month = () => {
 		for (let keys = Object.keys(sortable1), i = 0, end = 7; i < end; ++i) {
 			let key = keys[i],
 				value = sortable1[key];
-			//console.log(key, value);
+
 			ToptoDOM1(key.toUpperCase(), " + " + value + " %");
 		}
 		ToptoDOM(sortable);
@@ -735,9 +683,7 @@ const top_5_year = () => {
 
 	fetch(curr_name) // Getting Currency Name
 		.then((response) => response.json())
-		.then((data) => {
-			/* console.log(data); */
-		});
+		.then((data) => {});
 
 	const today = new Date();
 	const yesterday = new Date(today);
@@ -746,7 +692,7 @@ const top_5_year = () => {
 	yesterday.toDateString();
 	let todays_date = formatDate(today);
 	let yesterday_date = formatDate(yesterday);
-	//console.log(yesterday_date);
+
 	// Adding Date to DOM
 	$(".date_year").append(`
 		<div class="Current_dates">
@@ -777,8 +723,6 @@ const top_5_year = () => {
 		let data1 = price_data.usd;
 		let data2 = yes_price_data.usd;
 		let difference = [];
-		/* console.log(data1);
-		console.log(data2); */
 
 		// Finding the TOP PRICE MOVERS!!
 		let curr = [];
@@ -789,19 +733,15 @@ const top_5_year = () => {
 			day1.push(Number(`${data1[each]}`));
 		}
 		let diff = "3.14";
-		//console.log(Number(diff) +1);
-		//console.log(typeof diff);
+
 		for (const each in data2) {
 			day2.push(Number(`${data2[each]}`));
 		}
 
-		/* console.log(typeof parseFloat(day1[0])); */
 		for (let i = 0; i < day1.length; ++i) {
 			let increase = 0;
 			let decrease = 0;
-			//console.log(day1[i]);
-			//console.log(day2[i]);
-			//console.log(typeof day2[i]);
+
 			diff = (day1[i] - day2[i]).toPrecision(6);
 			if (diff > 0) {
 				increase = ((diff / day2[i]) * 100).toPrecision(9);
@@ -811,23 +751,18 @@ const top_5_year = () => {
 				-Math.abs(decrease);
 				difference.push(decrease);
 			}
-			//console.log(" percentage " + increase);
-			//console.log(" percentage " + decrease);
-			//console.log(i);
-			//difference.push(diff);
 		}
-		//console.log(difference);
 
 		//Sorting the Array Object to find Top and Bottom Gainers
 		var sorted_price = {};
 		for (var i = 0; i < curr.length; i++) {
 			sorted_price[curr[i]] = difference[i];
 		}
-		//console.log(sorted_price);
+
 		const sortable = Object.entries(sorted_price)
 			.sort(([, a], [, b]) => a - b)
 			.reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-		//console.log(sortable);
+
 		// Adding
 		let gainers = document.querySelector(".Top_gainer_year");
 		let loosers = document.querySelector(".Top_looser_year");
@@ -848,17 +783,17 @@ const top_5_year = () => {
 		for (let keys = Object.keys(sortable), i = 0, end = 7; i < end; ++i) {
 			let key = keys[i],
 				value = sortable[key];
-			//console.log(key, value);
+
 			ToptoDOM(key.toUpperCase(), value + " %");
 		}
 		const sortable1 = Object.entries(sorted_price)
 			.sort(([, a], [, b]) => b - a)
 			.reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-		/* console.log(sortable1); */
+
 		for (let keys = Object.keys(sortable1), i = 0, end = 7; i < end; ++i) {
 			let key = keys[i],
 				value = sortable1[key];
-			//console.log(key, value);
+
 			ToptoDOM1(key.toUpperCase(), " + " + value + " %");
 		}
 		ToptoDOM(sortable);
